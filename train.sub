@@ -27,4 +27,4 @@ when_to_transfer_output = ON_EXIT
 
 
 # launch 3 jobs with different SCRIPT values
-queue SCRIPT in ml_1.py, ml_2.py, ml_3.py
+queue SCRIPT in ml_6.py, ml_7.py

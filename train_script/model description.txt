@@ -1,0 +1,23 @@
+ml_1.py:
+Use raw data, train on 7 layers,learning rate =1e-4
+
+ml_2.py:
+Use noise data, train on 6 layers, learning rate 5e-3 and decrease if no improvement of loss.
+
+ml_3.py:
+Use raw data, train on 6 layers, same as 2. learning rate = 1e-4
+
+ml_4.py:
+Use raw data, train on 6 layers, same as 2. learning rate 5e-3 and decrease if no improvement of loss.
+
+ml_5.py:
+Use noise data, train on 6 layers with different length compared to 2. learning rate 5e-3 and decrease if no improvement of loss.
+
+ml_6.py:
+Use raw data, same as 4, excep also balance fcnm_RHI.
+
+ml_7.py:
+Use noise data, same as 5, excep also balance fcnm_RHI.
+
+ml_8.py:
+Use raw data, train on 4 layers. learning rate 5e-3 and decrease if no improvement of loss. Also balance fcnm_RHI.

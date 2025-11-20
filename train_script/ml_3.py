@@ -230,10 +230,10 @@ class WeightedMSELoss(nn.Module):
         return weighted_mse.mean()
 
 criterion = WeightedMSELoss(weights=[2.0, 1.0])  # emphasize RHI
-optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)
+optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4, weight_decay=1e-4)
 scaler = torch.cuda.amp.GradScaler(enabled=(device.type == "cuda"))
 
-scheduler = ReduceLROnPlateau(optimizer, mode="min", factor=0.5, patience=20, min_lr=1e-6, verbose=True)
+#scheduler = ReduceLROnPlateau(optimizer, mode="min", factor=0.5, patience=20, min_lr=1e-6, verbose=True)
 
 # ---------------- (Optional) tiny overfit sanity check ----------------
 TINY_OVERFIT = False
@@ -298,7 +298,7 @@ history = []  # will store dicts per epoch
 for epoch in range(1, MAX_EPOCHS + 1):
     tr_loss = run_epoch(train_loader, train=True)
     val_loss = run_epoch(val_loader, train=False)
-    scheduler.step(val_loss)
+    #scheduler.step(val_loss)
 
     tr_rmse = epoch_rmse(train_loader)
     va_rmse = epoch_rmse(val_loader)

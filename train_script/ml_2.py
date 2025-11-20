@@ -168,8 +168,8 @@ test_loader  = DataLoader(test_ds,  batch_size=BATCH_SIZE, shuffle=False,
 # ---------------- Model (BatchNorm keeps intensity info) ----------------
 class CNN1DRegressor(nn.Module):
     def __init__(self, cin, out_dim=2,
-                 chs = (64, 128, 256, 256, 512, 512),
-                ks = (30, 20, 10, 7, 5, 3),
+                 chs=(180, 160, 128, 96, 64, 32),
+                 ks=(33, 25, 33, 7, 20, 3),
                  p_drop=0.1):
         super().__init__()
 
@@ -362,7 +362,7 @@ for i, ax in enumerate(axes):
     ax.scatter(x, yhat, s=10, alpha=0.5)
     ax.plot([lo, hi], [lo, hi], ls="--", c="black")
     ax.set_xlabel(f"True {names[i]}"); ax.set_ylabel(f"Pred {names[i]}")
-    ax.set_title(f"2_Pred vs True: {names[i]}")
+    ax.set_title(f"Pred vs True: {names[i]}")
     ax.set_xlim(lo, hi); ax.set_ylim(lo, hi)
 
 os.makedirs("figs", exist_ok=True)
