@@ -1,0 +1,424 @@
+Python 3.10.14
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pip in /opt/conda/lib/python3.10/site-packages (24.0)
+Collecting pip
+  Downloading pip-25.3-py3-none-any.whl.metadata (4.7 kB)
+Downloading pip-25.3-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 16.1 MB/s eta 0:00:00
+Installing collected packages: pip
+Successfully installed pip-25.3
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: numpy==1.26.4 in /opt/conda/lib/python3.10/site-packages (1.26.4)
+Collecting pandas
+  Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)
+Collecting astropy==6.0.1
+  Downloading astropy-6.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.8 kB)
+Collecting scikit-learn
+  Downloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+Collecting matplotlib==3.8.4
+  Downloading matplotlib-3.8.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.8 kB)
+Collecting pyerfa>=2.0.1.1 (from astropy==6.0.1)
+  Downloading pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.7 kB)
+Collecting astropy-iers-data>=0.2024.2.26.0.28.55 (from astropy==6.0.1)
+  Downloading astropy_iers_data-0.2025.11.10.0.38.31-py3-none-any.whl.metadata (3.4 kB)
+Requirement already satisfied: PyYAML>=3.13 in /opt/conda/lib/python3.10/site-packages (from astropy==6.0.1) (6.0.1)
+Requirement already satisfied: packaging>=19.0 in /opt/conda/lib/python3.10/site-packages (from astropy==6.0.1) (23.2)
+Collecting contourpy>=1.0.1 (from matplotlib==3.8.4)
+  Downloading contourpy-1.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib==3.8.4)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib==3.8.4)
+  Downloading fonttools-4.60.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (112 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib==3.8.4)
+  Downloading kiwisolver-1.4.9-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (6.3 kB)
+Requirement already satisfied: pillow>=8 in /opt/conda/lib/python3.10/site-packages (from matplotlib==3.8.4) (10.3.0)
+Collecting pyparsing>=2.3.1 (from matplotlib==3.8.4)
+  Downloading pyparsing-3.2.5-py3-none-any.whl.metadata (5.0 kB)
+Collecting python-dateutil>=2.7 (from matplotlib==3.8.4)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Requirement already satisfied: pytz>=2020.1 in /opt/conda/lib/python3.10/site-packages (from pandas) (2024.1)
+Collecting tzdata>=2022.7 (from pandas)
+  Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting scipy>=1.8.0 (from scikit-learn)
+  Downloading scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+Collecting joblib>=1.2.0 (from scikit-learn)
+  Downloading joblib-1.5.2-py3-none-any.whl.metadata (5.6 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn)
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: six>=1.5 in /opt/conda/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib==3.8.4) (1.16.0)
+Downloading astropy-6.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 39.2 MB/s  0:00:00
+Downloading matplotlib-3.8.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 89.4 MB/s  0:00:00
+Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 137.3 MB/s  0:00:00
+Downloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 151.2 MB/s  0:00:00
+Downloading astropy_iers_data-0.2025.11.10.0.38.31-py3-none-any.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 62.9 MB/s  0:00:00
+Downloading contourpy-1.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (325 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.60.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 158.6 MB/s  0:00:00
+Downloading joblib-1.5.2-py3-none-any.whl (308 kB)
+Downloading kiwisolver-1.4.9-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 112.6 MB/s  0:00:00
+Downloading pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (738 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 738.7/738.7 kB 595.2 MB/s  0:00:00
+Downloading pyparsing-3.2.5-py3-none-any.whl (113 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.7/37.7 MB 98.0 MB/s  0:00:00
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Installing collected packages: tzdata, threadpoolctl, scipy, python-dateutil, pyparsing, pyerfa, kiwisolver, joblib, fonttools, cycler, contourpy, astropy-iers-data, scikit-learn, pandas, matplotlib, astropy
+
+Successfully installed astropy-6.0.1 astropy-iers-data-0.2025.11.10.0.38.31 contourpy-1.3.2 cycler-0.12.1 fonttools-4.60.1 joblib-1.5.2 kiwisolver-1.4.9 matplotlib-3.8.4 pandas-2.3.3 pyerfa-2.0.1.5 pyparsing-3.2.5 python-dateutil-2.9.0.post0 scikit-learn-1.7.2 scipy-1.15.3 threadpoolctl-3.6.0 tzdata-2025.2
+[run.sh] running ml_3.py (tag=ml_3)
+Device: cuda
+finish loading data
+[Stratify] 3x3 bins OK (min=19, max=24347)
+Split sizes -> train=61302, val=10818, test=12728
+CNN1DRegressor(
+  (features): Sequential(
+    (0): Conv1d(1, 180, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (1): BatchNorm1d(180, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): MaxPool1d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Dropout(p=0.2, inplace=False)
+    (5): Conv1d(180, 160, kernel_size=(25,), stride=(1,), padding=(12,), bias=False)
+    (6): BatchNorm1d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): ReLU(inplace=True)
+    (8): MaxPool1d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (9): Dropout(p=0.2, inplace=False)
+    (10): Conv1d(160, 128, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (11): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): ReLU(inplace=True)
+    (13): MaxPool1d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (14): Dropout(p=0.2, inplace=False)
+    (15): Conv1d(128, 96, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (16): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (17): ReLU(inplace=True)
+    (18): Dropout(p=0.2, inplace=False)
+    (19): Conv1d(96, 64, kernel_size=(20,), stride=(1,), padding=(10,), bias=False)
+    (20): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (21): ReLU(inplace=True)
+    (22): Dropout(p=0.2, inplace=False)
+    (23): Conv1d(64, 32, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+    (24): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (25): ReLU(inplace=True)
+    (26): Dropout(p=0.2, inplace=False)
+    (27): AdaptiveAvgPool1d(output_size=1)
+  )
+  (head): Sequential(
+    (0): Flatten(start_dim=1, end_dim=-1)
+    (1): Linear(in_features=32, out_features=128, bias=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.1, inplace=False)
+    (4): Linear(in_features=128, out_features=2, bias=True)
+  )
+)
+Baseline RMSE (val) — RHI 0.1738, fcnm 0.1737
+Epoch 001 | train 1.4220 (RMSE RHI=0.1694, fcnm=0.1696) | val 1.4264 (RMSE RHI=0.1698, fcnm=0.1690) | lr=0.001
+Epoch 002 | train 1.4267 (RMSE RHI=0.1667, fcnm=0.1688) | val 1.4030 (RMSE RHI=0.1684, fcnm=0.1677) | lr=0.001
+Epoch 003 | train 1.3970 (RMSE RHI=0.1650, fcnm=0.1672) | val 1.3822 (RMSE RHI=0.1670, fcnm=0.1668) | lr=0.001
+Epoch 004 | train 1.3549 (RMSE RHI=0.1695, fcnm=0.1691) | val 1.4233 (RMSE RHI=0.1698, fcnm=0.1685) | lr=0.001
+Epoch 005 | train 1.3599 (RMSE RHI=0.1646, fcnm=0.1649) | val 1.3328 (RMSE RHI=0.1641, fcnm=0.1636) | lr=0.001
+Epoch 006 | train 1.3192 (RMSE RHI=0.1628, fcnm=0.1643) | val 1.3287 (RMSE RHI=0.1638, fcnm=0.1635) | lr=0.001
+Epoch 007 | train 1.3185 (RMSE RHI=0.1601, fcnm=0.1626) | val 1.3203 (RMSE RHI=0.1632, fcnm=0.1630) | lr=0.001
+Epoch 008 | train 1.2791 (RMSE RHI=0.1608, fcnm=0.1623) | val 1.3032 (RMSE RHI=0.1619, fcnm=0.1625) | lr=0.001
+Epoch 009 | train 1.2750 (RMSE RHI=0.1586, fcnm=0.1606) | val 1.2755 (RMSE RHI=0.1601, fcnm=0.1608) | lr=0.001
+Epoch 010 | train 1.2677 (RMSE RHI=0.1602, fcnm=0.1607) | val 1.2739 (RMSE RHI=0.1601, fcnm=0.1605) | lr=0.001
+Epoch 011 | train 1.2666 (RMSE RHI=0.1579, fcnm=0.1593) | val 1.2429 (RMSE RHI=0.1582, fcnm=0.1585) | lr=0.001
+Epoch 012 | train 1.2389 (RMSE RHI=0.1549, fcnm=0.1561) | val 1.2141 (RMSE RHI=0.1565, fcnm=0.1563) | lr=0.001
+Epoch 013 | train 1.2347 (RMSE RHI=0.1551, fcnm=0.1561) | val 1.2024 (RMSE RHI=0.1556, fcnm=0.1559) | lr=0.001
+Epoch 014 | train 1.2080 (RMSE RHI=0.1546, fcnm=0.1574) | val 1.2332 (RMSE RHI=0.1575, fcnm=0.1581) | lr=0.001
+Epoch 015 | train 1.1993 (RMSE RHI=0.1561, fcnm=0.1571) | val 1.2071 (RMSE RHI=0.1558, fcnm=0.1563) | lr=0.001
+Epoch 016 | train 1.1890 (RMSE RHI=0.1498, fcnm=0.1540) | val 1.1886 (RMSE RHI=0.1545, fcnm=0.1554) | lr=0.001
+Epoch 017 | train 1.1762 (RMSE RHI=0.1517, fcnm=0.1530) | val 1.1794 (RMSE RHI=0.1543, fcnm=0.1540) | lr=0.001
+Epoch 018 | train 1.1794 (RMSE RHI=0.1486, fcnm=0.1505) | val 1.1514 (RMSE RHI=0.1520, fcnm=0.1530) | lr=0.001
+Epoch 019 | train 1.1618 (RMSE RHI=0.1503, fcnm=0.1525) | val 1.1674 (RMSE RHI=0.1529, fcnm=0.1543) | lr=0.001
+Epoch 020 | train 1.1542 (RMSE RHI=0.1484, fcnm=0.1504) | val 1.1420 (RMSE RHI=0.1514, fcnm=0.1523) | lr=0.001
+Epoch 021 | train 1.1400 (RMSE RHI=0.1478, fcnm=0.1500) | val 1.1327 (RMSE RHI=0.1510, fcnm=0.1514) | lr=0.001
+Epoch 022 | train 1.1400 (RMSE RHI=0.1464, fcnm=0.1490) | val 1.1204 (RMSE RHI=0.1499, fcnm=0.1510) | lr=0.001
+Epoch 023 | train 1.1229 (RMSE RHI=0.1461, fcnm=0.1483) | val 1.1050 (RMSE RHI=0.1488, fcnm=0.1503) | lr=0.001
+Epoch 024 | train 1.1102 (RMSE RHI=0.1459, fcnm=0.1483) | val 1.1242 (RMSE RHI=0.1506, fcnm=0.1504) | lr=0.001
+Epoch 025 | train 1.1157 (RMSE RHI=0.1429, fcnm=0.1465) | val 1.0849 (RMSE RHI=0.1474, fcnm=0.1488) | lr=0.001
+Epoch 026 | train 1.1064 (RMSE RHI=0.1459, fcnm=0.1470) | val 1.0903 (RMSE RHI=0.1482, fcnm=0.1483) | lr=0.001
+Epoch 027 | train 1.1025 (RMSE RHI=0.1414, fcnm=0.1450) | val 1.0764 (RMSE RHI=0.1468, fcnm=0.1483) | lr=0.001
+Epoch 028 | train 1.0732 (RMSE RHI=0.1443, fcnm=0.1458) | val 1.1011 (RMSE RHI=0.1488, fcnm=0.1494) | lr=0.001
+Epoch 029 | train 1.0965 (RMSE RHI=0.1407, fcnm=0.1441) | val 1.0581 (RMSE RHI=0.1457, fcnm=0.1468) | lr=0.001
+Epoch 030 | train 1.0733 (RMSE RHI=0.1427, fcnm=0.1443) | val 1.0839 (RMSE RHI=0.1480, fcnm=0.1474) | lr=0.001
+Epoch 031 | train 1.0781 (RMSE RHI=0.1396, fcnm=0.1430) | val 1.0360 (RMSE RHI=0.1442, fcnm=0.1451) | lr=0.001
+Epoch 032 | train 1.0463 (RMSE RHI=0.1415, fcnm=0.1435) | val 1.0532 (RMSE RHI=0.1453, fcnm=0.1465) | lr=0.001
+Epoch 033 | train 1.0361 (RMSE RHI=0.1392, fcnm=0.1423) | val 1.0325 (RMSE RHI=0.1438, fcnm=0.1452) | lr=0.001
+Epoch 034 | train 1.0222 (RMSE RHI=0.1376, fcnm=0.1407) | val 1.0335 (RMSE RHI=0.1440, fcnm=0.1451) | lr=0.001
+Epoch 035 | train 1.0439 (RMSE RHI=0.1372, fcnm=0.1394) | val 1.0219 (RMSE RHI=0.1434, fcnm=0.1437) | lr=0.001
+Epoch 036 | train 1.0326 (RMSE RHI=0.1384, fcnm=0.1405) | val 1.0162 (RMSE RHI=0.1429, fcnm=0.1436) | lr=0.001
+Epoch 037 | train 1.0041 (RMSE RHI=0.1375, fcnm=0.1408) | val 1.0073 (RMSE RHI=0.1419, fcnm=0.1437) | lr=0.001
+Epoch 038 | train 1.0108 (RMSE RHI=0.1362, fcnm=0.1391) | val 1.0049 (RMSE RHI=0.1422, fcnm=0.1426) | lr=0.001
+Epoch 039 | train 1.0051 (RMSE RHI=0.1335, fcnm=0.1372) | val 0.9930 (RMSE RHI=0.1412, fcnm=0.1421) | lr=0.001
+Epoch 040 | train 1.0050 (RMSE RHI=0.1355, fcnm=0.1397) | val 1.0263 (RMSE RHI=0.1437, fcnm=0.1441) | lr=0.001
+Epoch 041 | train 0.9994 (RMSE RHI=0.1339, fcnm=0.1381) | val 1.0018 (RMSE RHI=0.1417, fcnm=0.1429) | lr=0.001
+Epoch 042 | train 0.9885 (RMSE RHI=0.1322, fcnm=0.1375) | val 0.9688 (RMSE RHI=0.1391, fcnm=0.1411) | lr=0.001
+Epoch 043 | train 0.9718 (RMSE RHI=0.1335, fcnm=0.1363) | val 0.9791 (RMSE RHI=0.1403, fcnm=0.1409) | lr=0.001
+Epoch 044 | train 0.9657 (RMSE RHI=0.1328, fcnm=0.1360) | val 0.9603 (RMSE RHI=0.1388, fcnm=0.1398) | lr=0.001
+Epoch 045 | train 0.9816 (RMSE RHI=0.1323, fcnm=0.1362) | val 0.9835 (RMSE RHI=0.1405, fcnm=0.1414) | lr=0.001
+Epoch 046 | train 0.9630 (RMSE RHI=0.1322, fcnm=0.1355) | val 0.9882 (RMSE RHI=0.1412, fcnm=0.1410) | lr=0.001
+Epoch 047 | train 0.9353 (RMSE RHI=0.1297, fcnm=0.1341) | val 0.9546 (RMSE RHI=0.1383, fcnm=0.1396) | lr=0.001
+Epoch 048 | train 0.9337 (RMSE RHI=0.1292, fcnm=0.1355) | val 0.9471 (RMSE RHI=0.1374, fcnm=0.1397) | lr=0.001
+Epoch 049 | train 0.9512 (RMSE RHI=0.1302, fcnm=0.1338) | val 0.9552 (RMSE RHI=0.1387, fcnm=0.1389) | lr=0.001
+Epoch 050 | train 0.9237 (RMSE RHI=0.1279, fcnm=0.1321) | val 0.9393 (RMSE RHI=0.1373, fcnm=0.1382) | lr=0.001
+Epoch 051 | train 0.9409 (RMSE RHI=0.1304, fcnm=0.1327) | val 0.9550 (RMSE RHI=0.1386, fcnm=0.1391) | lr=0.001
+Epoch 052 | train 0.9133 (RMSE RHI=0.1284, fcnm=0.1309) | val 0.9255 (RMSE RHI=0.1362, fcnm=0.1375) | lr=0.001
+Epoch 053 | train 0.9042 (RMSE RHI=0.1285, fcnm=0.1313) | val 0.9315 (RMSE RHI=0.1369, fcnm=0.1372) | lr=0.001
+Epoch 054 | train 0.9234 (RMSE RHI=0.1267, fcnm=0.1317) | val 0.9210 (RMSE RHI=0.1355, fcnm=0.1378) | lr=0.001
+Epoch 055 | train 0.8976 (RMSE RHI=0.1272, fcnm=0.1314) | val 0.9324 (RMSE RHI=0.1367, fcnm=0.1378) | lr=0.001
+Epoch 056 | train 0.9149 (RMSE RHI=0.1276, fcnm=0.1313) | val 0.9182 (RMSE RHI=0.1355, fcnm=0.1371) | lr=0.001
+Epoch 057 | train 0.8966 (RMSE RHI=0.1272, fcnm=0.1314) | val 0.9265 (RMSE RHI=0.1364, fcnm=0.1372) | lr=0.001
+Epoch 058 | train 0.9015 (RMSE RHI=0.1258, fcnm=0.1303) | val 0.9053 (RMSE RHI=0.1345, fcnm=0.1362) | lr=0.001
+Epoch 059 | train 0.8976 (RMSE RHI=0.1263, fcnm=0.1297) | val 0.9177 (RMSE RHI=0.1357, fcnm=0.1366) | lr=0.001
+Epoch 060 | train 0.8890 (RMSE RHI=0.1280, fcnm=0.1307) | val 0.9308 (RMSE RHI=0.1368, fcnm=0.1372) | lr=0.001
+Epoch 061 | train 0.8788 (RMSE RHI=0.1225, fcnm=0.1279) | val 0.8884 (RMSE RHI=0.1333, fcnm=0.1350) | lr=0.001
+Epoch 062 | train 0.8916 (RMSE RHI=0.1261, fcnm=0.1319) | val 0.9255 (RMSE RHI=0.1363, fcnm=0.1372) | lr=0.001
+Epoch 063 | train 0.8750 (RMSE RHI=0.1242, fcnm=0.1287) | val 0.8951 (RMSE RHI=0.1337, fcnm=0.1356) | lr=0.001
+Epoch 064 | train 0.8733 (RMSE RHI=0.1233, fcnm=0.1273) | val 0.8991 (RMSE RHI=0.1346, fcnm=0.1347) | lr=0.001
+Epoch 065 | train 0.8681 (RMSE RHI=0.1220, fcnm=0.1265) | val 0.8709 (RMSE RHI=0.1319, fcnm=0.1338) | lr=0.001
+Epoch 066 | train 0.8620 (RMSE RHI=0.1215, fcnm=0.1268) | val 0.9045 (RMSE RHI=0.1349, fcnm=0.1354) | lr=0.001
+Epoch 067 | train 0.8684 (RMSE RHI=0.1218, fcnm=0.1265) | val 0.8990 (RMSE RHI=0.1346, fcnm=0.1347) | lr=0.001
+Epoch 068 | train 0.8652 (RMSE RHI=0.1217, fcnm=0.1267) | val 0.8902 (RMSE RHI=0.1338, fcnm=0.1344) | lr=0.001
+Epoch 069 | train 0.8654 (RMSE RHI=0.1215, fcnm=0.1259) | val 0.8809 (RMSE RHI=0.1330, fcnm=0.1338) | lr=0.001
+Epoch 070 | train 0.8683 (RMSE RHI=0.1204, fcnm=0.1265) | val 0.8643 (RMSE RHI=0.1314, fcnm=0.1333) | lr=0.001
+Epoch 071 | train 0.8552 (RMSE RHI=0.1226, fcnm=0.1266) | val 0.8902 (RMSE RHI=0.1334, fcnm=0.1350) | lr=0.001
+Epoch 072 | train 0.8440 (RMSE RHI=0.1209, fcnm=0.1252) | val 0.8593 (RMSE RHI=0.1309, fcnm=0.1331) | lr=0.001
+Epoch 073 | train 0.8486 (RMSE RHI=0.1192, fcnm=0.1247) | val 0.8417 (RMSE RHI=0.1296, fcnm=0.1317) | lr=0.001
+Epoch 074 | train 0.8495 (RMSE RHI=0.1213, fcnm=0.1258) | val 0.8732 (RMSE RHI=0.1326, fcnm=0.1329) | lr=0.001
+Epoch 075 | train 0.8258 (RMSE RHI=0.1211, fcnm=0.1246) | val 0.8632 (RMSE RHI=0.1317, fcnm=0.1323) | lr=0.001
+Epoch 076 | train 0.8440 (RMSE RHI=0.1193, fcnm=0.1244) | val 0.8580 (RMSE RHI=0.1314, fcnm=0.1318) | lr=0.001
+Epoch 077 | train 0.8188 (RMSE RHI=0.1210, fcnm=0.1248) | val 0.8655 (RMSE RHI=0.1318, fcnm=0.1327) | lr=0.001
+Epoch 078 | train 0.8394 (RMSE RHI=0.1173, fcnm=0.1242) | val 0.8472 (RMSE RHI=0.1299, fcnm=0.1323) | lr=0.001
+Epoch 079 | train 0.8154 (RMSE RHI=0.1165, fcnm=0.1232) | val 0.8387 (RMSE RHI=0.1294, fcnm=0.1313) | lr=0.001
+Epoch 080 | train 0.8260 (RMSE RHI=0.1188, fcnm=0.1236) | val 0.8710 (RMSE RHI=0.1323, fcnm=0.1328) | lr=0.001
+Epoch 081 | train 0.8204 (RMSE RHI=0.1162, fcnm=0.1222) | val 0.8388 (RMSE RHI=0.1296, fcnm=0.1310) | lr=0.001
+Epoch 082 | train 0.8100 (RMSE RHI=0.1160, fcnm=0.1212) | val 0.8348 (RMSE RHI=0.1295, fcnm=0.1302) | lr=0.001
+Epoch 083 | train 0.8098 (RMSE RHI=0.1209, fcnm=0.1246) | val 0.8654 (RMSE RHI=0.1319, fcnm=0.1324) | lr=0.001
+Epoch 084 | train 0.8012 (RMSE RHI=0.1215, fcnm=0.1261) | val 0.8868 (RMSE RHI=0.1338, fcnm=0.1334) | lr=0.001
+Epoch 085 | train 0.8050 (RMSE RHI=0.1165, fcnm=0.1214) | val 0.8235 (RMSE RHI=0.1285, fcnm=0.1295) | lr=0.001
+Epoch 086 | train 0.8173 (RMSE RHI=0.1157, fcnm=0.1215) | val 0.8321 (RMSE RHI=0.1292, fcnm=0.1303) | lr=0.001
+Epoch 087 | train 0.7951 (RMSE RHI=0.1204, fcnm=0.1240) | val 0.8546 (RMSE RHI=0.1311, fcnm=0.1316) | lr=0.001
+Epoch 088 | train 0.8006 (RMSE RHI=0.1155, fcnm=0.1223) | val 0.8233 (RMSE RHI=0.1279, fcnm=0.1306) | lr=0.001
+Epoch 089 | train 0.7906 (RMSE RHI=0.1168, fcnm=0.1222) | val 0.8323 (RMSE RHI=0.1288, fcnm=0.1310) | lr=0.001
+Epoch 090 | train 0.7980 (RMSE RHI=0.1146, fcnm=0.1194) | val 0.8107 (RMSE RHI=0.1275, fcnm=0.1285) | lr=0.001
+Epoch 091 | train 0.7982 (RMSE RHI=0.1148, fcnm=0.1212) | val 0.8126 (RMSE RHI=0.1273, fcnm=0.1294) | lr=0.001
+Epoch 092 | train 0.7930 (RMSE RHI=0.1157, fcnm=0.1203) | val 0.8167 (RMSE RHI=0.1280, fcnm=0.1289) | lr=0.001
+Epoch 093 | train 0.7996 (RMSE RHI=0.1141, fcnm=0.1207) | val 0.8297 (RMSE RHI=0.1289, fcnm=0.1302) | lr=0.001
+Epoch 094 | train 0.7855 (RMSE RHI=0.1130, fcnm=0.1191) | val 0.8089 (RMSE RHI=0.1274, fcnm=0.1284) | lr=0.001
+Epoch 095 | train 0.7946 (RMSE RHI=0.1120, fcnm=0.1195) | val 0.7992 (RMSE RHI=0.1260, fcnm=0.1287) | lr=0.001
+Epoch 096 | train 0.7944 (RMSE RHI=0.1142, fcnm=0.1197) | val 0.8335 (RMSE RHI=0.1296, fcnm=0.1296) | lr=0.001
+Epoch 097 | train 0.7768 (RMSE RHI=0.1127, fcnm=0.1187) | val 0.7994 (RMSE RHI=0.1263, fcnm=0.1283) | lr=0.001
+Epoch 098 | train 0.7767 (RMSE RHI=0.1111, fcnm=0.1178) | val 0.8016 (RMSE RHI=0.1268, fcnm=0.1279) | lr=0.001
+Epoch 099 | train 0.7761 (RMSE RHI=0.1112, fcnm=0.1181) | val 0.7860 (RMSE RHI=0.1250, fcnm=0.1277) | lr=0.001
+Epoch 100 | train 0.7710 (RMSE RHI=0.1114, fcnm=0.1182) | val 0.8017 (RMSE RHI=0.1267, fcnm=0.1281) | lr=0.001
+Epoch 101 | train 0.7751 (RMSE RHI=0.1125, fcnm=0.1193) | val 0.8092 (RMSE RHI=0.1270, fcnm=0.1293) | lr=0.001
+Epoch 102 | train 0.7763 (RMSE RHI=0.1109, fcnm=0.1173) | val 0.7896 (RMSE RHI=0.1259, fcnm=0.1267) | lr=0.001
+Epoch 103 | train 0.7677 (RMSE RHI=0.1098, fcnm=0.1163) | val 0.7952 (RMSE RHI=0.1263, fcnm=0.1273) | lr=0.001
+Epoch 104 | train 0.7472 (RMSE RHI=0.1099, fcnm=0.1162) | val 0.7935 (RMSE RHI=0.1262, fcnm=0.1270) | lr=0.001
+Epoch 105 | train 0.7555 (RMSE RHI=0.1117, fcnm=0.1175) | val 0.8192 (RMSE RHI=0.1286, fcnm=0.1284) | lr=0.001
+Epoch 106 | train 0.7691 (RMSE RHI=0.1114, fcnm=0.1181) | val 0.7928 (RMSE RHI=0.1261, fcnm=0.1271) | lr=0.001
+Epoch 107 | train 0.7568 (RMSE RHI=0.1098, fcnm=0.1174) | val 0.7895 (RMSE RHI=0.1252, fcnm=0.1280) | lr=0.001
+Epoch 108 | train 0.7582 (RMSE RHI=0.1094, fcnm=0.1168) | val 0.7732 (RMSE RHI=0.1242, fcnm=0.1262) | lr=0.001
+Epoch 109 | train 0.7648 (RMSE RHI=0.1149, fcnm=0.1216) | val 0.8367 (RMSE RHI=0.1297, fcnm=0.1302) | lr=0.001
+Epoch 110 | train 0.7656 (RMSE RHI=0.1098, fcnm=0.1164) | val 0.7830 (RMSE RHI=0.1252, fcnm=0.1265) | lr=0.001
+Epoch 111 | train 0.7389 (RMSE RHI=0.1067, fcnm=0.1146) | val 0.7772 (RMSE RHI=0.1246, fcnm=0.1262) | lr=0.001
+Epoch 112 | train 0.7345 (RMSE RHI=0.1103, fcnm=0.1161) | val 0.7868 (RMSE RHI=0.1252, fcnm=0.1274) | lr=0.001
+Epoch 113 | train 0.7496 (RMSE RHI=0.1082, fcnm=0.1150) | val 0.7762 (RMSE RHI=0.1247, fcnm=0.1259) | lr=0.001
+Epoch 114 | train 0.7456 (RMSE RHI=0.1080, fcnm=0.1150) | val 0.7771 (RMSE RHI=0.1247, fcnm=0.1260) | lr=0.001
+Epoch 115 | train 0.7364 (RMSE RHI=0.1075, fcnm=0.1154) | val 0.7827 (RMSE RHI=0.1253, fcnm=0.1263) | lr=0.001
+Epoch 116 | train 0.7311 (RMSE RHI=0.1090, fcnm=0.1159) | val 0.7793 (RMSE RHI=0.1248, fcnm=0.1264) | lr=0.001
+Epoch 117 | train 0.7314 (RMSE RHI=0.1069, fcnm=0.1154) | val 0.7878 (RMSE RHI=0.1260, fcnm=0.1262) | lr=0.001
+Epoch 118 | train 0.7390 (RMSE RHI=0.1081, fcnm=0.1145) | val 0.7810 (RMSE RHI=0.1252, fcnm=0.1261) | lr=0.001
+Epoch 119 | train 0.7352 (RMSE RHI=0.1088, fcnm=0.1153) | val 0.7625 (RMSE RHI=0.1232, fcnm=0.1255) | lr=0.001
+Epoch 120 | train 0.7199 (RMSE RHI=0.1057, fcnm=0.1138) | val 0.7624 (RMSE RHI=0.1236, fcnm=0.1248) | lr=0.001
+Epoch 121 | train 0.7279 (RMSE RHI=0.1091, fcnm=0.1153) | val 0.7905 (RMSE RHI=0.1260, fcnm=0.1268) | lr=0.001
+Epoch 122 | train 0.7193 (RMSE RHI=0.1082, fcnm=0.1144) | val 0.7803 (RMSE RHI=0.1248, fcnm=0.1267) | lr=0.001
+Epoch 123 | train 0.7148 (RMSE RHI=0.1069, fcnm=0.1136) | val 0.7651 (RMSE RHI=0.1235, fcnm=0.1256) | lr=0.001
+Epoch 124 | train 0.7206 (RMSE RHI=0.1071, fcnm=0.1148) | val 0.7652 (RMSE RHI=0.1236, fcnm=0.1254) | lr=0.001
+Epoch 125 | train 0.7239 (RMSE RHI=0.1061, fcnm=0.1128) | val 0.7550 (RMSE RHI=0.1226, fcnm=0.1249) | lr=0.001
+Epoch 126 | train 0.6979 (RMSE RHI=0.1090, fcnm=0.1150) | val 0.7941 (RMSE RHI=0.1265, fcnm=0.1265) | lr=0.001
+Epoch 127 | train 0.7288 (RMSE RHI=0.1050, fcnm=0.1119) | val 0.7570 (RMSE RHI=0.1232, fcnm=0.1243) | lr=0.001
+Epoch 128 | train 0.7051 (RMSE RHI=0.1060, fcnm=0.1128) | val 0.7614 (RMSE RHI=0.1237, fcnm=0.1244) | lr=0.001
+Epoch 129 | train 0.7236 (RMSE RHI=0.1045, fcnm=0.1133) | val 0.7424 (RMSE RHI=0.1214, fcnm=0.1242) | lr=0.001
+Epoch 130 | train 0.7066 (RMSE RHI=0.1058, fcnm=0.1128) | val 0.7593 (RMSE RHI=0.1231, fcnm=0.1249) | lr=0.001
+Epoch 131 | train 0.7084 (RMSE RHI=0.1038, fcnm=0.1115) | val 0.7407 (RMSE RHI=0.1213, fcnm=0.1240) | lr=0.001
+Epoch 132 | train 0.6963 (RMSE RHI=0.1055, fcnm=0.1130) | val 0.7701 (RMSE RHI=0.1244, fcnm=0.1249) | lr=0.001
+Epoch 133 | train 0.7036 (RMSE RHI=0.1047, fcnm=0.1118) | val 0.7658 (RMSE RHI=0.1240, fcnm=0.1247) | lr=0.001
+Epoch 134 | train 0.7196 (RMSE RHI=0.1051, fcnm=0.1120) | val 0.7535 (RMSE RHI=0.1227, fcnm=0.1243) | lr=0.001
+Epoch 135 | train 0.7021 (RMSE RHI=0.1051, fcnm=0.1117) | val 0.7817 (RMSE RHI=0.1253, fcnm=0.1259) | lr=0.001
+Epoch 136 | train 0.6976 (RMSE RHI=0.1063, fcnm=0.1122) | val 0.7662 (RMSE RHI=0.1240, fcnm=0.1248) | lr=0.001
+Epoch 137 | train 0.7188 (RMSE RHI=0.1046, fcnm=0.1126) | val 0.7540 (RMSE RHI=0.1225, fcnm=0.1248) | lr=0.001
+Epoch 138 | train 0.7051 (RMSE RHI=0.1056, fcnm=0.1129) | val 0.7541 (RMSE RHI=0.1225, fcnm=0.1248) | lr=0.001
+Epoch 139 | train 0.7037 (RMSE RHI=0.1041, fcnm=0.1109) | val 0.7513 (RMSE RHI=0.1230, fcnm=0.1232) | lr=0.001
+Epoch 140 | train 0.7082 (RMSE RHI=0.1025, fcnm=0.1115) | val 0.7618 (RMSE RHI=0.1237, fcnm=0.1245) | lr=0.001
+Epoch 141 | train 0.7008 (RMSE RHI=0.1037, fcnm=0.1108) | val 0.7533 (RMSE RHI=0.1229, fcnm=0.1240) | lr=0.001
+Epoch 142 | train 0.6803 (RMSE RHI=0.1016, fcnm=0.1101) | val 0.7409 (RMSE RHI=0.1217, fcnm=0.1233) | lr=0.001
+Epoch 143 | train 0.6986 (RMSE RHI=0.1040, fcnm=0.1118) | val 0.7709 (RMSE RHI=0.1246, fcnm=0.1248) | lr=0.001
+Epoch 144 | train 0.6957 (RMSE RHI=0.1036, fcnm=0.1111) | val 0.7559 (RMSE RHI=0.1232, fcnm=0.1240) | lr=0.001
+Epoch 145 | train 0.6946 (RMSE RHI=0.1017, fcnm=0.1111) | val 0.7389 (RMSE RHI=0.1214, fcnm=0.1233) | lr=0.001
+Epoch 146 | train 0.7075 (RMSE RHI=0.1027, fcnm=0.1104) | val 0.7549 (RMSE RHI=0.1231, fcnm=0.1239) | lr=0.001
+Epoch 147 | train 0.6897 (RMSE RHI=0.1047, fcnm=0.1112) | val 0.7582 (RMSE RHI=0.1234, fcnm=0.1241) | lr=0.001
+Epoch 148 | train 0.6845 (RMSE RHI=0.1016, fcnm=0.1087) | val 0.7392 (RMSE RHI=0.1217, fcnm=0.1228) | lr=0.001
+Epoch 149 | train 0.6715 (RMSE RHI=0.1012, fcnm=0.1094) | val 0.7341 (RMSE RHI=0.1210, fcnm=0.1230) | lr=0.001
+Epoch 150 | train 0.6843 (RMSE RHI=0.0998, fcnm=0.1090) | val 0.7168 (RMSE RHI=0.1195, fcnm=0.1216) | lr=0.001
+Epoch 151 | train 0.6758 (RMSE RHI=0.1030, fcnm=0.1100) | val 0.7286 (RMSE RHI=0.1208, fcnm=0.1220) | lr=0.001
+Epoch 152 | train 0.6750 (RMSE RHI=0.1052, fcnm=0.1122) | val 0.7661 (RMSE RHI=0.1239, fcnm=0.1251) | lr=0.001
+Epoch 153 | train 0.6695 (RMSE RHI=0.1007, fcnm=0.1088) | val 0.7307 (RMSE RHI=0.1208, fcnm=0.1225) | lr=0.001
+Epoch 154 | train 0.6709 (RMSE RHI=0.1029, fcnm=0.1103) | val 0.7514 (RMSE RHI=0.1229, fcnm=0.1234) | lr=0.001
+Epoch 155 | train 0.6820 (RMSE RHI=0.1018, fcnm=0.1092) | val 0.7449 (RMSE RHI=0.1225, fcnm=0.1225) | lr=0.001
+Epoch 156 | train 0.6872 (RMSE RHI=0.1021, fcnm=0.1102) | val 0.7499 (RMSE RHI=0.1229, fcnm=0.1230) | lr=0.001
+Epoch 157 | train 0.6790 (RMSE RHI=0.0985, fcnm=0.1078) | val 0.7215 (RMSE RHI=0.1202, fcnm=0.1214) | lr=0.001
+Epoch 158 | train 0.6650 (RMSE RHI=0.1012, fcnm=0.1087) | val 0.7303 (RMSE RHI=0.1207, fcnm=0.1227) | lr=0.001
+Epoch 159 | train 0.6714 (RMSE RHI=0.1024, fcnm=0.1095) | val 0.7376 (RMSE RHI=0.1219, fcnm=0.1220) | lr=0.001
+Epoch 160 | train 0.6722 (RMSE RHI=0.0999, fcnm=0.1081) | val 0.7248 (RMSE RHI=0.1204, fcnm=0.1217) | lr=0.001
+Epoch 161 | train 0.6736 (RMSE RHI=0.0984, fcnm=0.1078) | val 0.7367 (RMSE RHI=0.1215, fcnm=0.1226) | lr=0.001
+Epoch 162 | train 0.6690 (RMSE RHI=0.1030, fcnm=0.1086) | val 0.7525 (RMSE RHI=0.1234, fcnm=0.1227) | lr=0.001
+Epoch 163 | train 0.6591 (RMSE RHI=0.1000, fcnm=0.1078) | val 0.7204 (RMSE RHI=0.1200, fcnm=0.1214) | lr=0.001
+Epoch 164 | train 0.6478 (RMSE RHI=0.1003, fcnm=0.1089) | val 0.7363 (RMSE RHI=0.1215, fcnm=0.1224) | lr=0.001
+Epoch 165 | train 0.6624 (RMSE RHI=0.1006, fcnm=0.1077) | val 0.7323 (RMSE RHI=0.1215, fcnm=0.1215) | lr=0.001
+Epoch 166 | train 0.6748 (RMSE RHI=0.0979, fcnm=0.1073) | val 0.7117 (RMSE RHI=0.1194, fcnm=0.1206) | lr=0.001
+Epoch 167 | train 0.6630 (RMSE RHI=0.0984, fcnm=0.1078) | val 0.7248 (RMSE RHI=0.1204, fcnm=0.1217) | lr=0.001
+Epoch 168 | train 0.6634 (RMSE RHI=0.0990, fcnm=0.1084) | val 0.7306 (RMSE RHI=0.1209, fcnm=0.1223) | lr=0.001
+Epoch 169 | train 0.6497 (RMSE RHI=0.1021, fcnm=0.1098) | val 0.7464 (RMSE RHI=0.1223, fcnm=0.1235) | lr=0.001
+Epoch 170 | train 0.6471 (RMSE RHI=0.0999, fcnm=0.1069) | val 0.7199 (RMSE RHI=0.1204, fcnm=0.1205) | lr=0.001
+Epoch 171 | train 0.6762 (RMSE RHI=0.1017, fcnm=0.1087) | val 0.7531 (RMSE RHI=0.1236, fcnm=0.1223) | lr=0.001
+Epoch 172 | train 0.6657 (RMSE RHI=0.1013, fcnm=0.1089) | val 0.7429 (RMSE RHI=0.1222, fcnm=0.1227) | lr=0.001
+Epoch 173 | train 0.6522 (RMSE RHI=0.0977, fcnm=0.1075) | val 0.7225 (RMSE RHI=0.1204, fcnm=0.1213) | lr=0.001
+Epoch 174 | train 0.6588 (RMSE RHI=0.0999, fcnm=0.1077) | val 0.7516 (RMSE RHI=0.1233, fcnm=0.1226) | lr=0.001
+Epoch 175 | train 0.6625 (RMSE RHI=0.0986, fcnm=0.1071) | val 0.7256 (RMSE RHI=0.1208, fcnm=0.1212) | lr=0.001
+Epoch 176 | train 0.6493 (RMSE RHI=0.0984, fcnm=0.1061) | val 0.7078 (RMSE RHI=0.1192, fcnm=0.1199) | lr=0.001
+Epoch 177 | train 0.6507 (RMSE RHI=0.0980, fcnm=0.1067) | val 0.7213 (RMSE RHI=0.1203, fcnm=0.1211) | lr=0.001
+Epoch 178 | train 0.6373 (RMSE RHI=0.0981, fcnm=0.1058) | val 0.7137 (RMSE RHI=0.1195, fcnm=0.1210) | lr=0.001
+Epoch 179 | train 0.6544 (RMSE RHI=0.1016, fcnm=0.1076) | val 0.7518 (RMSE RHI=0.1232, fcnm=0.1229) | lr=0.001
+Epoch 180 | train 0.6506 (RMSE RHI=0.0967, fcnm=0.1053) | val 0.7195 (RMSE RHI=0.1203, fcnm=0.1207) | lr=0.001
+Epoch 181 | train 0.6379 (RMSE RHI=0.0956, fcnm=0.1054) | val 0.7077 (RMSE RHI=0.1189, fcnm=0.1205) | lr=0.001
+Epoch 182 | train 0.6395 (RMSE RHI=0.0967, fcnm=0.1055) | val 0.7100 (RMSE RHI=0.1195, fcnm=0.1200) | lr=0.001
+Epoch 183 | train 0.6468 (RMSE RHI=0.0978, fcnm=0.1061) | val 0.7104 (RMSE RHI=0.1191, fcnm=0.1208) | lr=0.001
+Epoch 184 | train 0.6455 (RMSE RHI=0.1016, fcnm=0.1092) | val 0.7491 (RMSE RHI=0.1226, fcnm=0.1234) | lr=0.001
+Epoch 185 | train 0.6281 (RMSE RHI=0.0959, fcnm=0.1048) | val 0.7029 (RMSE RHI=0.1187, fcnm=0.1197) | lr=0.001
+Epoch 186 | train 0.6372 (RMSE RHI=0.0978, fcnm=0.1062) | val 0.7169 (RMSE RHI=0.1199, fcnm=0.1209) | lr=0.001
+Epoch 187 | train 0.6504 (RMSE RHI=0.0980, fcnm=0.1067) | val 0.7205 (RMSE RHI=0.1201, fcnm=0.1214) | lr=0.001
+Epoch 188 | train 0.6468 (RMSE RHI=0.0974, fcnm=0.1054) | val 0.7124 (RMSE RHI=0.1195, fcnm=0.1205) | lr=0.001
+Epoch 189 | train 0.6357 (RMSE RHI=0.0971, fcnm=0.1056) | val 0.7144 (RMSE RHI=0.1197, fcnm=0.1207) | lr=0.001
+Epoch 190 | train 0.6324 (RMSE RHI=0.0966, fcnm=0.1056) | val 0.7166 (RMSE RHI=0.1196, fcnm=0.1214) | lr=0.001
+Epoch 191 | train 0.6348 (RMSE RHI=0.0970, fcnm=0.1052) | val 0.7160 (RMSE RHI=0.1200, fcnm=0.1205) | lr=0.001
+Epoch 192 | train 0.6398 (RMSE RHI=0.0972, fcnm=0.1043) | val 0.7049 (RMSE RHI=0.1186, fcnm=0.1204) | lr=0.001
+Epoch 193 | train 0.6255 (RMSE RHI=0.0964, fcnm=0.1052) | val 0.7102 (RMSE RHI=0.1192, fcnm=0.1206) | lr=0.001
+Epoch 194 | train 0.6415 (RMSE RHI=0.0965, fcnm=0.1047) | val 0.7097 (RMSE RHI=0.1188, fcnm=0.1213) | lr=0.001
+Epoch 195 | train 0.6334 (RMSE RHI=0.1004, fcnm=0.1079) | val 0.7323 (RMSE RHI=0.1213, fcnm=0.1220) | lr=0.001
+Epoch 196 | train 0.6404 (RMSE RHI=0.0963, fcnm=0.1038) | val 0.7119 (RMSE RHI=0.1198, fcnm=0.1197) | lr=0.001
+Epoch 197 | train 0.6185 (RMSE RHI=0.0949, fcnm=0.1034) | val 0.7032 (RMSE RHI=0.1187, fcnm=0.1197) | lr=0.001
+Epoch 198 | train 0.6403 (RMSE RHI=0.0958, fcnm=0.1038) | val 0.6895 (RMSE RHI=0.1173, fcnm=0.1192) | lr=0.001
+Epoch 199 | train 0.6295 (RMSE RHI=0.0945, fcnm=0.1045) | val 0.6937 (RMSE RHI=0.1177, fcnm=0.1194) | lr=0.001
+Epoch 200 | train 0.6223 (RMSE RHI=0.0940, fcnm=0.1034) | val 0.7028 (RMSE RHI=0.1187, fcnm=0.1197) | lr=0.001
+Epoch 201 | train 0.6289 (RMSE RHI=0.0965, fcnm=0.1054) | val 0.7220 (RMSE RHI=0.1203, fcnm=0.1213) | lr=0.001
+Epoch 202 | train 0.6226 (RMSE RHI=0.0972, fcnm=0.1045) | val 0.7158 (RMSE RHI=0.1203, fcnm=0.1197) | lr=0.001
+Epoch 203 | train 0.6533 (RMSE RHI=0.0978, fcnm=0.1046) | val 0.7274 (RMSE RHI=0.1211, fcnm=0.1210) | lr=0.001
+Epoch 204 | train 0.6271 (RMSE RHI=0.0959, fcnm=0.1047) | val 0.7154 (RMSE RHI=0.1198, fcnm=0.1208) | lr=0.001
+Epoch 205 | train 0.6179 (RMSE RHI=0.0977, fcnm=0.1063) | val 0.7345 (RMSE RHI=0.1218, fcnm=0.1214) | lr=0.001
+Epoch 206 | train 0.6280 (RMSE RHI=0.0960, fcnm=0.1040) | val 0.7229 (RMSE RHI=0.1210, fcnm=0.1201) | lr=0.001
+Epoch 207 | train 0.6320 (RMSE RHI=0.0966, fcnm=0.1042) | val 0.7176 (RMSE RHI=0.1205, fcnm=0.1198) | lr=0.001
+Epoch 208 | train 0.6163 (RMSE RHI=0.0951, fcnm=0.1032) | val 0.6954 (RMSE RHI=0.1181, fcnm=0.1191) | lr=0.001
+Epoch 209 | train 0.6198 (RMSE RHI=0.0942, fcnm=0.1035) | val 0.7073 (RMSE RHI=0.1194, fcnm=0.1194) | lr=0.001
+Epoch 210 | train 0.6121 (RMSE RHI=0.0924, fcnm=0.1022) | val 0.6850 (RMSE RHI=0.1172, fcnm=0.1182) | lr=0.001
+Epoch 211 | train 0.6170 (RMSE RHI=0.0928, fcnm=0.1023) | val 0.7081 (RMSE RHI=0.1194, fcnm=0.1197) | lr=0.001
+Epoch 212 | train 0.6338 (RMSE RHI=0.0927, fcnm=0.1028) | val 0.6887 (RMSE RHI=0.1176, fcnm=0.1183) | lr=0.001
+Epoch 213 | train 0.6179 (RMSE RHI=0.0939, fcnm=0.1040) | val 0.7043 (RMSE RHI=0.1190, fcnm=0.1194) | lr=0.001
+Epoch 214 | train 0.6100 (RMSE RHI=0.0942, fcnm=0.1019) | val 0.7003 (RMSE RHI=0.1187, fcnm=0.1190) | lr=0.001
+Epoch 215 | train 0.6116 (RMSE RHI=0.0970, fcnm=0.1051) | val 0.7221 (RMSE RHI=0.1206, fcnm=0.1208) | lr=0.001
+Epoch 216 | train 0.6131 (RMSE RHI=0.0929, fcnm=0.1017) | val 0.6953 (RMSE RHI=0.1185, fcnm=0.1181) | lr=0.001
+Epoch 217 | train 0.6065 (RMSE RHI=0.0933, fcnm=0.1029) | val 0.6892 (RMSE RHI=0.1174, fcnm=0.1187) | lr=0.001
+Epoch 218 | train 0.6273 (RMSE RHI=0.0939, fcnm=0.1026) | val 0.6976 (RMSE RHI=0.1185, fcnm=0.1188) | lr=0.001
+Epoch 219 | train 0.5984 (RMSE RHI=0.0928, fcnm=0.1016) | val 0.6877 (RMSE RHI=0.1174, fcnm=0.1185) | lr=0.001
+Epoch 220 | train 0.6122 (RMSE RHI=0.0955, fcnm=0.1030) | val 0.7018 (RMSE RHI=0.1187, fcnm=0.1194) | lr=0.001
+Epoch 221 | train 0.5948 (RMSE RHI=0.0944, fcnm=0.1019) | val 0.7072 (RMSE RHI=0.1197, fcnm=0.1187) | lr=0.001
+Epoch 222 | train 0.6051 (RMSE RHI=0.0946, fcnm=0.1029) | val 0.7126 (RMSE RHI=0.1201, fcnm=0.1194) | lr=0.001
+Epoch 223 | train 0.6126 (RMSE RHI=0.0940, fcnm=0.1038) | val 0.6928 (RMSE RHI=0.1180, fcnm=0.1185) | lr=0.001
+Epoch 224 | train 0.6154 (RMSE RHI=0.0961, fcnm=0.1043) | val 0.7030 (RMSE RHI=0.1189, fcnm=0.1194) | lr=0.001
+Epoch 225 | train 0.6050 (RMSE RHI=0.0929, fcnm=0.1020) | val 0.6807 (RMSE RHI=0.1168, fcnm=0.1179) | lr=0.001
+Epoch 226 | train 0.6201 (RMSE RHI=0.0930, fcnm=0.1029) | val 0.6999 (RMSE RHI=0.1185, fcnm=0.1193) | lr=0.001
+Epoch 227 | train 0.6006 (RMSE RHI=0.0908, fcnm=0.1015) | val 0.6753 (RMSE RHI=0.1162, fcnm=0.1176) | lr=0.001
+Epoch 228 | train 0.5998 (RMSE RHI=0.0925, fcnm=0.1017) | val 0.6903 (RMSE RHI=0.1175, fcnm=0.1189) | lr=0.001
+Epoch 229 | train 0.6109 (RMSE RHI=0.0961, fcnm=0.1036) | val 0.7104 (RMSE RHI=0.1197, fcnm=0.1196) | lr=0.001
+Epoch 230 | train 0.6081 (RMSE RHI=0.0914, fcnm=0.1014) | val 0.6707 (RMSE RHI=0.1158, fcnm=0.1172) | lr=0.001
+Epoch 231 | train 0.6011 (RMSE RHI=0.0944, fcnm=0.1023) | val 0.7009 (RMSE RHI=0.1188, fcnm=0.1190) | lr=0.001
+Epoch 232 | train 0.5953 (RMSE RHI=0.0921, fcnm=0.1012) | val 0.6872 (RMSE RHI=0.1175, fcnm=0.1180) | lr=0.001
+Epoch 233 | train 0.6110 (RMSE RHI=0.0936, fcnm=0.1020) | val 0.6924 (RMSE RHI=0.1181, fcnm=0.1183) | lr=0.001
+Epoch 234 | train 0.6133 (RMSE RHI=0.0950, fcnm=0.1024) | val 0.6995 (RMSE RHI=0.1189, fcnm=0.1184) | lr=0.001
+Epoch 235 | train 0.6029 (RMSE RHI=0.0929, fcnm=0.1015) | val 0.6998 (RMSE RHI=0.1191, fcnm=0.1182) | lr=0.001
+Epoch 236 | train 0.5965 (RMSE RHI=0.0975, fcnm=0.1058) | val 0.7342 (RMSE RHI=0.1217, fcnm=0.1216) | lr=0.001
+Epoch 237 | train 0.5998 (RMSE RHI=0.0927, fcnm=0.1017) | val 0.6935 (RMSE RHI=0.1181, fcnm=0.1186) | lr=0.001
+Epoch 238 | train 0.5901 (RMSE RHI=0.1005, fcnm=0.1069) | val 0.7416 (RMSE RHI=0.1223, fcnm=0.1222) | lr=0.001
+Epoch 239 | train 0.5959 (RMSE RHI=0.0946, fcnm=0.1015) | val 0.7172 (RMSE RHI=0.1209, fcnm=0.1188) | lr=0.001
+Epoch 240 | train 0.6039 (RMSE RHI=0.0935, fcnm=0.1020) | val 0.6769 (RMSE RHI=0.1167, fcnm=0.1170) | lr=0.001
+Epoch 241 | train 0.6019 (RMSE RHI=0.0937, fcnm=0.1015) | val 0.6990 (RMSE RHI=0.1185, fcnm=0.1192) | lr=0.001
+Epoch 242 | train 0.5936 (RMSE RHI=0.0913, fcnm=0.1016) | val 0.6889 (RMSE RHI=0.1175, fcnm=0.1186) | lr=0.001
+Epoch 243 | train 0.6002 (RMSE RHI=0.0897, fcnm=0.1001) | val 0.6659 (RMSE RHI=0.1151, fcnm=0.1174) | lr=0.001
+Epoch 244 | train 0.5959 (RMSE RHI=0.0897, fcnm=0.1005) | val 0.6682 (RMSE RHI=0.1153, fcnm=0.1176) | lr=0.001
+Epoch 245 | train 0.6000 (RMSE RHI=0.0905, fcnm=0.1004) | val 0.6797 (RMSE RHI=0.1168, fcnm=0.1176) | lr=0.001
+Epoch 246 | train 0.5965 (RMSE RHI=0.0942, fcnm=0.1017) | val 0.6961 (RMSE RHI=0.1183, fcnm=0.1187) | lr=0.001
+Epoch 247 | train 0.5940 (RMSE RHI=0.0918, fcnm=0.0998) | val 0.6814 (RMSE RHI=0.1171, fcnm=0.1174) | lr=0.001
+Epoch 248 | train 0.5871 (RMSE RHI=0.0942, fcnm=0.1017) | val 0.6998 (RMSE RHI=0.1187, fcnm=0.1188) | lr=0.001
+Epoch 249 | train 0.5884 (RMSE RHI=0.0964, fcnm=0.1024) | val 0.7153 (RMSE RHI=0.1203, fcnm=0.1196) | lr=0.001
+Epoch 250 | train 0.5899 (RMSE RHI=0.0926, fcnm=0.1006) | val 0.7030 (RMSE RHI=0.1191, fcnm=0.1189) | lr=0.001
+Epoch 251 | train 0.5811 (RMSE RHI=0.0912, fcnm=0.1000) | val 0.6895 (RMSE RHI=0.1180, fcnm=0.1177) | lr=0.001
+Epoch 252 | train 0.6043 (RMSE RHI=0.0916, fcnm=0.1001) | val 0.6812 (RMSE RHI=0.1169, fcnm=0.1178) | lr=0.001
+Epoch 253 | train 0.5882 (RMSE RHI=0.0932, fcnm=0.1017) | val 0.7080 (RMSE RHI=0.1194, fcnm=0.1195) | lr=0.001
+Epoch 254 | train 0.5926 (RMSE RHI=0.0919, fcnm=0.1005) | val 0.6788 (RMSE RHI=0.1166, fcnm=0.1177) | lr=0.001
+Epoch 255 | train 0.5882 (RMSE RHI=0.0904, fcnm=0.1009) | val 0.6878 (RMSE RHI=0.1175, fcnm=0.1182) | lr=0.001
+Epoch 256 | train 0.5652 (RMSE RHI=0.0899, fcnm=0.0988) | val 0.6775 (RMSE RHI=0.1167, fcnm=0.1172) | lr=0.001
+Epoch 257 | train 0.5868 (RMSE RHI=0.0909, fcnm=0.0998) | val 0.6922 (RMSE RHI=0.1181, fcnm=0.1181) | lr=0.001
+Epoch 258 | train 0.5903 (RMSE RHI=0.0935, fcnm=0.1024) | val 0.7108 (RMSE RHI=0.1197, fcnm=0.1197) | lr=0.001
+Epoch 259 | train 0.5891 (RMSE RHI=0.0892, fcnm=0.0994) | val 0.6717 (RMSE RHI=0.1161, fcnm=0.1170) | lr=0.001
+Epoch 260 | train 0.5878 (RMSE RHI=0.0924, fcnm=0.1005) | val 0.6972 (RMSE RHI=0.1188, fcnm=0.1181) | lr=0.001
+Epoch 261 | train 0.5975 (RMSE RHI=0.0915, fcnm=0.0998) | val 0.6653 (RMSE RHI=0.1157, fcnm=0.1160) | lr=0.001
+Epoch 262 | train 0.5808 (RMSE RHI=0.0896, fcnm=0.0995) | val 0.6783 (RMSE RHI=0.1169, fcnm=0.1171) | lr=0.001
+Epoch 263 | train 0.5842 (RMSE RHI=0.0910, fcnm=0.0994) | val 0.6741 (RMSE RHI=0.1164, fcnm=0.1170) | lr=0.001
+Epoch 264 | train 0.5761 (RMSE RHI=0.0918, fcnm=0.0996) | val 0.6844 (RMSE RHI=0.1174, fcnm=0.1175) | lr=0.001
+Epoch 265 | train 0.5865 (RMSE RHI=0.0908, fcnm=0.1005) | val 0.7007 (RMSE RHI=0.1192, fcnm=0.1182) | lr=0.001
+Epoch 266 | train 0.5849 (RMSE RHI=0.0886, fcnm=0.0976) | val 0.6681 (RMSE RHI=0.1158, fcnm=0.1165) | lr=0.001
+Epoch 267 | train 0.5871 (RMSE RHI=0.0910, fcnm=0.0999) | val 0.6792 (RMSE RHI=0.1171, fcnm=0.1169) | lr=0.001
+Epoch 268 | train 0.5824 (RMSE RHI=0.0913, fcnm=0.0994) | val 0.6704 (RMSE RHI=0.1156, fcnm=0.1175) | lr=0.001
+Epoch 269 | train 0.5774 (RMSE RHI=0.0905, fcnm=0.0989) | val 0.6645 (RMSE RHI=0.1153, fcnm=0.1166) | lr=0.001
+Epoch 270 | train 0.5879 (RMSE RHI=0.0893, fcnm=0.0991) | val 0.6720 (RMSE RHI=0.1161, fcnm=0.1169) | lr=0.001
+Epoch 271 | train 0.5782 (RMSE RHI=0.0922, fcnm=0.0994) | val 0.6840 (RMSE RHI=0.1177, fcnm=0.1169) | lr=0.001
+Epoch 272 | train 0.5795 (RMSE RHI=0.0908, fcnm=0.0988) | val 0.6849 (RMSE RHI=0.1178, fcnm=0.1169) | lr=0.001
+Epoch 273 | train 0.5703 (RMSE RHI=0.0899, fcnm=0.0983) | val 0.6783 (RMSE RHI=0.1169, fcnm=0.1169) | lr=0.001
+Epoch 274 | train 0.5718 (RMSE RHI=0.0864, fcnm=0.0982) | val 0.6537 (RMSE RHI=0.1144, fcnm=0.1157) | lr=0.001
+Epoch 275 | train 0.5774 (RMSE RHI=0.0918, fcnm=0.0997) | val 0.6861 (RMSE RHI=0.1179, fcnm=0.1170) | lr=0.001
+Epoch 276 | train 0.5672 (RMSE RHI=0.0918, fcnm=0.0995) | val 0.6831 (RMSE RHI=0.1172, fcnm=0.1176) | lr=0.001
+Epoch 277 | train 0.5772 (RMSE RHI=0.0882, fcnm=0.0985) | val 0.6751 (RMSE RHI=0.1168, fcnm=0.1164) | lr=0.001
+Epoch 278 | train 0.5704 (RMSE RHI=0.0920, fcnm=0.1006) | val 0.7022 (RMSE RHI=0.1193, fcnm=0.1183) | lr=0.001
+Epoch 279 | train 0.5799 (RMSE RHI=0.0872, fcnm=0.0980) | val 0.6680 (RMSE RHI=0.1158, fcnm=0.1166) | lr=0.001
+Epoch 280 | train 0.5739 (RMSE RHI=0.0899, fcnm=0.0985) | val 0.6906 (RMSE RHI=0.1182, fcnm=0.1175) | lr=0.001
+Epoch 281 | train 0.5741 (RMSE RHI=0.0893, fcnm=0.0980) | val 0.6776 (RMSE RHI=0.1169, fcnm=0.1169) | lr=0.001
+Epoch 282 | train 0.5746 (RMSE RHI=0.0876, fcnm=0.0976) | val 0.6588 (RMSE RHI=0.1150, fcnm=0.1157) | lr=0.001
+Epoch 283 | train 0.5716 (RMSE RHI=0.0888, fcnm=0.0986) | val 0.6756 (RMSE RHI=0.1167, fcnm=0.1167) | lr=0.001
+Epoch 284 | train 0.5744 (RMSE RHI=0.0869, fcnm=0.0970) | val 0.6519 (RMSE RHI=0.1145, fcnm=0.1149) | lr=0.001
+Epoch 285 | train 0.5671 (RMSE RHI=0.0898, fcnm=0.0974) | val 0.6756 (RMSE RHI=0.1169, fcnm=0.1164) | lr=0.001
+Epoch 286 | train 0.5750 (RMSE RHI=0.0875, fcnm=0.0975) | val 0.6628 (RMSE RHI=0.1155, fcnm=0.1158) | lr=0.001
+Epoch 287 | train 0.5761 (RMSE RHI=0.0902, fcnm=0.0991) | val 0.7020 (RMSE RHI=0.1196, fcnm=0.1177) | lr=0.001
+Epoch 288 | train 0.5743 (RMSE RHI=0.0893, fcnm=0.0981) | val 0.6708 (RMSE RHI=0.1164, fcnm=0.1160) | lr=0.001
+Epoch 289 | train 0.5674 (RMSE RHI=0.0877, fcnm=0.0975) | val 0.6601 (RMSE RHI=0.1153, fcnm=0.1155) | lr=0.001
+Epoch 290 | train 0.5678 (RMSE RHI=0.0867, fcnm=0.0972) | val 0.6598 (RMSE RHI=0.1151, fcnm=0.1158) | lr=0.001
+Epoch 291 | train 0.5829 (RMSE RHI=0.0913, fcnm=0.0995) | val 0.7012 (RMSE RHI=0.1194, fcnm=0.1179) | lr=0.001
+Epoch 292 | train 0.5710 (RMSE RHI=0.0868, fcnm=0.0965) | val 0.6574 (RMSE RHI=0.1150, fcnm=0.1154) | lr=0.001
+Epoch 293 | train 0.5637 (RMSE RHI=0.0884, fcnm=0.0967) | val 0.6686 (RMSE RHI=0.1162, fcnm=0.1158) | lr=0.001
+Epoch 294 | train 0.5681 (RMSE RHI=0.0884, fcnm=0.0973) | val 0.6727 (RMSE RHI=0.1164, fcnm=0.1166) | lr=0.001
+Epoch 295 | train 0.5764 (RMSE RHI=0.0867, fcnm=0.0969) | val 0.6598 (RMSE RHI=0.1148, fcnm=0.1163) | lr=0.001
+Epoch 296 | train 0.5710 (RMSE RHI=0.0906, fcnm=0.0990) | val 0.6935 (RMSE RHI=0.1188, fcnm=0.1172) | lr=0.001
+Epoch 297 | train 0.5688 (RMSE RHI=0.0905, fcnm=0.0998) | val 0.6714 (RMSE RHI=0.1162, fcnm=0.1166) | lr=0.001
+Epoch 298 | train 0.5633 (RMSE RHI=0.0853, fcnm=0.0960) | val 0.6478 (RMSE RHI=0.1140, fcnm=0.1148) | lr=0.001
+Epoch 299 | train 0.5627 (RMSE RHI=0.0891, fcnm=0.0990) | val 0.6923 (RMSE RHI=0.1182, fcnm=0.1180) | lr=0.001
+Epoch 300 | train 0.5640 (RMSE RHI=0.0881, fcnm=0.0970) | val 0.6705 (RMSE RHI=0.1165, fcnm=0.1159) | lr=0.001
+Saved training log to: results/3_training_log20251120_025045.csv
+Saved predictions to results/3_test_predictions.csv
+Saved figure to: figs/3_pred_vs_true_20251120_025045.png

@@ -4,3 +4,175 @@
 ...
 000 (4626842.002.000) 2025-11-19 12:05:24 Job submitted from host: <128.105.68.113:9618?addrs=128.105.68.113-9618+[2607-f388-2200-100-eaeb-d3ff-fea7-d05e]-9618&alias=ap2002.chtc.wisc.edu&noUDP&sock=schedd_7716_1cd9>
 ...
+040 (4626842.000.000) 2025-11-19 19:50:48 Started transferring input files
+	Transferring to host: <128.104.100.169:9618?addrs=128.104.100.169-9618+[2607-f388-107c-501-ae1f-6bff-fea4-d980]-9618&alias=patel0000.chtc.wisc.edu&noUDP&sock=slot1_1_1988992_8beb_53797>
+...
+040 (4626842.000.000) 2025-11-19 19:50:55 Finished transferring input files
+...
+001 (4626842.000.000) 2025-11-19 19:50:55 Job executing on host: <128.104.100.169:9618?addrs=128.104.100.169-9618+[2607-f388-107c-501-ae1f-6bff-fea4-d980]-9618&alias=patel0000.chtc.wisc.edu&noUDP&sock=startd_2176109_59fb>
+	SlotName: slot1_1@patel0000.chtc.wisc.edu
+	AvailableGPUs = { GPUs_GPU_b1274dcc }
+	CondorScratchDir = "/var/lib/condor/execute/slot1/dir_2612709/scratch"
+	Cpus = 8
+	Disk = 41943040
+	GPUs = 1
+	GPUs_GPU_b1274dcc = [ Id = "GPU-b1274dcc"; Capability = 7.5; DeviceName = "Quadro RTX 8000"; DeviceUuid = "b1274dcc-ae90-f117-0ee9-4ced156e7ca0"; ECCEnabled = false; NvidiaDriver = "550.90.07"; DriverVersion = 12.4; DevicePciBusId = "0000:25:00.0"; GlobalMemoryMb = 48586; MaxSupportedVersion = 12040 ]
+	IoHeavy = 0
+	Memory = 24576
+...
+006 (4626842.000.000) 2025-11-19 19:51:03 Image size of job updated: 67
+	67  -  MemoryUsage of job (MB)
+	69136  -  ResidentSetSize of job (KB)
+...
+006 (4626842.000.000) 2025-11-19 19:56:04 Image size of job updated: 627
+	627  -  MemoryUsage of job (MB)
+	642108  -  ResidentSetSize of job (KB)
+...
+006 (4626842.000.000) 2025-11-19 20:01:05 Image size of job updated: 3953
+	3953  -  MemoryUsage of job (MB)
+	4048160  -  ResidentSetSize of job (KB)
+...
+006 (4626842.000.000) 2025-11-19 20:06:06 Image size of job updated: 4203
+	4203  -  MemoryUsage of job (MB)
+	4304120  -  ResidentSetSize of job (KB)
+...
+040 (4626842.000.000) 2025-11-19 20:06:46 Started transferring output files
+...
+040 (4626842.000.000) 2025-11-19 20:06:46 Finished transferring output files
+...
+005 (4626842.000.000) 2025-11-19 20:06:49 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:15:34, Sys 0 00:01:07  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:15:34, Sys 0 00:01:07  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	1828409  -  Run Bytes Sent By Job
+	2268140307  -  Run Bytes Received By Job
+	1828409  -  Total Bytes Sent By Job
+	2268140307  -  Total Bytes Received By Job
+	Partitionable Resources :      Usage  Request Allocated Assigned
+	   Cpus                 :       0           8         8 
+	   Disk (KB)            : 5783528    41943040  41943040 
+	   GPUs                 :       0.32        1         1 "GPU-b1274dcc"
+	   GpusMemory (MB)      :   12436                       
+	   IoHeavy              :                             0 
+	   Memory (MB)          :    4203       24576     24576 
+	   TimeExecute (s)      :     950                       
+	   TimeSlotBusy (s)     :     960                       
+...
+040 (4626842.001.000) 2025-11-19 20:06:51 Started transferring input files
+	Transferring to host: <128.104.100.169:9618?addrs=128.104.100.169-9618+[2607-f388-107c-501-ae1f-6bff-fea4-d980]-9618&alias=patel0000.chtc.wisc.edu&noUDP&sock=slot1_1_1988992_8beb_53823>
+...
+040 (4626842.001.000) 2025-11-19 20:06:58 Finished transferring input files
+...
+001 (4626842.001.000) 2025-11-19 20:06:58 Job executing on host: <128.104.100.169:9618?addrs=128.104.100.169-9618+[2607-f388-107c-501-ae1f-6bff-fea4-d980]-9618&alias=patel0000.chtc.wisc.edu&noUDP&sock=startd_2176109_59fb>
+	SlotName: slot1_1@patel0000.chtc.wisc.edu
+	AvailableGPUs = { GPUs_GPU_b1274dcc }
+	CondorScratchDir = "/var/lib/condor/execute/slot1/dir_2617557/scratch"
+	Cpus = 8
+	Disk = 41943040
+	GPUs = 1
+	GPUs_GPU_b1274dcc = [ Id = "GPU-b1274dcc"; Capability = 7.5; DeviceName = "Quadro RTX 8000"; DeviceUuid = "b1274dcc-ae90-f117-0ee9-4ced156e7ca0"; ECCEnabled = false; NvidiaDriver = "550.90.07"; DriverVersion = 12.4; DevicePciBusId = "0000:25:00.0"; GlobalMemoryMb = 48586; MaxSupportedVersion = 12040 ]
+	IoHeavy = 0
+	Memory = 24576
+...
+006 (4626842.001.000) 2025-11-19 20:07:07 Image size of job updated: 69
+	69  -  MemoryUsage of job (MB)
+	71412  -  ResidentSetSize of job (KB)
+...
+006 (4626842.001.000) 2025-11-19 20:12:07 Image size of job updated: 632
+	632  -  MemoryUsage of job (MB)
+	647804  -  ResidentSetSize of job (KB)
+...
+006 (4626842.001.000) 2025-11-19 20:17:08 Image size of job updated: 2353
+	2353  -  MemoryUsage of job (MB)
+	2409880  -  ResidentSetSize of job (KB)
+...
+006 (4626842.001.000) 2025-11-19 20:32:11 Image size of job updated: 2377
+	2377  -  MemoryUsage of job (MB)
+	2434836  -  ResidentSetSize of job (KB)
+...
+040 (4626842.001.000) 2025-11-19 20:33:16 Started transferring output files
+...
+040 (4626842.001.000) 2025-11-19 20:33:16 Finished transferring output files
+...
+005 (4626842.001.000) 2025-11-19 20:33:19 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:26:29, Sys 0 00:17:18  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:26:29, Sys 0 00:17:18  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	1604768  -  Run Bytes Sent By Job
+	2268140307  -  Run Bytes Received By Job
+	1604768  -  Total Bytes Sent By Job
+	2268140307  -  Total Bytes Received By Job
+	Partitionable Resources :      Usage  Request Allocated Assigned
+	   Cpus                 :       0.00        8         8 
+	   Disk (KB)            : 5782984    41943040  41943040 
+	   GPUs                 :       0.51        1         1 "GPU-b1274dcc"
+	   GpusMemory (MB)      :   10722                       
+	   IoHeavy              :                             0 
+	   Memory (MB)          :    2377       24576     24576 
+	   TimeExecute (s)      :    1578                       
+	   TimeSlotBusy (s)     :    1587                       
+...
+040 (4626842.002.000) 2025-11-19 20:33:21 Started transferring input files
+	Transferring to host: <128.104.100.169:9618?addrs=128.104.100.169-9618+[2607-f388-107c-501-ae1f-6bff-fea4-d980]-9618&alias=patel0000.chtc.wisc.edu&noUDP&sock=slot1_1_1988992_8beb_53869>
+...
+040 (4626842.002.000) 2025-11-19 20:33:28 Finished transferring input files
+...
+001 (4626842.002.000) 2025-11-19 20:33:28 Job executing on host: <128.104.100.169:9618?addrs=128.104.100.169-9618+[2607-f388-107c-501-ae1f-6bff-fea4-d980]-9618&alias=patel0000.chtc.wisc.edu&noUDP&sock=startd_2176109_59fb>
+	SlotName: slot1_1@patel0000.chtc.wisc.edu
+	AvailableGPUs = { GPUs_GPU_b1274dcc }
+	CondorScratchDir = "/var/lib/condor/execute/slot1/dir_2725545/scratch"
+	Cpus = 8
+	Disk = 41943040
+	GPUs = 1
+	GPUs_GPU_b1274dcc = [ Id = "GPU-b1274dcc"; Capability = 7.5; DeviceName = "Quadro RTX 8000"; DeviceUuid = "b1274dcc-ae90-f117-0ee9-4ced156e7ca0"; ECCEnabled = false; NvidiaDriver = "550.90.07"; DriverVersion = 12.4; DevicePciBusId = "0000:25:00.0"; GlobalMemoryMb = 48586; MaxSupportedVersion = 12040 ]
+	IoHeavy = 0
+	Memory = 24576
+...
+006 (4626842.002.000) 2025-11-19 20:33:36 Image size of job updated: 69
+	69  -  MemoryUsage of job (MB)
+	70904  -  ResidentSetSize of job (KB)
+...
+006 (4626842.002.000) 2025-11-19 20:38:36 Image size of job updated: 633
+	633  -  MemoryUsage of job (MB)
+	648688  -  ResidentSetSize of job (KB)
+...
+006 (4626842.002.000) 2025-11-19 20:43:36 Image size of job updated: 3885
+	3885  -  MemoryUsage of job (MB)
+	3978564  -  ResidentSetSize of job (KB)
+...
+006 (4626842.002.000) 2025-11-19 20:48:36 Image size of job updated: 3889
+	3889  -  MemoryUsage of job (MB)
+	3982764  -  ResidentSetSize of job (KB)
+...
+006 (4626842.002.000) 2025-11-19 20:53:36 Image size of job updated: 4116
+	4116  -  MemoryUsage of job (MB)
+	4215640  -  ResidentSetSize of job (KB)
+...
+040 (4626842.002.000) 2025-11-19 20:54:48 Started transferring output files
+...
+040 (4626842.002.000) 2025-11-19 20:54:48 Finished transferring output files
+...
+005 (4626842.002.000) 2025-11-19 20:54:52 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:23:26, Sys 0 00:01:39  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:23:26, Sys 0 00:01:39  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	1824677  -  Run Bytes Sent By Job
+	2268140307  -  Run Bytes Received By Job
+	1824677  -  Total Bytes Sent By Job
+	2268140307  -  Total Bytes Received By Job
+	Partitionable Resources :      Usage  Request Allocated Assigned
+	   Cpus                 :       0.00        8         8 
+	   Disk (KB)            : 5783408    41943040  41943040 
+	   GPUs                 :       0.56        1         1 "GPU-b1274dcc"
+	   GpusMemory (MB)      :    2470                       
+	   IoHeavy              :                             0 
+	   Memory (MB)          :    4116       24576     24576 
+	   TimeExecute (s)      :    1280                       
+	   TimeSlotBusy (s)     :    1289                       
+...

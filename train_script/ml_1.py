@@ -35,7 +35,6 @@ PATIENCE   = 15 # early stopping patienc
 
 
 torch.backends.cudnn.benchmark = True
-# PyTorch 2.x (optional but helpful)
 try:
     torch.set_float32_matmul_precision("high")
 except Exception:
