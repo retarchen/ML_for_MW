@@ -65,8 +65,8 @@ RHI   = hdul[2].data.flatten().astype(np.float32)
 TB = load_spectra(CSV_DIR)   # (N, 201)
 
 # Basic filtering
-mask = (RHI < 2) & (fcnm > 0)
-TB, fcnm, RHI = TB[mask], fcnm[mask], RHI[mask]
+#mask = (RHI < 2) & (fcnm > 0)
+#TB, fcnm, RHI = TB[mask], fcnm[mask], RHI[mask]
 print('finish loading data')
 
 # ---------------- Inputs/targets ----------------
@@ -158,6 +158,7 @@ sampler = WeightedRandomSampler(
     num_samples=len(weights),
     replacement=True,
 )
+
 # (Optional) quick audit:
 # print("Sampler (fcnm) counts sample:", Counter(np.random.choice(train_bins, size=2000, p=weights/weights.sum())))
 
@@ -183,8 +184,8 @@ test_loader = DataLoader(
 # ---------------- Model (BatchNorm keeps intensity info) ----------------
 class CNN1DRegressor(nn.Module):
     def __init__(self, cin, out_dim=2,
-                 chs=(120,90,60,40),
-                 ks=(33, 25, 10, 7),
+                 chs=(120, 100, 80, 60,40,20),
+                 ks=(33, 25, 33, 7,25,7 ),
                  p_drop=0.2):
         super().__init__()
 
@@ -361,7 +362,7 @@ def collect_preds(dl, model, y_scaler=None):
 pred_test, true_test = collect_preds(test_loader, model, y_scaler=y_scaler)
 
 os.makedirs("results", exist_ok=True)
-log_path = os.path.join("results", f"8_training_log{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv")
+log_path = os.path.join("results", f"9_training_log{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv")
 pd.DataFrame(history).to_csv(log_path, index=False)
 print(f"Saved training log to: {log_path}")
 
@@ -370,8 +371,8 @@ pd.DataFrame({
     "RHI_pred":  pred_test[:, 0],
     "fcnm_true": true_test[:, 1],
     "fcnm_pred": pred_test[:, 1],
-}).to_csv(f"results/8_test_predictions{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv", index=False)
-print("Saved predictions to results/8_test_predictions.csv")
+}).to_csv(f"results/9_test_predictions{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv", index=False)
+print("Saved predictions to results/9_test_predictions.csv")
 
 # parity plots
 fig, axes = plt.subplots(1, 2, figsize=(11,5))
@@ -386,7 +387,7 @@ for i, ax in enumerate(axes):
     ax.set_xlim(lo, hi); ax.set_ylim(lo, hi)
 
 os.makedirs("figs", exist_ok=True)
-png_path = os.path.join("figs", f"8_pred_vs_true_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png")
+png_path = os.path.join("figs", f"9_pred_vs_true_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png")
 fig.savefig(png_path, dpi=300, bbox_inches="tight")
 plt.close(fig)
 print(f"Saved figure to: {png_path}")

@@ -21,3 +21,9 @@ Use noise data, same as 5, excep also balance fcnm_RHI.
 
 ml_8.py:
 Use raw data, train on 4 layers. learning rate 5e-3 and decrease if no improvement of loss. Also balance fcnm_RHI.
+
+ml_9.py:
+Use raw data, train on 6 layers. learning rate 5e-3 and decrease if no improvement of loss. Also balance fcnm_RHI. don't mask the rhi and fcnm
+
+ml_10.py:
+same as 9 but do mask.
