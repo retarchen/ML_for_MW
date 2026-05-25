@@ -39,7 +39,7 @@ from torch.utils.data import DataLoader, Dataset, WeightedRandomSampler
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-DATAPATH_BASE = "/mnt/c/Users/retar/Desktop/research/ML/data/MW"
+DATAPATH_BASE = os.environ.get("DATAPATH_BASE", str(PROJECT_ROOT.parent / "data" / "MW"))
 # Note: the prompt showed os.path.join(DATAPATH_BASE, "/fcnm_RHI_z.fits").
 # A leading slash would ignore DATAPATH_BASE, so the default below uses the
 # intended path under DATAPATH_BASE.
@@ -1509,5 +1509,5 @@ if __name__ == "__main__":
 
 
 
-#cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
-#setsid bash -lc 'source /home/retar/miniconda3/etc/profile.d/conda.sh && conda activate cnn && export MPLCONFIGDIR=/tmp && python -u scripts/train_hi_tpcnet_cnn.py --subset-size -1 --epochs 100 --patience 15 --device cuda --rhi-target-transform log --fcnm-error-floor 0.02 --fcnm-zero-loss-weight 2.0 --run-name no_noise_tb_fcnm_floor_002' > logs/train_hi_tpcnet_cnn_no_noise_fcnm_floor_002.log 2>&1 < /dev/null & echo $!
+# Example detached run:
+# RUN_NAME=no_noise_tb_fcnm_floor_002 bash scripts/run_train_hi_tpcnet_cnn.sh

@@ -23,7 +23,7 @@ the full paper training setup exactly.
 Run the default full-data CNN training in detached/no-stop mode:
 
 ```bash
-cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
+cd /path/to/ML_MW
 RUN_NAME=my_cnn_run bash scripts/run_train_hi_tpcnet_cnn.sh
 ```
 
@@ -56,11 +56,19 @@ nvidia-smi
 
 ## Data
 
-Default data paths in `train_hi_tpcnet_cnn.py`:
+By default, `train_hi_tpcnet_cnn.py` looks for data relative to the repository
+parent directory:
 
 ```text
-FITS targets: /mnt/c/Users/retar/Desktop/research/ML/data/MW/fcnm_RHI_z.fits
-Spectra CSVs: /mnt/c/Users/retar/Desktop/research/ML/data/MW/syn_HI_spec_z
+../data/MW/fcnm_RHI_z.fits
+../data/MW/syn_HI_spec_z/
+```
+
+You can override these paths with command-line flags:
+
+```bash
+--fits-path /path/to/fcnm_RHI_z.fits
+--csv-dir /path/to/syn_HI_spec_z
 ```
 
 The FITS file is expected to contain:
@@ -127,7 +135,7 @@ Channel counts decrease by 8 each layer:
 Full no-noise run with fCNM error-floor handling:
 
 ```bash
-cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
+cd /path/to/ML_MW
 RUN_NAME=no_noise_full_fcnm_floor \
 FCNM_ERROR_FLOOR=0.02 \
 FCNM_ZERO_LOSS_WEIGHT=2.0 \
@@ -137,7 +145,7 @@ bash scripts/run_train_hi_tpcnet_cnn.sh
 Small debug run:
 
 ```bash
-cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
+cd /path/to/ML_MW
 RUN_NAME=debug_small \
 SUBSET_SIZE=1000 \
 EPOCHS=2 \
@@ -148,7 +156,7 @@ bash scripts/run_train_hi_tpcnet_cnn.sh
 CPU debug run:
 
 ```bash
-cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
+cd /path/to/ML_MW
 RUN_NAME=cpu_debug \
 SUBSET_SIZE=500 \
 EPOCHS=1 \
@@ -162,8 +170,8 @@ If you do not use the launcher script, activate the `cnn` conda environment
 first:
 
 ```bash
-cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
-source /home/retar/miniconda3/etc/profile.d/conda.sh
+cd /path/to/ML_MW
+source "${HOME}/miniconda3/etc/profile.d/conda.sh"
 conda activate cnn
 export MPLCONFIGDIR=/tmp
 
@@ -182,7 +190,7 @@ python -u scripts/train_hi_tpcnet_cnn.py \
 Detached/no-stop version:
 
 ```bash
-setsid bash -lc 'source /home/retar/miniconda3/etc/profile.d/conda.sh && conda activate cnn && export MPLCONFIGDIR=/tmp && python -u scripts/train_hi_tpcnet_cnn.py --subset-size -1 --epochs 100 --patience 15 --batch-size 256 --device cuda --rhi-target-transform log --fcnm-error-floor 0.02 --fcnm-zero-loss-weight 2.0 --run-name my_cnn_run' > logs/my_cnn_run.log 2>&1 < /dev/null & echo $!
+setsid bash -lc 'source "${HOME}/miniconda3/etc/profile.d/conda.sh" && conda activate cnn && export MPLCONFIGDIR=/tmp && python -u scripts/train_hi_tpcnet_cnn.py --subset-size -1 --epochs 100 --patience 15 --batch-size 256 --device cuda --rhi-target-transform log --fcnm-error-floor 0.02 --fcnm-zero-loss-weight 2.0 --run-name my_cnn_run' > logs/my_cnn_run.log 2>&1 < /dev/null & echo $!
 ```
 
 ## Important Parameters
@@ -406,7 +414,8 @@ logs/                                   Training logs
 ## Troubleshooting
 
 If GPU memory stays at zero, the script may still be reading CSV files. Loading
-many compressed spectra from `/mnt/c` can take a long time.
+many compressed spectra from mounted drives or network filesystems can take a
+long time.
 
 If a run stops when the terminal closes, use:
 
@@ -425,7 +434,7 @@ nvidia-smi
 and verify that PyTorch in the `cnn` environment sees CUDA:
 
 ```bash
-source /home/retar/miniconda3/etc/profile.d/conda.sh
+source "${HOME}/miniconda3/etc/profile.d/conda.sh"
 conda activate cnn
 python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 ```

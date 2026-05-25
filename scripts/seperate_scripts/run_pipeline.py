@@ -65,7 +65,7 @@ except ImportError:
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATAPATH_BASE = "/mnt/c/Users/retar/Desktop/research/ML/data/MW"
+DATAPATH_BASE = os.environ.get("DATAPATH_BASE", str(PROJECT_ROOT.parent / "data" / "MW"))
 FITS_PATH = os.path.join(DATAPATH_BASE, "fcnm_RHI_z.fits")
 CSV_DIR = os.path.join(DATAPATH_BASE, "syn_HI_spec_z")
 

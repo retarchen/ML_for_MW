@@ -5,8 +5,9 @@ set -euo pipefail
 # Edit the variables below, or override them from the command line:
 #   RUN_NAME=my_run FCNM_ERROR_FLOOR=0.02 bash scripts/run_train_hi_tpcnet_cnn.sh
 
-PROJECT_DIR="/mnt/c/Users/retar/Desktop/research/ML/ML_MW"
-CONDA_SH="/home/retar/miniconda3/etc/profile.d/conda.sh"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+CONDA_SH="${CONDA_SH:-${HOME}/miniconda3/etc/profile.d/conda.sh}"
 ENV_NAME="${ENV_NAME:-cnn}"
 
 RUN_NAME="${RUN_NAME:-cnn_run_$(date +%Y%m%d_%H%M%S)}"
