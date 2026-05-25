@@ -1,121 +1,48 @@
-# Notes for `train_hi_tpcnet_cnn.py`
+# HI Spectra CNN Regression
 
-This note explains the CNN training script:
+This repository trains and evaluates a PyTorch 1D CNN for predicting two HI
+emission-spectrum regression targets:
+
+```text
+input : TB emission spectrum, shape (N, L)
+output: [fCNM, RHI]
+```
+
+The current main training script is:
 
 ```text
 scripts/train_hi_tpcnet_cnn.py
 ```
 
-This is the main 1D CNN script for predicting two regression targets from HI emission spectra:
+The CNN is a small-scale, practical implementation inspired by the 1D CNN idea
+in Appendix A / Figure A1 of the TPCNet paper. It is not intended to reproduce
+the full paper training setup exactly.
 
-```text
-input:  TB spectrum, shape (N, L)
-output: [fCNM, RHI]
-```
+## Quick Start
 
-The current default data paths are:
-
-```text
-FITS targets: /mnt/c/Users/retar/Desktop/research/ML/data/MW/fcnm_RHI_z.fits
-Spectra CSVs: /mnt/c/Users/retar/Desktop/research/ML/data/MW/syn_HI_spec_z
-```
-
-The script currently reads the no-noise TB column:
-
-```python
-df.iloc[:, 3]
-```
-
-If you want noisy TB instead, use the separated pipeline with `--tb-column 1`, or edit the TB column in `train_hi_tpcnet_cnn.py`.
-
-## What the Script Does
-
-1. Loads fCNM and RHI from the FITS file.
-2. Lists spectra CSV/CSV.GZ files in numeric `row_col` order.
-3. Maps filenames like `139_48.csv.gz` to the correct flattened FITS target index.
-4. Selects a random subset, or all spectra with `--subset-size -1`.
-5. Splits data into train/validation/test.
-6. Loads selected spectra.
-7. Optionally normalizes TB inputs and targets.
-8. Trains an 8-layer 1D CNN.
-9. Evaluates on the test set.
-10. Saves predictions, metrics, model checkpoint, and plots.
-
-## CNN Architecture
-
-The model is inspired by the TPCNet Appendix/Figure A1 idea:
-
-- 8 convolutional layers
-- 1D convolutions
-- ReLU activations
-- BatchNorm after each convolution and before ReLU
-- alternating kernel sizes:
-
-```text
-7, 33, 7, 33, 7, 33, 7, 33
-```
-
-- decreasing channel pattern:
-
-```text
-64, 56, 48, 40, 32, 24, 16, 8
-```
-
-- no pooling layers
-- one shared CNN backbone
-- one final linear output layer for:
-
-```text
-[fCNM, RHI]
-```
-
-## Easiest Way to Run
-
-Use the launcher script:
-
-```bash
-cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
-bash scripts/run_train_hi_tpcnet_cnn.sh
-```
-
-This runs in detached/no-stop mode, so it should keep running after you close the terminal.
-
-To choose your own run name:
+Run the default full-data CNN training in detached/no-stop mode:
 
 ```bash
 cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
 RUN_NAME=my_cnn_run bash scripts/run_train_hi_tpcnet_cnn.sh
 ```
 
-To change common parameters:
-
-```bash
-RUN_NAME=my_cnn_run \
-EPOCHS=100 \
-PATIENCE=15 \
-BATCH_SIZE=256 \
-DEVICE=cuda \
-FCNM_ERROR_FLOOR=0.02 \
-FCNM_ZERO_LOSS_WEIGHT=2.0 \
-bash scripts/run_train_hi_tpcnet_cnn.sh
-```
-
-Outputs will be saved to:
+This keeps running after the terminal closes. Outputs are written to:
 
 ```text
-results/my_cnn_run/
-figs/my_cnn_run/
 logs/my_cnn_run.log
 logs/my_cnn_run.pid
+results/my_cnn_run/
+figs/my_cnn_run/
 ```
 
-Monitor the run with:
+Monitor the run:
 
 ```bash
 tail -f logs/my_cnn_run.log
 ```
 
-Check if it is running:
+Check whether it is still running:
 
 ```bash
 ps -ef | grep train_hi_tpcnet_cnn.py | grep -v grep
@@ -127,9 +54,112 @@ Check GPU usage:
 nvidia-smi
 ```
 
-## Direct Python Command
+## Data
 
-If you do not use the `.sh` launcher, run inside the `cnn` conda environment:
+Default data paths in `train_hi_tpcnet_cnn.py`:
+
+```text
+FITS targets: /mnt/c/Users/retar/Desktop/research/ML/data/MW/fcnm_RHI_z.fits
+Spectra CSVs: /mnt/c/Users/retar/Desktop/research/ML/data/MW/syn_HI_spec_z
+```
+
+The FITS file is expected to contain:
+
+```text
+HDU 1: fCNM map
+HDU 2: RHI map
+```
+
+Spectra files are expected to be named by pixel coordinate, for example:
+
+```text
+139_48.csv.gz
+```
+
+The script maps each filename to the flattened FITS target index using:
+
+```text
+target_index = row * n_cols + col
+```
+
+This avoids the common bug where simple string sorting misaligns spectra and
+targets.
+
+The monolithic script currently reads the no-noise TB column:
+
+```python
+df.iloc[:, 3]
+```
+
+For noisy TB or configurable TB columns, use the separated pipeline:
+
+```text
+scripts/seperate_scripts/run_pipeline.py
+```
+
+with `--tb-column 1` for noisy TB or `--tb-column 3` for no-noise TB.
+
+## Model
+
+The CNN uses:
+
+- 8 1D convolution layers
+- BatchNorm after each convolution
+- ReLU activations
+- no pooling layers
+- one shared CNN backbone
+- one final linear layer outputting `[fCNM, RHI]`
+
+Kernel sizes alternate:
+
+```text
+7, 33, 7, 33, 7, 33, 7, 33
+```
+
+Channel counts decrease by 8 each layer:
+
+```text
+64, 56, 48, 40, 32, 24, 16, 8
+```
+
+## Recommended Run Commands
+
+Full no-noise run with fCNM error-floor handling:
+
+```bash
+cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
+RUN_NAME=no_noise_full_fcnm_floor \
+FCNM_ERROR_FLOOR=0.02 \
+FCNM_ZERO_LOSS_WEIGHT=2.0 \
+bash scripts/run_train_hi_tpcnet_cnn.sh
+```
+
+Small debug run:
+
+```bash
+cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
+RUN_NAME=debug_small \
+SUBSET_SIZE=1000 \
+EPOCHS=2 \
+PATIENCE=2 \
+bash scripts/run_train_hi_tpcnet_cnn.sh
+```
+
+CPU debug run:
+
+```bash
+cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
+RUN_NAME=cpu_debug \
+SUBSET_SIZE=500 \
+EPOCHS=1 \
+DEVICE=cpu \
+bash scripts/run_train_hi_tpcnet_cnn.sh
+```
+
+## Direct Python Run
+
+If you do not use the launcher script, activate the `cnn` conda environment
+first:
 
 ```bash
 cd /mnt/c/Users/retar/Desktop/research/ML/ML_MW
@@ -149,66 +179,43 @@ python -u scripts/train_hi_tpcnet_cnn.py \
   --run-name my_cnn_run
 ```
 
-For no-stop mode directly:
+Detached/no-stop version:
 
 ```bash
 setsid bash -lc 'source /home/retar/miniconda3/etc/profile.d/conda.sh && conda activate cnn && export MPLCONFIGDIR=/tmp && python -u scripts/train_hi_tpcnet_cnn.py --subset-size -1 --epochs 100 --patience 15 --batch-size 256 --device cuda --rhi-target-transform log --fcnm-error-floor 0.02 --fcnm-zero-loss-weight 2.0 --run-name my_cnn_run' > logs/my_cnn_run.log 2>&1 < /dev/null & echo $!
 ```
 
-## Parameters You Will Most Often Change
+## Important Parameters
 
-### Run/output parameters
+### Run And Data
 
 `--run-name`
 
-Name for output subdirectories under `results/` and `figs/`.
-
-Example:
-
-```bash
---run-name no_noise_test1
-```
-
-`--output-root`
-
-Base directory where `results/` and `figs/` are created. Usually leave this unchanged.
-
-### Data parameters
+Name of the output subdirectory under `results/` and `figs/`.
 
 `--fits-path`
 
-Path to the FITS file containing fCNM and RHI.
+Path to the FITS target file.
 
 `--csv-dir`
 
-Directory containing spectra CSV files.
+Directory containing spectra CSV/CSV.GZ files.
 
 `--subset-size`
 
-Number of spectra to randomly use.
-
-Examples:
+Number of spectra to use. Use all spectra with:
 
 ```bash
---subset-size 20000
 --subset-size -1
 ```
 
-Use `-1` for all spectra.
-
 `--seed`
 
-Random seed for reproducible subset/split.
+Random seed for reproducible subset and split.
 
-Default:
+### Split
 
-```bash
---seed 42
-```
-
-### Split parameters
-
-Defaults are:
+Defaults:
 
 ```bash
 --train-frac 0.70
@@ -216,187 +223,143 @@ Defaults are:
 --test-frac 0.15
 ```
 
-These should sum to `1.0`.
+These must sum to `1.0`.
 
-### Training parameters
+### Training
 
-`--epochs`
-
-Maximum number of training epochs.
-
-`--patience`
-
-Early stopping patience. Training stops if validation loss does not improve for this many epochs.
-
-`--batch-size`
-
-Batch size. Increase if GPU memory allows; decrease if you get CUDA memory errors.
-
-`--lr`
-
-Learning rate. Default:
+Common training controls:
 
 ```bash
+--epochs 100
+--patience 15
+--batch-size 256
 --lr 1e-3
-```
-
-`--weight-decay`
-
-AdamW weight decay. Default:
-
-```bash
 --weight-decay 1e-4
-```
-
-`--device`
-
-Choose:
-
-```bash
 --device cuda
---device cpu
---device auto
 ```
 
-Use `cuda` when you want to force GPU.
+Use `--device cuda` to force GPU. Use `--device cpu` for CPU tests.
 
-### Normalization parameters
+### Normalization
 
-Input normalization is ON by default:
+Input and target normalization are on by default:
 
 ```bash
 --normalize-inputs
-```
-
-Disable it with:
-
-```bash
---no-normalize-inputs
-```
-
-Target normalization is ON by default:
-
-```bash
 --normalize-targets
 ```
 
-Disable it with:
+Disable them with:
 
 ```bash
+--no-normalize-inputs
 --no-normalize-targets
 ```
 
-Usually keep both ON.
+Usually keep both enabled.
 
-### RHI parameters
+### RHI
 
-`--rhi-target-transform`
-
-Choices:
+RHI is concentrated near 1 with a high tail, so the default is to train on
+`log(RHI)`:
 
 ```bash
 --rhi-target-transform log
+```
+
+Use raw RHI only for comparison:
+
+```bash
 --rhi-target-transform raw
 ```
 
-Use `log` for the current problem because RHI is concentrated near 1 with a high tail.
-
-`--rhi-tail-loss-weight`
-
-Extra weighting for high-RHI samples. Default is off:
+Optional high-RHI weighting:
 
 ```bash
 --rhi-tail-loss-weight 0
 ```
 
-Only increase this if you specifically want to emphasize rare high-RHI values.
+The default `0` disables extra tail weighting.
 
-### fCNM floor parameters
+### fCNM Error Floor
 
-These were added because many true fCNM values are exactly zero or below the physical/error floor, producing a vertical band in true-vs-predicted plots.
+Many samples have true fCNM equal to zero or below the physical/error floor.
+These points can appear as a vertical band near true fCNM = 0 in true-vs-pred
+plots.
 
-`--fcnm-error-floor`
-
-Treat true fCNM below this value as zero during training/evaluation.
-
-Example:
+Treat sub-floor fCNM as zero:
 
 ```bash
 --fcnm-error-floor 0.02
 ```
 
-Set to `0` to disable:
+Disable the floor:
 
 ```bash
 --fcnm-error-floor 0
 ```
 
-`--fcnm-zero-loss-weight`
-
-Extra fCNM loss weight for true-zero or below-floor fCNM samples.
-
-Example:
+Increase the fCNM loss weight for true-zero or below-floor samples:
 
 ```bash
 --fcnm-zero-loss-weight 2.0
 ```
 
-Use `1.0` to disable extra weighting:
+Disable extra weighting:
 
 ```bash
 --fcnm-zero-loss-weight 1.0
 ```
 
-`--apply-physical-constraints`
-
-On by default. During metrics/plots, it constrains predictions to physical ranges:
+Physical prediction constraints are on by default:
 
 ```text
-fCNM in [0, 1]
-RHI >= 0
+fCNM clipped to [0, 1]
+RHI clipped to >= 0
 ```
 
-Disable with:
+Disable them with:
 
 ```bash
 --no-physical-constraints
 ```
 
-`--snap-fcnm-below-floor`
-
-On by default. If predicted fCNM is below `--fcnm-error-floor`, it is set to zero before metrics/plots.
-
-Disable with:
+Predicted fCNM below the floor is snapped to zero by default. Disable with:
 
 ```bash
 --no-snap-fcnm-below-floor
 ```
 
-### Imbalance parameters
+### Imbalance Sampler
 
-The imbalance sampler is ON by default:
+The imbalance sampler is on by default:
 
 ```bash
 --use-imbalance-sampler
 ```
 
-Disable it with:
+Disable it:
 
 ```bash
 --no-imbalance-sampler
 ```
 
-`--imbalance-bins`
-
-Number of bins per target for the sampler. Default:
+Control binning:
 
 ```bash
 --imbalance-bins 10
 ```
 
-## Output Files
+## Outputs
 
-For a run named `my_cnn_run`, the script writes:
+For `--run-name my_cnn_run`, results are saved under:
+
+```text
+results/my_cnn_run/
+figs/my_cnn_run/
+```
+
+Main CSV/model outputs:
 
 ```text
 results/my_cnn_run/sampled_indices.csv
@@ -415,7 +378,7 @@ figs/my_cnn_run/true_vs_pred_combined.png
 figs/my_cnn_run/true_vs_pred_rhi_log.png
 ```
 
-The prediction CSV contains:
+`test_predictions.csv` contains:
 
 ```text
 sample_index
@@ -425,40 +388,52 @@ true_rhi
 pred_rhi
 ```
 
-## Suggested Starting Commands
+`training_metrics.csv` stores epoch-by-epoch loss, validation RMSE, and learning
+rate for plotting learning curves.
 
-Full no-noise run:
+## Repository Layout
+
+```text
+scripts/train_hi_tpcnet_cnn.py          Main monolithic CNN training script
+scripts/run_train_hi_tpcnet_cnn.sh      Detached/no-stop launcher
+scripts/sample.py                       Earlier experimental script
+scripts/seperate_scripts/               Modular version of the CNN pipeline
+results/                                CSV outputs and model checkpoints
+figs/                                   Saved figures
+logs/                                   Training logs
+```
+
+## Troubleshooting
+
+If GPU memory stays at zero, the script may still be reading CSV files. Loading
+many compressed spectra from `/mnt/c` can take a long time.
+
+If a run stops when the terminal closes, use:
 
 ```bash
-RUN_NAME=no_noise_full_fcnm_floor \
-FCNM_ERROR_FLOOR=0.02 \
-FCNM_ZERO_LOSS_WEIGHT=2.0 \
 bash scripts/run_train_hi_tpcnet_cnn.sh
 ```
 
-Small quick test:
+or the detached `setsid` command shown above.
+
+If CUDA is not used, check:
 
 ```bash
-RUN_NAME=debug_small \
-SUBSET_SIZE=1000 \
-EPOCHS=2 \
-PATIENCE=2 \
-bash scripts/run_train_hi_tpcnet_cnn.sh
+nvidia-smi
 ```
 
-CPU test:
+and verify that PyTorch in the `cnn` environment sees CUDA:
 
 ```bash
-RUN_NAME=cpu_debug \
-SUBSET_SIZE=500 \
-EPOCHS=1 \
-DEVICE=cpu \
-bash scripts/run_train_hi_tpcnet_cnn.sh
+source /home/retar/miniconda3/etc/profile.d/conda.sh
+conda activate cnn
+python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 ```
 
-## Practical Notes
+If you want to compare noisy and no-noise TB columns without editing code, use
+the separated runner:
 
-- The script may look slow at first because reading many CSV/CSV.GZ files from `/mnt/c` is slow.
-- GPU memory will usually stay near zero until data loading finishes and training epochs begin.
-- Use a unique `--run-name` for each experiment so old figures and CSVs are not overwritten.
-- If the terminal closes, use the `.sh` launcher or the `setsid` command so training keeps running.
+```bash
+python -u scripts/seperate_scripts/run_pipeline.py --tb-column 1 --run-name noisy_tb
+python -u scripts/seperate_scripts/run_pipeline.py --tb-column 3 --run-name no_noise_tb
+```
