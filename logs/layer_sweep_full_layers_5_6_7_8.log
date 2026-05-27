@@ -1,0 +1,1848 @@
+Starting sequential CNN layer sweep
+Layers: 5 6 7 8
+Subset size: -1
+Device: cuda
+
+============================================================
+Starting layer count: 5
+============================================================
+Using device: cuda
+Selected CNN depth: 5/8 convolutional layers
+Reading targets from: /mnt/c/users/retar/desktop/research/ML/data/MW/fcnm_RHI_z.fits
+Listing spectra in: /mnt/c/users/retar/desktop/research/ML/data/MW/syn_HI_spec_z
+Found 262144 spectra files
+Mapped spectra filenames to flattened FITS target indices using target shape (512, 512)
+
+Split sizes: train=183501, val=39322, test=39321
+
+Target summary: selected subset (n=262144)
+  fCNM: min=0, p05=0, median=0, mean=0.092244, std=0.17233, p95=0.50071, max=0.9707
+  RHI : min=0.99561, p05=0.99786, median=1.0111, mean=1.0671, std=0.30218, p95=1.2818, max=38.421
+
+Target summary: train (n=183501)
+  fCNM: min=0, p05=0, median=0, mean=0.09278, std=0.17286, p95=0.50325, max=0.94901
+  RHI : min=0.99561, p05=0.99786, median=1.0111, mean=1.0674, std=0.30349, p95=1.2836, max=38.421
+
+Target summary: validation (n=39322)
+  fCNM: min=0, p05=0, median=0, mean=0.090652, std=0.17093, p95=0.49569, max=0.92045
+  RHI : min=0.99564, p05=0.99787, median=1.011, mean=1.0654, std=0.27205, p95=1.2814, max=12.44
+
+Target summary: test (n=39321)
+  fCNM: min=0, p05=0, median=0, mean=0.091333, std=0.17123, p95=0.49519, max=0.9707
+  RHI : min=0.99566, p05=0.99785, median=1.011, mean=1.0675, std=0.32391, p95=1.2742, max=25.905
+
+Reading only selected subset spectra: 262144 files, tb_column=3
+Inferred spectrum length: 201 channels
+Loaded 1/262144 spectra
+Loaded 1000/262144 spectra
+Loaded 2000/262144 spectra
+Loaded 3000/262144 spectra
+Loaded 4000/262144 spectra
+Loaded 5000/262144 spectra
+Loaded 6000/262144 spectra
+Loaded 7000/262144 spectra
+Loaded 8000/262144 spectra
+Loaded 9000/262144 spectra
+Loaded 10000/262144 spectra
+Loaded 11000/262144 spectra
+Loaded 12000/262144 spectra
+Loaded 13000/262144 spectra
+Loaded 14000/262144 spectra
+Loaded 15000/262144 spectra
+Loaded 16000/262144 spectra
+Loaded 17000/262144 spectra
+Loaded 18000/262144 spectra
+Loaded 19000/262144 spectra
+Loaded 20000/262144 spectra
+Loaded 21000/262144 spectra
+Loaded 22000/262144 spectra
+Loaded 23000/262144 spectra
+Loaded 24000/262144 spectra
+Loaded 25000/262144 spectra
+Loaded 26000/262144 spectra
+Loaded 27000/262144 spectra
+Loaded 28000/262144 spectra
+Loaded 29000/262144 spectra
+Loaded 30000/262144 spectra
+Loaded 31000/262144 spectra
+Loaded 32000/262144 spectra
+Loaded 33000/262144 spectra
+Loaded 34000/262144 spectra
+Loaded 35000/262144 spectra
+Loaded 36000/262144 spectra
+Loaded 37000/262144 spectra
+Loaded 38000/262144 spectra
+Loaded 39000/262144 spectra
+Loaded 40000/262144 spectra
+Loaded 41000/262144 spectra
+Loaded 42000/262144 spectra
+Loaded 43000/262144 spectra
+Loaded 44000/262144 spectra
+Loaded 45000/262144 spectra
+Loaded 46000/262144 spectra
+Loaded 47000/262144 spectra
+Loaded 48000/262144 spectra
+Loaded 49000/262144 spectra
+Loaded 50000/262144 spectra
+Loaded 51000/262144 spectra
+Loaded 52000/262144 spectra
+Loaded 53000/262144 spectra
+Loaded 54000/262144 spectra
+Loaded 55000/262144 spectra
+Loaded 56000/262144 spectra
+Loaded 57000/262144 spectra
+Loaded 58000/262144 spectra
+Loaded 59000/262144 spectra
+Loaded 60000/262144 spectra
+Loaded 61000/262144 spectra
+Loaded 62000/262144 spectra
+Loaded 63000/262144 spectra
+Loaded 64000/262144 spectra
+Loaded 65000/262144 spectra
+Loaded 66000/262144 spectra
+Loaded 67000/262144 spectra
+Loaded 68000/262144 spectra
+Loaded 69000/262144 spectra
+Loaded 70000/262144 spectra
+Loaded 71000/262144 spectra
+Loaded 72000/262144 spectra
+Loaded 73000/262144 spectra
+Loaded 74000/262144 spectra
+Loaded 75000/262144 spectra
+Loaded 76000/262144 spectra
+Loaded 77000/262144 spectra
+Loaded 78000/262144 spectra
+Loaded 79000/262144 spectra
+Loaded 80000/262144 spectra
+Loaded 81000/262144 spectra
+Loaded 82000/262144 spectra
+Loaded 83000/262144 spectra
+Loaded 84000/262144 spectra
+Loaded 85000/262144 spectra
+Loaded 86000/262144 spectra
+Loaded 87000/262144 spectra
+Loaded 88000/262144 spectra
+Loaded 89000/262144 spectra
+Loaded 90000/262144 spectra
+Loaded 91000/262144 spectra
+Loaded 92000/262144 spectra
+Loaded 93000/262144 spectra
+Loaded 94000/262144 spectra
+Loaded 95000/262144 spectra
+Loaded 96000/262144 spectra
+Loaded 97000/262144 spectra
+Loaded 98000/262144 spectra
+Loaded 99000/262144 spectra
+Loaded 100000/262144 spectra
+Loaded 101000/262144 spectra
+Loaded 102000/262144 spectra
+Loaded 103000/262144 spectra
+Loaded 104000/262144 spectra
+Loaded 105000/262144 spectra
+Loaded 106000/262144 spectra
+Loaded 107000/262144 spectra
+Loaded 108000/262144 spectra
+Loaded 109000/262144 spectra
+Loaded 110000/262144 spectra
+Loaded 111000/262144 spectra
+Loaded 112000/262144 spectra
+Loaded 113000/262144 spectra
+Loaded 114000/262144 spectra
+Loaded 115000/262144 spectra
+Loaded 116000/262144 spectra
+Loaded 117000/262144 spectra
+Loaded 118000/262144 spectra
+Loaded 119000/262144 spectra
+Loaded 120000/262144 spectra
+Loaded 121000/262144 spectra
+Loaded 122000/262144 spectra
+Loaded 123000/262144 spectra
+Loaded 124000/262144 spectra
+Loaded 125000/262144 spectra
+Loaded 126000/262144 spectra
+Loaded 127000/262144 spectra
+Loaded 128000/262144 spectra
+Loaded 129000/262144 spectra
+Loaded 130000/262144 spectra
+Loaded 131000/262144 spectra
+Loaded 132000/262144 spectra
+Loaded 133000/262144 spectra
+Loaded 134000/262144 spectra
+Loaded 135000/262144 spectra
+Loaded 136000/262144 spectra
+Loaded 137000/262144 spectra
+Loaded 138000/262144 spectra
+Loaded 139000/262144 spectra
+Loaded 140000/262144 spectra
+Loaded 141000/262144 spectra
+Loaded 142000/262144 spectra
+Loaded 143000/262144 spectra
+Loaded 144000/262144 spectra
+Loaded 145000/262144 spectra
+Loaded 146000/262144 spectra
+Loaded 147000/262144 spectra
+Loaded 148000/262144 spectra
+Loaded 149000/262144 spectra
+Loaded 150000/262144 spectra
+Loaded 151000/262144 spectra
+Loaded 152000/262144 spectra
+Loaded 153000/262144 spectra
+Loaded 154000/262144 spectra
+Loaded 155000/262144 spectra
+Loaded 156000/262144 spectra
+Loaded 157000/262144 spectra
+Loaded 158000/262144 spectra
+Loaded 159000/262144 spectra
+Loaded 160000/262144 spectra
+Loaded 161000/262144 spectra
+Loaded 162000/262144 spectra
+Loaded 163000/262144 spectra
+Loaded 164000/262144 spectra
+Loaded 165000/262144 spectra
+Loaded 166000/262144 spectra
+Loaded 167000/262144 spectra
+Loaded 168000/262144 spectra
+Loaded 169000/262144 spectra
+Loaded 170000/262144 spectra
+Loaded 171000/262144 spectra
+Loaded 172000/262144 spectra
+Loaded 173000/262144 spectra
+Loaded 174000/262144 spectra
+Loaded 175000/262144 spectra
+Loaded 176000/262144 spectra
+Loaded 177000/262144 spectra
+Loaded 178000/262144 spectra
+Loaded 179000/262144 spectra
+Loaded 180000/262144 spectra
+Loaded 181000/262144 spectra
+Loaded 182000/262144 spectra
+Loaded 183000/262144 spectra
+Loaded 184000/262144 spectra
+Loaded 185000/262144 spectra
+Loaded 186000/262144 spectra
+Loaded 187000/262144 spectra
+Loaded 188000/262144 spectra
+Loaded 189000/262144 spectra
+Loaded 190000/262144 spectra
+Loaded 191000/262144 spectra
+Loaded 192000/262144 spectra
+Loaded 193000/262144 spectra
+Loaded 194000/262144 spectra
+Loaded 195000/262144 spectra
+Loaded 196000/262144 spectra
+Loaded 197000/262144 spectra
+Loaded 198000/262144 spectra
+Loaded 199000/262144 spectra
+Loaded 200000/262144 spectra
+Loaded 201000/262144 spectra
+Loaded 202000/262144 spectra
+Loaded 203000/262144 spectra
+Loaded 204000/262144 spectra
+Loaded 205000/262144 spectra
+Loaded 206000/262144 spectra
+Loaded 207000/262144 spectra
+Loaded 208000/262144 spectra
+Loaded 209000/262144 spectra
+Loaded 210000/262144 spectra
+Loaded 211000/262144 spectra
+Loaded 212000/262144 spectra
+Loaded 213000/262144 spectra
+Loaded 214000/262144 spectra
+Loaded 215000/262144 spectra
+Loaded 216000/262144 spectra
+Loaded 217000/262144 spectra
+Loaded 218000/262144 spectra
+Loaded 219000/262144 spectra
+Loaded 220000/262144 spectra
+Loaded 221000/262144 spectra
+Loaded 222000/262144 spectra
+Loaded 223000/262144 spectra
+Loaded 224000/262144 spectra
+Loaded 225000/262144 spectra
+Loaded 226000/262144 spectra
+Loaded 227000/262144 spectra
+Loaded 228000/262144 spectra
+Loaded 229000/262144 spectra
+Loaded 230000/262144 spectra
+Loaded 231000/262144 spectra
+Loaded 232000/262144 spectra
+Loaded 233000/262144 spectra
+Loaded 234000/262144 spectra
+Loaded 235000/262144 spectra
+Loaded 236000/262144 spectra
+Loaded 237000/262144 spectra
+Loaded 238000/262144 spectra
+Loaded 239000/262144 spectra
+Loaded 240000/262144 spectra
+Loaded 241000/262144 spectra
+Loaded 242000/262144 spectra
+Loaded 243000/262144 spectra
+Loaded 244000/262144 spectra
+Loaded 245000/262144 spectra
+Loaded 246000/262144 spectra
+Loaded 247000/262144 spectra
+Loaded 248000/262144 spectra
+Loaded 249000/262144 spectra
+Loaded 250000/262144 spectra
+Loaded 251000/262144 spectra
+Loaded 252000/262144 spectra
+Loaded 253000/262144 spectra
+Loaded 254000/262144 spectra
+Loaded 255000/262144 spectra
+Loaded 256000/262144 spectra
+Loaded 257000/262144 spectra
+Loaded 258000/262144 spectra
+Loaded 259000/262144 spectra
+Loaded 260000/262144 spectra
+Loaded 261000/262144 spectra
+Loaded 262000/262144 spectra
+Loaded 262144/262144 spectra
+Selected TB loaded: (262144, 201)
+Input mode: raw spectrum only
+Model input array prepared: (262144, 201)
+fCNM error floor: OFF
+RHI target transform: log(RHI) for training, exp() for evaluation
+Input normalization: ON, fitted per velocity channel on train split
+Target normalization: ON, fitted on train split (mean fCNM/RHI=[0.0927797  0.05011275], std=[0.172869   0.14508232])
+RHI tail loss weighting: OFF
+fCNM zero/floor loss weighting: ON (threshold <= 0, weight=3, n=173964)
+Using imbalance sampler with 24 occupied joint bins out of 100; min/max bin counts=1/133224
+Building TPCNetInspiredCNN with num_layers=5
+TPCNetInspiredCNN(
+  num_layers=5, channels=[64, 56, 48, 40, 32], kernels=[7, 33, 7, 33, 7]
+  (backbone): Sequential(
+    (0): Conv1d(1, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv1d(64, 56, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (4): BatchNorm1d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): Conv1d(56, 48, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (7): BatchNorm1d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): Conv1d(48, 40, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (10): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): Conv1d(40, 32, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (13): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (14): ReLU(inplace=True)
+  )
+  (head): Linear(in_features=6432, out_features=2, bias=True)
+)
+Epoch 001 | train_loss=2.63455 | train_RMSE_fCNM=0.124459 | train_RMSE_RHI=2.30977 | val_loss=1.14616 | val_RMSE_fCNM=0.0740922 | val_RMSE_RHI=0.321016 | test_RMSE_fCNM=0.0752427 | test_RMSE_RHI=0.342388 | lr=0.001
+Epoch 002 | train_loss=0.735956 | train_RMSE_fCNM=0.0727613 | train_RMSE_RHI=1.23362 | val_loss=0.713478 | val_RMSE_fCNM=0.0744358 | val_RMSE_RHI=0.23735 | test_RMSE_fCNM=0.0752017 | test_RMSE_RHI=0.251695 | lr=0.001
+Epoch 003 | train_loss=0.503102 | train_RMSE_fCNM=0.0632793 | train_RMSE_RHI=0.987586 | val_loss=0.635169 | val_RMSE_fCNM=0.0703276 | val_RMSE_RHI=0.236005 | test_RMSE_fCNM=0.0710592 | test_RMSE_RHI=0.249078 | lr=0.001
+Epoch 004 | train_loss=0.434798 | train_RMSE_fCNM=0.0622669 | train_RMSE_RHI=0.944314 | val_loss=0.451932 | val_RMSE_fCNM=0.053383 | val_RMSE_RHI=0.206617 | test_RMSE_fCNM=0.0539586 | test_RMSE_RHI=0.217706 | lr=0.001
+Epoch 005 | train_loss=0.360167 | train_RMSE_fCNM=0.0572215 | train_RMSE_RHI=0.825144 | val_loss=0.419414 | val_RMSE_fCNM=0.0505344 | val_RMSE_RHI=0.201922 | test_RMSE_fCNM=0.0511675 | test_RMSE_RHI=0.218934 | lr=0.001
+Epoch 006 | train_loss=0.325573 | train_RMSE_fCNM=0.0558587 | train_RMSE_RHI=0.856133 | val_loss=0.39371 | val_RMSE_fCNM=0.0678577 | val_RMSE_RHI=0.19469 | test_RMSE_fCNM=0.068074 | test_RMSE_RHI=0.205912 | lr=0.001
+Epoch 007 | train_loss=0.288031 | train_RMSE_fCNM=0.0513452 | train_RMSE_RHI=0.772822 | val_loss=0.363639 | val_RMSE_fCNM=0.0545322 | val_RMSE_RHI=0.194103 | test_RMSE_fCNM=0.055317 | test_RMSE_RHI=0.204835 | lr=0.001
+Epoch 008 | train_loss=0.269242 | train_RMSE_fCNM=0.050727 | train_RMSE_RHI=0.752523 | val_loss=0.353362 | val_RMSE_fCNM=0.0554105 | val_RMSE_RHI=0.19156 | test_RMSE_fCNM=0.0557599 | test_RMSE_RHI=0.20335 | lr=0.001
+Epoch 009 | train_loss=0.237746 | train_RMSE_fCNM=0.0493103 | train_RMSE_RHI=0.673793 | val_loss=0.328526 | val_RMSE_fCNM=0.0544312 | val_RMSE_RHI=0.187612 | test_RMSE_fCNM=0.0552914 | test_RMSE_RHI=0.201267 | lr=0.001
+Epoch 010 | train_loss=0.232332 | train_RMSE_fCNM=0.0496581 | train_RMSE_RHI=0.696095 | val_loss=0.31884 | val_RMSE_fCNM=0.0563754 | val_RMSE_RHI=0.182051 | test_RMSE_fCNM=0.0571473 | test_RMSE_RHI=0.200789 | lr=0.001
+Epoch 011 | train_loss=0.212221 | train_RMSE_fCNM=0.0476815 | train_RMSE_RHI=0.66469 | val_loss=0.262516 | val_RMSE_fCNM=0.0473598 | val_RMSE_RHI=0.175213 | test_RMSE_fCNM=0.0480835 | test_RMSE_RHI=0.194293 | lr=0.001
+Epoch 012 | train_loss=0.190431 | train_RMSE_fCNM=0.0453919 | train_RMSE_RHI=0.607931 | val_loss=0.275771 | val_RMSE_fCNM=0.0470069 | val_RMSE_RHI=0.175414 | test_RMSE_fCNM=0.0477702 | test_RMSE_RHI=0.19572 | lr=0.001
+Epoch 013 | train_loss=0.184954 | train_RMSE_fCNM=0.0450939 | train_RMSE_RHI=0.604129 | val_loss=0.252772 | val_RMSE_fCNM=0.0455634 | val_RMSE_RHI=0.17472 | test_RMSE_fCNM=0.0463316 | test_RMSE_RHI=0.192944 | lr=0.001
+Epoch 014 | train_loss=0.169127 | train_RMSE_fCNM=0.0435709 | train_RMSE_RHI=0.567196 | val_loss=0.233385 | val_RMSE_fCNM=0.0487787 | val_RMSE_RHI=0.170605 | test_RMSE_fCNM=0.0496229 | test_RMSE_RHI=0.194672 | lr=0.001
+Epoch 015 | train_loss=0.167266 | train_RMSE_fCNM=0.0443212 | train_RMSE_RHI=0.5971 | val_loss=0.24133 | val_RMSE_fCNM=0.0439504 | val_RMSE_RHI=0.171791 | test_RMSE_fCNM=0.0447043 | test_RMSE_RHI=0.192473 | lr=0.001
+Epoch 016 | train_loss=0.153506 | train_RMSE_fCNM=0.042602 | train_RMSE_RHI=0.556331 | val_loss=0.246451 | val_RMSE_fCNM=0.0486908 | val_RMSE_RHI=0.172884 | test_RMSE_fCNM=0.0491305 | test_RMSE_RHI=0.189248 | lr=0.001
+Epoch 017 | train_loss=0.147856 | train_RMSE_fCNM=0.041281 | train_RMSE_RHI=0.538808 | val_loss=0.228764 | val_RMSE_fCNM=0.0468241 | val_RMSE_RHI=0.171192 | test_RMSE_fCNM=0.0472993 | test_RMSE_RHI=0.192768 | lr=0.001
+Epoch 018 | train_loss=0.145716 | train_RMSE_fCNM=0.042165 | train_RMSE_RHI=0.548804 | val_loss=0.211627 | val_RMSE_fCNM=0.0451667 | val_RMSE_RHI=0.167986 | test_RMSE_fCNM=0.0457123 | test_RMSE_RHI=0.193272 | lr=0.001
+Epoch 019 | train_loss=0.129305 | train_RMSE_fCNM=0.0401097 | train_RMSE_RHI=0.510878 | val_loss=0.237779 | val_RMSE_fCNM=0.0542646 | val_RMSE_RHI=0.168775 | test_RMSE_fCNM=0.0551265 | test_RMSE_RHI=0.194824 | lr=0.001
+Epoch 020 | train_loss=0.124367 | train_RMSE_fCNM=0.0391448 | train_RMSE_RHI=0.488536 | val_loss=0.210593 | val_RMSE_fCNM=0.0428753 | val_RMSE_RHI=0.167918 | test_RMSE_fCNM=0.0432904 | test_RMSE_RHI=0.186689 | lr=0.001
+Epoch 021 | train_loss=0.127153 | train_RMSE_fCNM=0.0397023 | train_RMSE_RHI=0.521232 | val_loss=0.198871 | val_RMSE_fCNM=0.0405363 | val_RMSE_RHI=0.165928 | test_RMSE_fCNM=0.0407002 | test_RMSE_RHI=0.188168 | lr=0.001
+Epoch 022 | train_loss=0.113464 | train_RMSE_fCNM=0.0376954 | train_RMSE_RHI=0.472456 | val_loss=0.193928 | val_RMSE_fCNM=0.0424331 | val_RMSE_RHI=0.165782 | test_RMSE_fCNM=0.0431664 | test_RMSE_RHI=0.186611 | lr=0.001
+Epoch 023 | train_loss=0.113265 | train_RMSE_fCNM=0.0380232 | train_RMSE_RHI=0.460629 | val_loss=0.197776 | val_RMSE_fCNM=0.0446039 | val_RMSE_RHI=0.165135 | test_RMSE_fCNM=0.0452944 | test_RMSE_RHI=0.185737 | lr=0.001
+Epoch 024 | train_loss=0.10692 | train_RMSE_fCNM=0.0376972 | train_RMSE_RHI=0.458133 | val_loss=0.191067 | val_RMSE_fCNM=0.0418194 | val_RMSE_RHI=0.165645 | test_RMSE_fCNM=0.0421076 | test_RMSE_RHI=0.190321 | lr=0.001
+Epoch 025 | train_loss=0.103503 | train_RMSE_fCNM=0.0366225 | train_RMSE_RHI=0.468149 | val_loss=0.197194 | val_RMSE_fCNM=0.0447535 | val_RMSE_RHI=0.164676 | test_RMSE_fCNM=0.0452484 | test_RMSE_RHI=0.186202 | lr=0.001
+Epoch 026 | train_loss=0.103126 | train_RMSE_fCNM=0.0367448 | train_RMSE_RHI=0.466192 | val_loss=0.18595 | val_RMSE_fCNM=0.0466655 | val_RMSE_RHI=0.163272 | test_RMSE_fCNM=0.0472996 | test_RMSE_RHI=0.188984 | lr=0.001
+Epoch 027 | train_loss=0.0986396 | train_RMSE_fCNM=0.0366121 | train_RMSE_RHI=0.47628 | val_loss=0.186241 | val_RMSE_fCNM=0.0406606 | val_RMSE_RHI=0.164888 | test_RMSE_fCNM=0.0411676 | test_RMSE_RHI=0.189409 | lr=0.001
+Epoch 028 | train_loss=0.0907516 | train_RMSE_fCNM=0.035235 | train_RMSE_RHI=0.408277 | val_loss=0.184639 | val_RMSE_fCNM=0.0408555 | val_RMSE_RHI=0.166219 | test_RMSE_fCNM=0.0414482 | test_RMSE_RHI=0.193238 | lr=0.001
+Epoch 029 | train_loss=0.0931145 | train_RMSE_fCNM=0.0350722 | train_RMSE_RHI=0.443969 | val_loss=0.190043 | val_RMSE_fCNM=0.045922 | val_RMSE_RHI=0.16455 | test_RMSE_fCNM=0.0469651 | test_RMSE_RHI=0.195694 | lr=0.001
+Epoch 030 | train_loss=0.0887487 | train_RMSE_fCNM=0.0352987 | train_RMSE_RHI=0.410634 | val_loss=0.184737 | val_RMSE_fCNM=0.0410305 | val_RMSE_RHI=0.16528 | test_RMSE_fCNM=0.0416161 | test_RMSE_RHI=0.18993 | lr=0.001
+Epoch 031 | train_loss=0.0862129 | train_RMSE_fCNM=0.0344212 | train_RMSE_RHI=0.426194 | val_loss=0.171377 | val_RMSE_fCNM=0.0424007 | val_RMSE_RHI=0.163266 | test_RMSE_fCNM=0.0430769 | test_RMSE_RHI=0.189265 | lr=0.001
+Epoch 032 | train_loss=0.0825226 | train_RMSE_fCNM=0.0342738 | train_RMSE_RHI=0.401176 | val_loss=0.172984 | val_RMSE_fCNM=0.0395697 | val_RMSE_RHI=0.164837 | test_RMSE_fCNM=0.0397485 | test_RMSE_RHI=0.191865 | lr=0.001
+Epoch 033 | train_loss=0.0806936 | train_RMSE_fCNM=0.0341795 | train_RMSE_RHI=0.406045 | val_loss=0.16771 | val_RMSE_fCNM=0.0403746 | val_RMSE_RHI=0.163627 | test_RMSE_fCNM=0.0411765 | test_RMSE_RHI=0.190919 | lr=0.001
+Epoch 034 | train_loss=0.0761125 | train_RMSE_fCNM=0.0327144 | train_RMSE_RHI=0.372635 | val_loss=0.164403 | val_RMSE_fCNM=0.039221 | val_RMSE_RHI=0.163868 | test_RMSE_fCNM=0.03957 | test_RMSE_RHI=0.193322 | lr=0.001
+Epoch 035 | train_loss=0.0790615 | train_RMSE_fCNM=0.0338676 | train_RMSE_RHI=0.41735 | val_loss=0.171121 | val_RMSE_fCNM=0.0416743 | val_RMSE_RHI=0.164458 | test_RMSE_fCNM=0.0422253 | test_RMSE_RHI=0.193486 | lr=0.001
+Epoch 036 | train_loss=0.0771683 | train_RMSE_fCNM=0.0332166 | train_RMSE_RHI=0.407771 | val_loss=0.165316 | val_RMSE_fCNM=0.0389253 | val_RMSE_RHI=0.162579 | test_RMSE_fCNM=0.0396942 | test_RMSE_RHI=0.190519 | lr=0.001
+Epoch 037 | train_loss=0.076041 | train_RMSE_fCNM=0.0331303 | train_RMSE_RHI=0.40294 | val_loss=0.158508 | val_RMSE_fCNM=0.039495 | val_RMSE_RHI=0.162613 | test_RMSE_fCNM=0.0403054 | test_RMSE_RHI=0.189383 | lr=0.001
+Epoch 038 | train_loss=0.0767719 | train_RMSE_fCNM=0.0333403 | train_RMSE_RHI=0.439444 | val_loss=0.158716 | val_RMSE_fCNM=0.0396264 | val_RMSE_RHI=0.163049 | test_RMSE_fCNM=0.0400692 | test_RMSE_RHI=0.191356 | lr=0.001
+Epoch 039 | train_loss=0.0681044 | train_RMSE_fCNM=0.0319076 | train_RMSE_RHI=0.356828 | val_loss=0.159361 | val_RMSE_fCNM=0.0406466 | val_RMSE_RHI=0.162023 | test_RMSE_fCNM=0.0411915 | test_RMSE_RHI=0.189309 | lr=0.001
+Epoch 040 | train_loss=0.067162 | train_RMSE_fCNM=0.0314275 | train_RMSE_RHI=0.373716 | val_loss=0.165714 | val_RMSE_fCNM=0.0408206 | val_RMSE_RHI=0.164255 | test_RMSE_fCNM=0.0409339 | test_RMSE_RHI=0.190247 | lr=0.001
+Epoch 041 | train_loss=0.0682366 | train_RMSE_fCNM=0.0321656 | train_RMSE_RHI=0.367347 | val_loss=0.161018 | val_RMSE_fCNM=0.0408703 | val_RMSE_RHI=0.164555 | test_RMSE_fCNM=0.041256 | test_RMSE_RHI=0.194177 | lr=0.001
+Epoch 042 | train_loss=0.065142 | train_RMSE_fCNM=0.0315549 | train_RMSE_RHI=0.370431 | val_loss=0.157685 | val_RMSE_fCNM=0.0392635 | val_RMSE_RHI=0.16096 | test_RMSE_fCNM=0.0400378 | test_RMSE_RHI=0.190016 | lr=0.001
+Epoch 043 | train_loss=0.0609961 | train_RMSE_fCNM=0.0307951 | train_RMSE_RHI=0.341943 | val_loss=0.162515 | val_RMSE_fCNM=0.0408419 | val_RMSE_RHI=0.163963 | test_RMSE_fCNM=0.0412691 | test_RMSE_RHI=0.192219 | lr=0.001
+Epoch 044 | train_loss=0.0665216 | train_RMSE_fCNM=0.0313253 | train_RMSE_RHI=0.381386 | val_loss=0.156829 | val_RMSE_fCNM=0.0407475 | val_RMSE_RHI=0.160995 | test_RMSE_fCNM=0.0416007 | test_RMSE_RHI=0.190215 | lr=0.001
+Epoch 045 | train_loss=0.0638035 | train_RMSE_fCNM=0.0311715 | train_RMSE_RHI=0.388821 | val_loss=0.157004 | val_RMSE_fCNM=0.0386969 | val_RMSE_RHI=0.1629 | test_RMSE_fCNM=0.0390339 | test_RMSE_RHI=0.193919 | lr=0.001
+Epoch 046 | train_loss=0.0601114 | train_RMSE_fCNM=0.030932 | train_RMSE_RHI=0.369807 | val_loss=0.154208 | val_RMSE_fCNM=0.0390589 | val_RMSE_RHI=0.162999 | test_RMSE_fCNM=0.039498 | test_RMSE_RHI=0.193114 | lr=0.001
+Epoch 047 | train_loss=0.0574764 | train_RMSE_fCNM=0.0299425 | train_RMSE_RHI=0.334826 | val_loss=0.155428 | val_RMSE_fCNM=0.0398034 | val_RMSE_RHI=0.162873 | test_RMSE_fCNM=0.0405256 | test_RMSE_RHI=0.193369 | lr=0.001
+Epoch 048 | train_loss=0.0604789 | train_RMSE_fCNM=0.0303063 | train_RMSE_RHI=0.38075 | val_loss=0.146746 | val_RMSE_fCNM=0.0384533 | val_RMSE_RHI=0.161255 | test_RMSE_fCNM=0.038968 | test_RMSE_RHI=0.192818 | lr=0.001
+Epoch 049 | train_loss=0.0583502 | train_RMSE_fCNM=0.0301401 | train_RMSE_RHI=0.351302 | val_loss=0.144545 | val_RMSE_fCNM=0.0378702 | val_RMSE_RHI=0.160716 | test_RMSE_fCNM=0.0384856 | test_RMSE_RHI=0.190486 | lr=0.001
+Epoch 050 | train_loss=0.0583095 | train_RMSE_fCNM=0.0301378 | train_RMSE_RHI=0.351214 | val_loss=0.146944 | val_RMSE_fCNM=0.0401436 | val_RMSE_RHI=0.161366 | test_RMSE_fCNM=0.0407071 | test_RMSE_RHI=0.190801 | lr=0.001
+Epoch 051 | train_loss=0.055388 | train_RMSE_fCNM=0.029609 | train_RMSE_RHI=0.342569 | val_loss=0.14237 | val_RMSE_fCNM=0.0377978 | val_RMSE_RHI=0.160644 | test_RMSE_fCNM=0.0382636 | test_RMSE_RHI=0.190944 | lr=0.001
+Epoch 052 | train_loss=0.0544589 | train_RMSE_fCNM=0.029501 | train_RMSE_RHI=0.333221 | val_loss=0.151628 | val_RMSE_fCNM=0.0385636 | val_RMSE_RHI=0.164263 | test_RMSE_fCNM=0.0388053 | test_RMSE_RHI=0.196221 | lr=0.001
+Epoch 053 | train_loss=0.0561757 | train_RMSE_fCNM=0.0297319 | train_RMSE_RHI=0.354385 | val_loss=0.139936 | val_RMSE_fCNM=0.0371578 | val_RMSE_RHI=0.161796 | test_RMSE_fCNM=0.0374538 | test_RMSE_RHI=0.192473 | lr=0.001
+Epoch 054 | train_loss=0.0520342 | train_RMSE_fCNM=0.0293303 | train_RMSE_RHI=0.318996 | val_loss=0.151091 | val_RMSE_fCNM=0.0384713 | val_RMSE_RHI=0.162233 | test_RMSE_fCNM=0.0388915 | test_RMSE_RHI=0.192602 | lr=0.001
+Epoch 055 | train_loss=0.05455 | train_RMSE_fCNM=0.0291792 | train_RMSE_RHI=0.353687 | val_loss=0.145081 | val_RMSE_fCNM=0.0374551 | val_RMSE_RHI=0.162213 | test_RMSE_fCNM=0.0380486 | test_RMSE_RHI=0.192595 | lr=0.001
+Epoch 056 | train_loss=0.0529646 | train_RMSE_fCNM=0.0291852 | train_RMSE_RHI=0.322673 | val_loss=0.145322 | val_RMSE_fCNM=0.0371 | val_RMSE_RHI=0.160019 | test_RMSE_fCNM=0.0375796 | test_RMSE_RHI=0.191509 | lr=0.001
+Epoch 057 | train_loss=0.0561099 | train_RMSE_fCNM=0.0294983 | train_RMSE_RHI=0.383286 | val_loss=0.142325 | val_RMSE_fCNM=0.0379092 | val_RMSE_RHI=0.163005 | test_RMSE_fCNM=0.0383081 | test_RMSE_RHI=0.19574 | lr=0.001
+Epoch 058 | train_loss=0.050802 | train_RMSE_fCNM=0.0286511 | train_RMSE_RHI=0.329377 | val_loss=0.144056 | val_RMSE_fCNM=0.0392361 | val_RMSE_RHI=0.16003 | test_RMSE_fCNM=0.0398228 | test_RMSE_RHI=0.192458 | lr=0.001
+Epoch 059 | train_loss=0.0499978 | train_RMSE_fCNM=0.0282715 | train_RMSE_RHI=0.335516 | val_loss=0.153334 | val_RMSE_fCNM=0.0395823 | val_RMSE_RHI=0.161969 | test_RMSE_fCNM=0.0404325 | test_RMSE_RHI=0.192576 | lr=0.0005
+Epoch 060 | train_loss=0.0336495 | train_RMSE_fCNM=0.025307 | train_RMSE_RHI=0.219788 | val_loss=0.133557 | val_RMSE_fCNM=0.0368769 | val_RMSE_RHI=0.160601 | test_RMSE_fCNM=0.0375143 | test_RMSE_RHI=0.19305 | lr=0.0005
+Epoch 061 | train_loss=0.0328569 | train_RMSE_fCNM=0.0252337 | train_RMSE_RHI=0.227575 | val_loss=0.141648 | val_RMSE_fCNM=0.0393704 | val_RMSE_RHI=0.160087 | test_RMSE_fCNM=0.0399936 | test_RMSE_RHI=0.191675 | lr=0.0005
+Epoch 062 | train_loss=0.0319679 | train_RMSE_fCNM=0.0247004 | train_RMSE_RHI=0.227789 | val_loss=0.132565 | val_RMSE_fCNM=0.0366799 | val_RMSE_RHI=0.160041 | test_RMSE_fCNM=0.0370826 | test_RMSE_RHI=0.19321 | lr=0.0005
+Epoch 063 | train_loss=0.0322243 | train_RMSE_fCNM=0.0247799 | train_RMSE_RHI=0.218283 | val_loss=0.13086 | val_RMSE_fCNM=0.0359756 | val_RMSE_RHI=0.159803 | test_RMSE_fCNM=0.0363995 | test_RMSE_RHI=0.193588 | lr=0.0005
+Epoch 064 | train_loss=0.0341432 | train_RMSE_fCNM=0.0252981 | train_RMSE_RHI=0.249795 | val_loss=0.131421 | val_RMSE_fCNM=0.0366858 | val_RMSE_RHI=0.159786 | test_RMSE_fCNM=0.0372235 | test_RMSE_RHI=0.192198 | lr=0.0005
+Epoch 065 | train_loss=0.0319672 | train_RMSE_fCNM=0.0246401 | train_RMSE_RHI=0.239067 | val_loss=0.131849 | val_RMSE_fCNM=0.0369566 | val_RMSE_RHI=0.159309 | test_RMSE_fCNM=0.0375722 | test_RMSE_RHI=0.192472 | lr=0.0005
+Epoch 066 | train_loss=0.0313485 | train_RMSE_fCNM=0.0245579 | train_RMSE_RHI=0.227812 | val_loss=0.135216 | val_RMSE_fCNM=0.0371854 | val_RMSE_RHI=0.160291 | test_RMSE_fCNM=0.0375763 | test_RMSE_RHI=0.19425 | lr=0.0005
+Epoch 067 | train_loss=0.0335821 | train_RMSE_fCNM=0.02498 | train_RMSE_RHI=0.265444 | val_loss=0.133754 | val_RMSE_fCNM=0.0364514 | val_RMSE_RHI=0.160667 | test_RMSE_fCNM=0.0369765 | test_RMSE_RHI=0.194066 | lr=0.0005
+Epoch 068 | train_loss=0.0311397 | train_RMSE_fCNM=0.0244856 | train_RMSE_RHI=0.241325 | val_loss=0.131137 | val_RMSE_fCNM=0.036774 | val_RMSE_RHI=0.159967 | test_RMSE_fCNM=0.0374414 | test_RMSE_RHI=0.19139 | lr=0.0005
+Epoch 069 | train_loss=0.030994 | train_RMSE_fCNM=0.024361 | train_RMSE_RHI=0.244007 | val_loss=0.13312 | val_RMSE_fCNM=0.0376577 | val_RMSE_RHI=0.159563 | test_RMSE_fCNM=0.0383185 | test_RMSE_RHI=0.191299 | lr=0.00025
+Epoch 070 | train_loss=0.0247456 | train_RMSE_fCNM=0.0229156 | train_RMSE_RHI=0.176809 | val_loss=0.128845 | val_RMSE_fCNM=0.0361959 | val_RMSE_RHI=0.160159 | test_RMSE_fCNM=0.036675 | test_RMSE_RHI=0.193564 | lr=0.00025
+Epoch 071 | train_loss=0.0241124 | train_RMSE_fCNM=0.0227678 | train_RMSE_RHI=0.171915 | val_loss=0.129605 | val_RMSE_fCNM=0.0372873 | val_RMSE_RHI=0.159399 | test_RMSE_fCNM=0.0377891 | test_RMSE_RHI=0.192856 | lr=0.00025
+Epoch 072 | train_loss=0.0239862 | train_RMSE_fCNM=0.0227417 | train_RMSE_RHI=0.180272 | val_loss=0.127622 | val_RMSE_fCNM=0.0359737 | val_RMSE_RHI=0.160648 | test_RMSE_fCNM=0.0363941 | test_RMSE_RHI=0.194804 | lr=0.00025
+Epoch 073 | train_loss=0.0239438 | train_RMSE_fCNM=0.0226491 | train_RMSE_RHI=0.172902 | val_loss=0.127628 | val_RMSE_fCNM=0.036275 | val_RMSE_RHI=0.160433 | test_RMSE_fCNM=0.0369022 | test_RMSE_RHI=0.193642 | lr=0.00025
+Epoch 074 | train_loss=0.0238962 | train_RMSE_fCNM=0.0225289 | train_RMSE_RHI=0.166066 | val_loss=0.126954 | val_RMSE_fCNM=0.0361932 | val_RMSE_RHI=0.159785 | test_RMSE_fCNM=0.03671 | test_RMSE_RHI=0.192505 | lr=0.00025
+Epoch 075 | train_loss=0.0237702 | train_RMSE_fCNM=0.0225978 | train_RMSE_RHI=0.177054 | val_loss=0.128195 | val_RMSE_fCNM=0.0363143 | val_RMSE_RHI=0.16028 | test_RMSE_fCNM=0.0367914 | test_RMSE_RHI=0.193683 | lr=0.00025
+Epoch 076 | train_loss=0.0232712 | train_RMSE_fCNM=0.0226702 | train_RMSE_RHI=0.173315 | val_loss=0.126848 | val_RMSE_fCNM=0.0360311 | val_RMSE_RHI=0.159697 | test_RMSE_fCNM=0.0365733 | test_RMSE_RHI=0.193503 | lr=0.00025
+Epoch 077 | train_loss=0.0239565 | train_RMSE_fCNM=0.0225316 | train_RMSE_RHI=0.193665 | val_loss=0.12637 | val_RMSE_fCNM=0.0356191 | val_RMSE_RHI=0.159943 | test_RMSE_fCNM=0.0362516 | test_RMSE_RHI=0.193254 | lr=0.00025
+Epoch 078 | train_loss=0.0236367 | train_RMSE_fCNM=0.0224609 | train_RMSE_RHI=0.181243 | val_loss=0.126886 | val_RMSE_fCNM=0.036141 | val_RMSE_RHI=0.159908 | test_RMSE_fCNM=0.0367412 | test_RMSE_RHI=0.19282 | lr=0.00025
+Epoch 079 | train_loss=0.0229573 | train_RMSE_fCNM=0.022395 | train_RMSE_RHI=0.176153 | val_loss=0.125524 | val_RMSE_fCNM=0.0352716 | val_RMSE_RHI=0.159682 | test_RMSE_fCNM=0.035982 | test_RMSE_RHI=0.192726 | lr=0.00025
+Epoch 080 | train_loss=0.0233392 | train_RMSE_fCNM=0.0224513 | train_RMSE_RHI=0.17943 | val_loss=0.128147 | val_RMSE_fCNM=0.0356551 | val_RMSE_RHI=0.160705 | test_RMSE_fCNM=0.036154 | test_RMSE_RHI=0.194835 | lr=0.00025
+Epoch 081 | train_loss=0.0228994 | train_RMSE_fCNM=0.0224688 | train_RMSE_RHI=0.168289 | val_loss=0.12475 | val_RMSE_fCNM=0.0352469 | val_RMSE_RHI=0.16002 | test_RMSE_fCNM=0.0357307 | test_RMSE_RHI=0.194672 | lr=0.00025
+Epoch 082 | train_loss=0.0233776 | train_RMSE_fCNM=0.0224505 | train_RMSE_RHI=0.181853 | val_loss=0.127931 | val_RMSE_fCNM=0.0362021 | val_RMSE_RHI=0.160682 | test_RMSE_fCNM=0.036861 | test_RMSE_RHI=0.193976 | lr=0.00025
+Epoch 083 | train_loss=0.0226741 | train_RMSE_fCNM=0.022109 | train_RMSE_RHI=0.175027 | val_loss=0.128431 | val_RMSE_fCNM=0.036085 | val_RMSE_RHI=0.160872 | test_RMSE_fCNM=0.0366671 | test_RMSE_RHI=0.194684 | lr=0.00025
+Epoch 084 | train_loss=0.0225407 | train_RMSE_fCNM=0.0221063 | train_RMSE_RHI=0.18631 | val_loss=0.128626 | val_RMSE_fCNM=0.0367949 | val_RMSE_RHI=0.160189 | test_RMSE_fCNM=0.0375364 | test_RMSE_RHI=0.194156 | lr=0.00025
+Epoch 085 | train_loss=0.0218348 | train_RMSE_fCNM=0.0219049 | train_RMSE_RHI=0.171484 | val_loss=0.124655 | val_RMSE_fCNM=0.0353262 | val_RMSE_RHI=0.160007 | test_RMSE_fCNM=0.0358108 | test_RMSE_RHI=0.19442 | lr=0.00025
+Epoch 086 | train_loss=0.0227133 | train_RMSE_fCNM=0.0219662 | train_RMSE_RHI=0.177661 | val_loss=0.127588 | val_RMSE_fCNM=0.0362969 | val_RMSE_RHI=0.160263 | test_RMSE_fCNM=0.0369161 | test_RMSE_RHI=0.194124 | lr=0.00025
+Epoch 087 | train_loss=0.0217919 | train_RMSE_fCNM=0.0218369 | train_RMSE_RHI=0.170875 | val_loss=0.126665 | val_RMSE_fCNM=0.0357713 | val_RMSE_RHI=0.160781 | test_RMSE_fCNM=0.0363619 | test_RMSE_RHI=0.195181 | lr=0.00025
+Epoch 088 | train_loss=0.0220015 | train_RMSE_fCNM=0.021886 | train_RMSE_RHI=0.181322 | val_loss=0.126619 | val_RMSE_fCNM=0.03505 | val_RMSE_RHI=0.15979 | test_RMSE_fCNM=0.0356391 | test_RMSE_RHI=0.194506 | lr=0.00025
+Epoch 089 | train_loss=0.021979 | train_RMSE_fCNM=0.0220045 | train_RMSE_RHI=0.166249 | val_loss=0.12439 | val_RMSE_fCNM=0.0355373 | val_RMSE_RHI=0.159472 | test_RMSE_fCNM=0.0361345 | test_RMSE_RHI=0.193939 | lr=0.00025
+Epoch 090 | train_loss=0.0213516 | train_RMSE_fCNM=0.0215673 | train_RMSE_RHI=0.167019 | val_loss=0.125967 | val_RMSE_fCNM=0.0361383 | val_RMSE_RHI=0.159728 | test_RMSE_fCNM=0.0367567 | test_RMSE_RHI=0.193649 | lr=0.00025
+Epoch 091 | train_loss=0.0217778 | train_RMSE_fCNM=0.0219413 | train_RMSE_RHI=0.168168 | val_loss=0.124789 | val_RMSE_fCNM=0.0353384 | val_RMSE_RHI=0.159766 | test_RMSE_fCNM=0.0360852 | test_RMSE_RHI=0.194362 | lr=0.00025
+Epoch 092 | train_loss=0.0215959 | train_RMSE_fCNM=0.021722 | train_RMSE_RHI=0.175907 | val_loss=0.125403 | val_RMSE_fCNM=0.0360839 | val_RMSE_RHI=0.159594 | test_RMSE_fCNM=0.0367254 | test_RMSE_RHI=0.193817 | lr=0.00025
+Epoch 093 | train_loss=0.021389 | train_RMSE_fCNM=0.0217618 | train_RMSE_RHI=0.17383 | val_loss=0.124141 | val_RMSE_fCNM=0.0355927 | val_RMSE_RHI=0.160444 | test_RMSE_fCNM=0.0361734 | test_RMSE_RHI=0.195407 | lr=0.00025
+Epoch 094 | train_loss=0.0215465 | train_RMSE_fCNM=0.0216847 | train_RMSE_RHI=0.165336 | val_loss=0.125238 | val_RMSE_fCNM=0.0356372 | val_RMSE_RHI=0.160308 | test_RMSE_fCNM=0.0363924 | test_RMSE_RHI=0.193658 | lr=0.00025
+Epoch 095 | train_loss=0.0213798 | train_RMSE_fCNM=0.0215769 | train_RMSE_RHI=0.1643 | val_loss=0.125358 | val_RMSE_fCNM=0.0357215 | val_RMSE_RHI=0.160512 | test_RMSE_fCNM=0.0364303 | test_RMSE_RHI=0.194193 | lr=0.00025
+Epoch 096 | train_loss=0.021242 | train_RMSE_fCNM=0.0216512 | train_RMSE_RHI=0.184736 | val_loss=0.124721 | val_RMSE_fCNM=0.0361583 | val_RMSE_RHI=0.160054 | test_RMSE_fCNM=0.0368789 | test_RMSE_RHI=0.194029 | lr=0.00025
+Epoch 097 | train_loss=0.0205867 | train_RMSE_fCNM=0.0212949 | train_RMSE_RHI=0.164462 | val_loss=0.124437 | val_RMSE_fCNM=0.0355941 | val_RMSE_RHI=0.160148 | test_RMSE_fCNM=0.0362041 | test_RMSE_RHI=0.193804 | lr=0.00025
+Epoch 098 | train_loss=0.0207047 | train_RMSE_fCNM=0.0214389 | train_RMSE_RHI=0.175597 | val_loss=0.125005 | val_RMSE_fCNM=0.035565 | val_RMSE_RHI=0.16058 | test_RMSE_fCNM=0.0363431 | test_RMSE_RHI=0.19588 | lr=0.00025
+Epoch 099 | train_loss=0.0212319 | train_RMSE_fCNM=0.0215705 | train_RMSE_RHI=0.179942 | val_loss=0.125804 | val_RMSE_fCNM=0.0356925 | val_RMSE_RHI=0.160141 | test_RMSE_fCNM=0.0363096 | test_RMSE_RHI=0.193539 | lr=0.000125
+Epoch 100 | train_loss=0.0183444 | train_RMSE_fCNM=0.0206081 | train_RMSE_RHI=0.136406 | val_loss=0.122721 | val_RMSE_fCNM=0.0354867 | val_RMSE_RHI=0.159535 | test_RMSE_fCNM=0.0362789 | test_RMSE_RHI=0.193813 | lr=0.000125
+
+Test RMSE fCNM: 0.0362789
+Test RMSE RHI : 0.193812
+Test MAE  fCNM: 0.0188591
+Test MAE  RHI : 0.041456
+
+Prediction diagnostics
+  fCNM truth: min=7.45058e-09, max=0.9707, mean=0.091333
+  fCNM pred : min=0, max=0.94715, mean=0.0990432
+  RHI truth: min=0.995655, max=25.905, mean=1.0675
+  RHI pred : min=0.760841, max=10.5818, mean=1.06515
+
+Summary
+  device: cuda
+  CNN layers: 5/8
+  subset size: 262144
+  train/val/test: 183501/39322/39321
+  best validation loss: 0.122721
+  final test RMSE fCNM: 0.0362789
+  final test RMSE RHI : 0.193812
+  sampled indices CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers5/sampled_indices_layers5.csv
+  split indices CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers5/split_indices_layers5.csv
+  training metrics CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers5/training_metrics_layers5.csv
+  prediction CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers5/test_predictions_layers5.csv
+  figures:
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers5/true_vs_pred_fcnm_layers5.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers5/true_vs_pred_rhi_layers5.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers5/true_vs_pred_combined_layers5.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers5/true_vs_pred_rhi_log_layers5.png
+
+============================================================
+Starting layer count: 6
+============================================================
+Using device: cuda
+Selected CNN depth: 6/8 convolutional layers
+Reading targets from: /mnt/c/users/retar/desktop/research/ML/data/MW/fcnm_RHI_z.fits
+Listing spectra in: /mnt/c/users/retar/desktop/research/ML/data/MW/syn_HI_spec_z
+Found 262144 spectra files
+Mapped spectra filenames to flattened FITS target indices using target shape (512, 512)
+
+Split sizes: train=183501, val=39322, test=39321
+
+Target summary: selected subset (n=262144)
+  fCNM: min=0, p05=0, median=0, mean=0.092244, std=0.17233, p95=0.50071, max=0.9707
+  RHI : min=0.99561, p05=0.99786, median=1.0111, mean=1.0671, std=0.30218, p95=1.2818, max=38.421
+
+Target summary: train (n=183501)
+  fCNM: min=0, p05=0, median=0, mean=0.09278, std=0.17286, p95=0.50325, max=0.94901
+  RHI : min=0.99561, p05=0.99786, median=1.0111, mean=1.0674, std=0.30349, p95=1.2836, max=38.421
+
+Target summary: validation (n=39322)
+  fCNM: min=0, p05=0, median=0, mean=0.090652, std=0.17093, p95=0.49569, max=0.92045
+  RHI : min=0.99564, p05=0.99787, median=1.011, mean=1.0654, std=0.27205, p95=1.2814, max=12.44
+
+Target summary: test (n=39321)
+  fCNM: min=0, p05=0, median=0, mean=0.091333, std=0.17123, p95=0.49519, max=0.9707
+  RHI : min=0.99566, p05=0.99785, median=1.011, mean=1.0675, std=0.32391, p95=1.2742, max=25.905
+
+Reading only selected subset spectra: 262144 files, tb_column=3
+Inferred spectrum length: 201 channels
+Loaded 1/262144 spectra
+Loaded 1000/262144 spectra
+Loaded 2000/262144 spectra
+Loaded 3000/262144 spectra
+Loaded 4000/262144 spectra
+Loaded 5000/262144 spectra
+Loaded 6000/262144 spectra
+Loaded 7000/262144 spectra
+Loaded 8000/262144 spectra
+Loaded 9000/262144 spectra
+Loaded 10000/262144 spectra
+Loaded 11000/262144 spectra
+Loaded 12000/262144 spectra
+Loaded 13000/262144 spectra
+Loaded 14000/262144 spectra
+Loaded 15000/262144 spectra
+Loaded 16000/262144 spectra
+Loaded 17000/262144 spectra
+Loaded 18000/262144 spectra
+Loaded 19000/262144 spectra
+Loaded 20000/262144 spectra
+Loaded 21000/262144 spectra
+Loaded 22000/262144 spectra
+Loaded 23000/262144 spectra
+Loaded 24000/262144 spectra
+Loaded 25000/262144 spectra
+Loaded 26000/262144 spectra
+Loaded 27000/262144 spectra
+Loaded 28000/262144 spectra
+Loaded 29000/262144 spectra
+Loaded 30000/262144 spectra
+Loaded 31000/262144 spectra
+Loaded 32000/262144 spectra
+Loaded 33000/262144 spectra
+Loaded 34000/262144 spectra
+Loaded 35000/262144 spectra
+Loaded 36000/262144 spectra
+Loaded 37000/262144 spectra
+Loaded 38000/262144 spectra
+Loaded 39000/262144 spectra
+Loaded 40000/262144 spectra
+Loaded 41000/262144 spectra
+Loaded 42000/262144 spectra
+Loaded 43000/262144 spectra
+Loaded 44000/262144 spectra
+Loaded 45000/262144 spectra
+Loaded 46000/262144 spectra
+Loaded 47000/262144 spectra
+Loaded 48000/262144 spectra
+Loaded 49000/262144 spectra
+Loaded 50000/262144 spectra
+Loaded 51000/262144 spectra
+Loaded 52000/262144 spectra
+Loaded 53000/262144 spectra
+Loaded 54000/262144 spectra
+Loaded 55000/262144 spectra
+Loaded 56000/262144 spectra
+Loaded 57000/262144 spectra
+Loaded 58000/262144 spectra
+Loaded 59000/262144 spectra
+Loaded 60000/262144 spectra
+Loaded 61000/262144 spectra
+Loaded 62000/262144 spectra
+Loaded 63000/262144 spectra
+Loaded 64000/262144 spectra
+Loaded 65000/262144 spectra
+Loaded 66000/262144 spectra
+Loaded 67000/262144 spectra
+Loaded 68000/262144 spectra
+Loaded 69000/262144 spectra
+Loaded 70000/262144 spectra
+Loaded 71000/262144 spectra
+Loaded 72000/262144 spectra
+Loaded 73000/262144 spectra
+Loaded 74000/262144 spectra
+Loaded 75000/262144 spectra
+Loaded 76000/262144 spectra
+Loaded 77000/262144 spectra
+Loaded 78000/262144 spectra
+Loaded 79000/262144 spectra
+Loaded 80000/262144 spectra
+Loaded 81000/262144 spectra
+Loaded 82000/262144 spectra
+Loaded 83000/262144 spectra
+Loaded 84000/262144 spectra
+Loaded 85000/262144 spectra
+Loaded 86000/262144 spectra
+Loaded 87000/262144 spectra
+Loaded 88000/262144 spectra
+Loaded 89000/262144 spectra
+Loaded 90000/262144 spectra
+Loaded 91000/262144 spectra
+Loaded 92000/262144 spectra
+Loaded 93000/262144 spectra
+Loaded 94000/262144 spectra
+Loaded 95000/262144 spectra
+Loaded 96000/262144 spectra
+Loaded 97000/262144 spectra
+Loaded 98000/262144 spectra
+Loaded 99000/262144 spectra
+Loaded 100000/262144 spectra
+Loaded 101000/262144 spectra
+Loaded 102000/262144 spectra
+Loaded 103000/262144 spectra
+Loaded 104000/262144 spectra
+Loaded 105000/262144 spectra
+Loaded 106000/262144 spectra
+Loaded 107000/262144 spectra
+Loaded 108000/262144 spectra
+Loaded 109000/262144 spectra
+Loaded 110000/262144 spectra
+Loaded 111000/262144 spectra
+Loaded 112000/262144 spectra
+Loaded 113000/262144 spectra
+Loaded 114000/262144 spectra
+Loaded 115000/262144 spectra
+Loaded 116000/262144 spectra
+Loaded 117000/262144 spectra
+Loaded 118000/262144 spectra
+Loaded 119000/262144 spectra
+Loaded 120000/262144 spectra
+Loaded 121000/262144 spectra
+Loaded 122000/262144 spectra
+Loaded 123000/262144 spectra
+Loaded 124000/262144 spectra
+Loaded 125000/262144 spectra
+Loaded 126000/262144 spectra
+Loaded 127000/262144 spectra
+Loaded 128000/262144 spectra
+Loaded 129000/262144 spectra
+Loaded 130000/262144 spectra
+Loaded 131000/262144 spectra
+Loaded 132000/262144 spectra
+Loaded 133000/262144 spectra
+Loaded 134000/262144 spectra
+Loaded 135000/262144 spectra
+Loaded 136000/262144 spectra
+Loaded 137000/262144 spectra
+Loaded 138000/262144 spectra
+Loaded 139000/262144 spectra
+Loaded 140000/262144 spectra
+Loaded 141000/262144 spectra
+Loaded 142000/262144 spectra
+Loaded 143000/262144 spectra
+Loaded 144000/262144 spectra
+Loaded 145000/262144 spectra
+Loaded 146000/262144 spectra
+Loaded 147000/262144 spectra
+Loaded 148000/262144 spectra
+Loaded 149000/262144 spectra
+Loaded 150000/262144 spectra
+Loaded 151000/262144 spectra
+Loaded 152000/262144 spectra
+Loaded 153000/262144 spectra
+Loaded 154000/262144 spectra
+Loaded 155000/262144 spectra
+Loaded 156000/262144 spectra
+Loaded 157000/262144 spectra
+Loaded 158000/262144 spectra
+Loaded 159000/262144 spectra
+Loaded 160000/262144 spectra
+Loaded 161000/262144 spectra
+Loaded 162000/262144 spectra
+Loaded 163000/262144 spectra
+Loaded 164000/262144 spectra
+Loaded 165000/262144 spectra
+Loaded 166000/262144 spectra
+Loaded 167000/262144 spectra
+Loaded 168000/262144 spectra
+Loaded 169000/262144 spectra
+Loaded 170000/262144 spectra
+Loaded 171000/262144 spectra
+Loaded 172000/262144 spectra
+Loaded 173000/262144 spectra
+Loaded 174000/262144 spectra
+Loaded 175000/262144 spectra
+Loaded 176000/262144 spectra
+Loaded 177000/262144 spectra
+Loaded 178000/262144 spectra
+Loaded 179000/262144 spectra
+Loaded 180000/262144 spectra
+Loaded 181000/262144 spectra
+Loaded 182000/262144 spectra
+Loaded 183000/262144 spectra
+Loaded 184000/262144 spectra
+Loaded 185000/262144 spectra
+Loaded 186000/262144 spectra
+Loaded 187000/262144 spectra
+Loaded 188000/262144 spectra
+Loaded 189000/262144 spectra
+Loaded 190000/262144 spectra
+Loaded 191000/262144 spectra
+Loaded 192000/262144 spectra
+Loaded 193000/262144 spectra
+Loaded 194000/262144 spectra
+Loaded 195000/262144 spectra
+Loaded 196000/262144 spectra
+Loaded 197000/262144 spectra
+Loaded 198000/262144 spectra
+Loaded 199000/262144 spectra
+Loaded 200000/262144 spectra
+Loaded 201000/262144 spectra
+Loaded 202000/262144 spectra
+Loaded 203000/262144 spectra
+Loaded 204000/262144 spectra
+Loaded 205000/262144 spectra
+Loaded 206000/262144 spectra
+Loaded 207000/262144 spectra
+Loaded 208000/262144 spectra
+Loaded 209000/262144 spectra
+Loaded 210000/262144 spectra
+Loaded 211000/262144 spectra
+Loaded 212000/262144 spectra
+Loaded 213000/262144 spectra
+Loaded 214000/262144 spectra
+Loaded 215000/262144 spectra
+Loaded 216000/262144 spectra
+Loaded 217000/262144 spectra
+Loaded 218000/262144 spectra
+Loaded 219000/262144 spectra
+Loaded 220000/262144 spectra
+Loaded 221000/262144 spectra
+Loaded 222000/262144 spectra
+Loaded 223000/262144 spectra
+Loaded 224000/262144 spectra
+Loaded 225000/262144 spectra
+Loaded 226000/262144 spectra
+Loaded 227000/262144 spectra
+Loaded 228000/262144 spectra
+Loaded 229000/262144 spectra
+Loaded 230000/262144 spectra
+Loaded 231000/262144 spectra
+Loaded 232000/262144 spectra
+Loaded 233000/262144 spectra
+Loaded 234000/262144 spectra
+Loaded 235000/262144 spectra
+Loaded 236000/262144 spectra
+Loaded 237000/262144 spectra
+Loaded 238000/262144 spectra
+Loaded 239000/262144 spectra
+Loaded 240000/262144 spectra
+Loaded 241000/262144 spectra
+Loaded 242000/262144 spectra
+Loaded 243000/262144 spectra
+Loaded 244000/262144 spectra
+Loaded 245000/262144 spectra
+Loaded 246000/262144 spectra
+Loaded 247000/262144 spectra
+Loaded 248000/262144 spectra
+Loaded 249000/262144 spectra
+Loaded 250000/262144 spectra
+Loaded 251000/262144 spectra
+Loaded 252000/262144 spectra
+Loaded 253000/262144 spectra
+Loaded 254000/262144 spectra
+Loaded 255000/262144 spectra
+Loaded 256000/262144 spectra
+Loaded 257000/262144 spectra
+Loaded 258000/262144 spectra
+Loaded 259000/262144 spectra
+Loaded 260000/262144 spectra
+Loaded 261000/262144 spectra
+Loaded 262000/262144 spectra
+Loaded 262144/262144 spectra
+Selected TB loaded: (262144, 201)
+Input mode: raw spectrum only
+Model input array prepared: (262144, 201)
+fCNM error floor: OFF
+RHI target transform: log(RHI) for training, exp() for evaluation
+Input normalization: ON, fitted per velocity channel on train split
+Target normalization: ON, fitted on train split (mean fCNM/RHI=[0.0927797  0.05011275], std=[0.172869   0.14508232])
+RHI tail loss weighting: OFF
+fCNM zero/floor loss weighting: ON (threshold <= 0, weight=3, n=173964)
+Using imbalance sampler with 24 occupied joint bins out of 100; min/max bin counts=1/133224
+Building TPCNetInspiredCNN with num_layers=6
+TPCNetInspiredCNN(
+  num_layers=6, channels=[64, 56, 48, 40, 32, 24], kernels=[7, 33, 7, 33, 7, 33]
+  (backbone): Sequential(
+    (0): Conv1d(1, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv1d(64, 56, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (4): BatchNorm1d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): Conv1d(56, 48, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (7): BatchNorm1d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): Conv1d(48, 40, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (10): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): Conv1d(40, 32, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (13): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (14): ReLU(inplace=True)
+    (15): Conv1d(32, 24, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (16): BatchNorm1d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (17): ReLU(inplace=True)
+  )
+  (head): Linear(in_features=4824, out_features=2, bias=True)
+)
+Epoch 001 | train_loss=2.44124 | train_RMSE_fCNM=0.122988 | train_RMSE_RHI=2.25354 | val_loss=0.877797 | val_RMSE_fCNM=0.079492 | val_RMSE_RHI=0.280411 | test_RMSE_fCNM=0.0794409 | test_RMSE_RHI=0.291847 | lr=0.001
+Epoch 002 | train_loss=0.682923 | train_RMSE_fCNM=0.0722908 | train_RMSE_RHI=1.18135 | val_loss=0.678214 | val_RMSE_fCNM=0.0818656 | val_RMSE_RHI=0.243636 | test_RMSE_fCNM=0.0817769 | test_RMSE_RHI=0.247561 | lr=0.001
+Epoch 003 | train_loss=0.465575 | train_RMSE_fCNM=0.062577 | train_RMSE_RHI=0.925564 | val_loss=0.496213 | val_RMSE_fCNM=0.0754649 | val_RMSE_RHI=0.211598 | test_RMSE_fCNM=0.0759142 | test_RMSE_RHI=0.215206 | lr=0.001
+Epoch 004 | train_loss=0.398456 | train_RMSE_fCNM=0.0592117 | train_RMSE_RHI=0.901756 | val_loss=0.382219 | val_RMSE_fCNM=0.0544686 | val_RMSE_RHI=0.19245 | test_RMSE_fCNM=0.0549776 | test_RMSE_RHI=0.200551 | lr=0.001
+Epoch 005 | train_loss=0.336912 | train_RMSE_fCNM=0.0569555 | train_RMSE_RHI=0.807457 | val_loss=0.487568 | val_RMSE_fCNM=0.0585346 | val_RMSE_RHI=0.21467 | test_RMSE_fCNM=0.0591019 | test_RMSE_RHI=0.222684 | lr=0.001
+Epoch 006 | train_loss=0.298546 | train_RMSE_fCNM=0.0540579 | train_RMSE_RHI=0.775567 | val_loss=0.331896 | val_RMSE_fCNM=0.0531915 | val_RMSE_RHI=0.18749 | test_RMSE_fCNM=0.0533932 | test_RMSE_RHI=0.190645 | lr=0.001
+Epoch 007 | train_loss=0.267909 | train_RMSE_fCNM=0.0511297 | train_RMSE_RHI=0.712666 | val_loss=0.314333 | val_RMSE_fCNM=0.0588603 | val_RMSE_RHI=0.181756 | test_RMSE_fCNM=0.0591945 | test_RMSE_RHI=0.189376 | lr=0.001
+Epoch 008 | train_loss=0.257477 | train_RMSE_fCNM=0.050914 | train_RMSE_RHI=0.694024 | val_loss=0.401855 | val_RMSE_fCNM=0.070171 | val_RMSE_RHI=0.200363 | test_RMSE_fCNM=0.0705513 | test_RMSE_RHI=0.198094 | lr=0.001
+Epoch 009 | train_loss=0.227985 | train_RMSE_fCNM=0.0485456 | train_RMSE_RHI=0.680122 | val_loss=0.250558 | val_RMSE_fCNM=0.0516855 | val_RMSE_RHI=0.172568 | test_RMSE_fCNM=0.0518531 | test_RMSE_RHI=0.181625 | lr=0.001
+Epoch 010 | train_loss=0.21702 | train_RMSE_fCNM=0.048891 | train_RMSE_RHI=0.659119 | val_loss=0.242453 | val_RMSE_fCNM=0.0488067 | val_RMSE_RHI=0.172229 | test_RMSE_fCNM=0.0491768 | test_RMSE_RHI=0.179258 | lr=0.001
+Epoch 011 | train_loss=0.198309 | train_RMSE_fCNM=0.0465198 | train_RMSE_RHI=0.626899 | val_loss=0.234886 | val_RMSE_fCNM=0.0486044 | val_RMSE_RHI=0.17008 | test_RMSE_fCNM=0.0486401 | test_RMSE_RHI=0.179477 | lr=0.001
+Epoch 012 | train_loss=0.184296 | train_RMSE_fCNM=0.0455149 | train_RMSE_RHI=0.602609 | val_loss=0.25943 | val_RMSE_fCNM=0.0623801 | val_RMSE_RHI=0.170596 | test_RMSE_fCNM=0.0624119 | test_RMSE_RHI=0.181626 | lr=0.001
+Epoch 013 | train_loss=0.175701 | train_RMSE_fCNM=0.0450164 | train_RMSE_RHI=0.570007 | val_loss=0.240235 | val_RMSE_fCNM=0.0466131 | val_RMSE_RHI=0.172387 | test_RMSE_fCNM=0.046458 | test_RMSE_RHI=0.177206 | lr=0.001
+Epoch 014 | train_loss=0.16305 | train_RMSE_fCNM=0.0432203 | train_RMSE_RHI=0.583342 | val_loss=0.201974 | val_RMSE_fCNM=0.0443381 | val_RMSE_RHI=0.167208 | test_RMSE_fCNM=0.0444494 | test_RMSE_RHI=0.172647 | lr=0.001
+Epoch 015 | train_loss=0.163345 | train_RMSE_fCNM=0.0440313 | train_RMSE_RHI=0.582269 | val_loss=0.200729 | val_RMSE_fCNM=0.0454453 | val_RMSE_RHI=0.165002 | test_RMSE_fCNM=0.0454846 | test_RMSE_RHI=0.183069 | lr=0.001
+Epoch 016 | train_loss=0.145559 | train_RMSE_fCNM=0.0423143 | train_RMSE_RHI=0.50813 | val_loss=0.223317 | val_RMSE_fCNM=0.0493871 | val_RMSE_RHI=0.166398 | test_RMSE_fCNM=0.049473 | test_RMSE_RHI=0.17485 | lr=0.001
+Epoch 017 | train_loss=0.138585 | train_RMSE_fCNM=0.041175 | train_RMSE_RHI=0.515443 | val_loss=0.210736 | val_RMSE_fCNM=0.052291 | val_RMSE_RHI=0.163428 | test_RMSE_fCNM=0.0527685 | test_RMSE_RHI=0.180506 | lr=0.001
+Epoch 018 | train_loss=0.135452 | train_RMSE_fCNM=0.0406446 | train_RMSE_RHI=0.528017 | val_loss=0.182516 | val_RMSE_fCNM=0.046256 | val_RMSE_RHI=0.161305 | test_RMSE_fCNM=0.0464437 | test_RMSE_RHI=0.173052 | lr=0.001
+Epoch 019 | train_loss=0.1223 | train_RMSE_fCNM=0.0396441 | train_RMSE_RHI=0.486915 | val_loss=0.17973 | val_RMSE_fCNM=0.0425901 | val_RMSE_RHI=0.160345 | test_RMSE_fCNM=0.0426934 | test_RMSE_RHI=0.167246 | lr=0.001
+Epoch 020 | train_loss=0.118484 | train_RMSE_fCNM=0.0386306 | train_RMSE_RHI=0.479898 | val_loss=0.189651 | val_RMSE_fCNM=0.0445607 | val_RMSE_RHI=0.161931 | test_RMSE_fCNM=0.0445648 | test_RMSE_RHI=0.171552 | lr=0.001
+Epoch 021 | train_loss=0.116685 | train_RMSE_fCNM=0.0391645 | train_RMSE_RHI=0.506565 | val_loss=0.161327 | val_RMSE_fCNM=0.0404485 | val_RMSE_RHI=0.156418 | test_RMSE_fCNM=0.0407039 | test_RMSE_RHI=0.174693 | lr=0.001
+Epoch 022 | train_loss=0.107421 | train_RMSE_fCNM=0.0371942 | train_RMSE_RHI=0.448182 | val_loss=0.165308 | val_RMSE_fCNM=0.0436363 | val_RMSE_RHI=0.158973 | test_RMSE_fCNM=0.0441027 | test_RMSE_RHI=0.175603 | lr=0.001
+Epoch 023 | train_loss=0.10832 | train_RMSE_fCNM=0.0375847 | train_RMSE_RHI=0.447189 | val_loss=0.159846 | val_RMSE_fCNM=0.0411295 | val_RMSE_RHI=0.158205 | test_RMSE_fCNM=0.0412704 | test_RMSE_RHI=0.172072 | lr=0.001
+Epoch 024 | train_loss=0.101073 | train_RMSE_fCNM=0.0370355 | train_RMSE_RHI=0.448191 | val_loss=0.156535 | val_RMSE_fCNM=0.0422388 | val_RMSE_RHI=0.158077 | test_RMSE_fCNM=0.0424489 | test_RMSE_RHI=0.171585 | lr=0.001
+Epoch 025 | train_loss=0.100274 | train_RMSE_fCNM=0.0370044 | train_RMSE_RHI=0.477341 | val_loss=0.161623 | val_RMSE_fCNM=0.0424812 | val_RMSE_RHI=0.159498 | test_RMSE_fCNM=0.0423999 | test_RMSE_RHI=0.174412 | lr=0.001
+Epoch 026 | train_loss=0.0949516 | train_RMSE_fCNM=0.0361057 | train_RMSE_RHI=0.433898 | val_loss=0.154912 | val_RMSE_fCNM=0.0402047 | val_RMSE_RHI=0.155784 | test_RMSE_fCNM=0.0401282 | test_RMSE_RHI=0.172272 | lr=0.001
+Epoch 027 | train_loss=0.0893734 | train_RMSE_fCNM=0.0356371 | train_RMSE_RHI=0.422276 | val_loss=0.162015 | val_RMSE_fCNM=0.0440402 | val_RMSE_RHI=0.157299 | test_RMSE_fCNM=0.0441659 | test_RMSE_RHI=0.168747 | lr=0.001
+Epoch 028 | train_loss=0.0921125 | train_RMSE_fCNM=0.0359981 | train_RMSE_RHI=0.446872 | val_loss=0.151461 | val_RMSE_fCNM=0.0418285 | val_RMSE_RHI=0.158199 | test_RMSE_fCNM=0.0420794 | test_RMSE_RHI=0.17735 | lr=0.001
+Epoch 029 | train_loss=0.0889723 | train_RMSE_fCNM=0.0349307 | train_RMSE_RHI=0.428377 | val_loss=0.149758 | val_RMSE_fCNM=0.0411721 | val_RMSE_RHI=0.156988 | test_RMSE_fCNM=0.04135 | test_RMSE_RHI=0.1745 | lr=0.001
+Epoch 030 | train_loss=0.0829378 | train_RMSE_fCNM=0.0343015 | train_RMSE_RHI=0.404053 | val_loss=0.147434 | val_RMSE_fCNM=0.0437757 | val_RMSE_RHI=0.156601 | test_RMSE_fCNM=0.0439974 | test_RMSE_RHI=0.171919 | lr=0.001
+Epoch 031 | train_loss=0.0847667 | train_RMSE_fCNM=0.0348904 | train_RMSE_RHI=0.440296 | val_loss=0.133572 | val_RMSE_fCNM=0.0388214 | val_RMSE_RHI=0.155474 | test_RMSE_fCNM=0.0391726 | test_RMSE_RHI=0.177905 | lr=0.001
+Epoch 032 | train_loss=0.0771375 | train_RMSE_fCNM=0.0338875 | train_RMSE_RHI=0.395065 | val_loss=0.139509 | val_RMSE_fCNM=0.0394333 | val_RMSE_RHI=0.155844 | test_RMSE_fCNM=0.0395985 | test_RMSE_RHI=0.171646 | lr=0.001
+Epoch 033 | train_loss=0.0763731 | train_RMSE_fCNM=0.0338328 | train_RMSE_RHI=0.394886 | val_loss=0.140807 | val_RMSE_fCNM=0.0416375 | val_RMSE_RHI=0.154755 | test_RMSE_fCNM=0.0418653 | test_RMSE_RHI=0.170874 | lr=0.001
+Epoch 034 | train_loss=0.0795461 | train_RMSE_fCNM=0.0342739 | train_RMSE_RHI=0.426967 | val_loss=0.148751 | val_RMSE_fCNM=0.0431819 | val_RMSE_RHI=0.156951 | test_RMSE_fCNM=0.0433073 | test_RMSE_RHI=0.17415 | lr=0.001
+Epoch 035 | train_loss=0.0708534 | train_RMSE_fCNM=0.0323919 | train_RMSE_RHI=0.392217 | val_loss=0.135455 | val_RMSE_fCNM=0.0417196 | val_RMSE_RHI=0.155201 | test_RMSE_fCNM=0.0420025 | test_RMSE_RHI=0.17313 | lr=0.001
+Epoch 036 | train_loss=0.0691882 | train_RMSE_fCNM=0.0324193 | train_RMSE_RHI=0.378552 | val_loss=0.141812 | val_RMSE_fCNM=0.0426579 | val_RMSE_RHI=0.156143 | test_RMSE_fCNM=0.0431121 | test_RMSE_RHI=0.172305 | lr=0.001
+Epoch 037 | train_loss=0.0693661 | train_RMSE_fCNM=0.03213 | train_RMSE_RHI=0.365235 | val_loss=0.141785 | val_RMSE_fCNM=0.0422397 | val_RMSE_RHI=0.156142 | test_RMSE_fCNM=0.0426694 | test_RMSE_RHI=0.17249 | lr=0.0005
+Epoch 038 | train_loss=0.0459584 | train_RMSE_fCNM=0.0282858 | train_RMSE_RHI=0.266591 | val_loss=0.126685 | val_RMSE_fCNM=0.0382226 | val_RMSE_RHI=0.153933 | test_RMSE_fCNM=0.0385038 | test_RMSE_RHI=0.176254 | lr=0.0005
+Epoch 039 | train_loss=0.0443088 | train_RMSE_fCNM=0.028348 | train_RMSE_RHI=0.254907 | val_loss=0.122782 | val_RMSE_fCNM=0.0393961 | val_RMSE_RHI=0.153459 | test_RMSE_fCNM=0.0395858 | test_RMSE_RHI=0.175306 | lr=0.0005
+Epoch 040 | train_loss=0.0425119 | train_RMSE_fCNM=0.027734 | train_RMSE_RHI=0.260762 | val_loss=0.126474 | val_RMSE_fCNM=0.0396763 | val_RMSE_RHI=0.154292 | test_RMSE_fCNM=0.0401113 | test_RMSE_RHI=0.172584 | lr=0.0005
+Epoch 041 | train_loss=0.0433049 | train_RMSE_fCNM=0.0278178 | train_RMSE_RHI=0.280311 | val_loss=0.12476 | val_RMSE_fCNM=0.0407048 | val_RMSE_RHI=0.153802 | test_RMSE_fCNM=0.0410596 | test_RMSE_RHI=0.173959 | lr=0.0005
+Epoch 042 | train_loss=0.0420401 | train_RMSE_fCNM=0.0273687 | train_RMSE_RHI=0.268243 | val_loss=0.126413 | val_RMSE_fCNM=0.039156 | val_RMSE_RHI=0.15441 | test_RMSE_fCNM=0.0397866 | test_RMSE_RHI=0.175097 | lr=0.0005
+Epoch 043 | train_loss=0.0405471 | train_RMSE_fCNM=0.0273448 | train_RMSE_RHI=0.250486 | val_loss=0.121222 | val_RMSE_fCNM=0.0380856 | val_RMSE_RHI=0.154199 | test_RMSE_fCNM=0.0384033 | test_RMSE_RHI=0.176792 | lr=0.0005
+Epoch 044 | train_loss=0.0421703 | train_RMSE_fCNM=0.0274765 | train_RMSE_RHI=0.277794 | val_loss=0.120688 | val_RMSE_fCNM=0.039023 | val_RMSE_RHI=0.152715 | test_RMSE_fCNM=0.0394723 | test_RMSE_RHI=0.176381 | lr=0.0005
+Epoch 045 | train_loss=0.0408568 | train_RMSE_fCNM=0.0271081 | train_RMSE_RHI=0.259407 | val_loss=0.119897 | val_RMSE_fCNM=0.0384929 | val_RMSE_RHI=0.154732 | test_RMSE_fCNM=0.038883 | test_RMSE_RHI=0.17619 | lr=0.0005
+Epoch 046 | train_loss=0.0387463 | train_RMSE_fCNM=0.0267254 | train_RMSE_RHI=0.249834 | val_loss=0.122627 | val_RMSE_fCNM=0.0373512 | val_RMSE_RHI=0.154865 | test_RMSE_fCNM=0.0375633 | test_RMSE_RHI=0.176619 | lr=0.0005
+Epoch 047 | train_loss=0.0400397 | train_RMSE_fCNM=0.027067 | train_RMSE_RHI=0.272673 | val_loss=0.115343 | val_RMSE_fCNM=0.0366855 | val_RMSE_RHI=0.153352 | test_RMSE_fCNM=0.0370571 | test_RMSE_RHI=0.175278 | lr=0.0005
+Epoch 048 | train_loss=0.0372781 | train_RMSE_fCNM=0.0263882 | train_RMSE_RHI=0.231172 | val_loss=0.115205 | val_RMSE_fCNM=0.0370882 | val_RMSE_RHI=0.153184 | test_RMSE_fCNM=0.0375306 | test_RMSE_RHI=0.174226 | lr=0.0005
+Epoch 049 | train_loss=0.0392136 | train_RMSE_fCNM=0.0267601 | train_RMSE_RHI=0.265894 | val_loss=0.116211 | val_RMSE_fCNM=0.0364295 | val_RMSE_RHI=0.153804 | test_RMSE_fCNM=0.0367515 | test_RMSE_RHI=0.177522 | lr=0.0005
+Epoch 050 | train_loss=0.0385014 | train_RMSE_fCNM=0.026523 | train_RMSE_RHI=0.257473 | val_loss=0.115427 | val_RMSE_fCNM=0.037407 | val_RMSE_RHI=0.153549 | test_RMSE_fCNM=0.037684 | test_RMSE_RHI=0.174604 | lr=0.0005
+Epoch 051 | train_loss=0.0383664 | train_RMSE_fCNM=0.0264987 | train_RMSE_RHI=0.255056 | val_loss=0.115483 | val_RMSE_fCNM=0.0361733 | val_RMSE_RHI=0.153056 | test_RMSE_fCNM=0.0365674 | test_RMSE_RHI=0.175248 | lr=0.0005
+Epoch 052 | train_loss=0.0374734 | train_RMSE_fCNM=0.0264018 | train_RMSE_RHI=0.272011 | val_loss=0.115842 | val_RMSE_fCNM=0.0382527 | val_RMSE_RHI=0.153744 | test_RMSE_fCNM=0.0388334 | test_RMSE_RHI=0.178811 | lr=0.0005
+Epoch 053 | train_loss=0.036284 | train_RMSE_fCNM=0.0258595 | train_RMSE_RHI=0.257569 | val_loss=0.115415 | val_RMSE_fCNM=0.036258 | val_RMSE_RHI=0.154632 | test_RMSE_fCNM=0.0366321 | test_RMSE_RHI=0.178956 | lr=0.0005
+Epoch 054 | train_loss=0.0352093 | train_RMSE_fCNM=0.02585 | train_RMSE_RHI=0.237344 | val_loss=0.115676 | val_RMSE_fCNM=0.0365295 | val_RMSE_RHI=0.155651 | test_RMSE_fCNM=0.0368695 | test_RMSE_RHI=0.180776 | lr=0.00025
+Epoch 055 | train_loss=0.027668 | train_RMSE_fCNM=0.0241937 | train_RMSE_RHI=0.180443 | val_loss=0.111801 | val_RMSE_fCNM=0.0365065 | val_RMSE_RHI=0.153123 | test_RMSE_fCNM=0.0368302 | test_RMSE_RHI=0.175981 | lr=0.00025
+Epoch 056 | train_loss=0.027654 | train_RMSE_fCNM=0.0240233 | train_RMSE_RHI=0.184589 | val_loss=0.111897 | val_RMSE_fCNM=0.0362865 | val_RMSE_RHI=0.153608 | test_RMSE_fCNM=0.0366026 | test_RMSE_RHI=0.177002 | lr=0.00025
+Epoch 057 | train_loss=0.0274502 | train_RMSE_fCNM=0.0239924 | train_RMSE_RHI=0.203703 | val_loss=0.111981 | val_RMSE_fCNM=0.0359993 | val_RMSE_RHI=0.154276 | test_RMSE_fCNM=0.036315 | test_RMSE_RHI=0.178353 | lr=0.00025
+Epoch 058 | train_loss=0.0276577 | train_RMSE_fCNM=0.024118 | train_RMSE_RHI=0.198229 | val_loss=0.109035 | val_RMSE_fCNM=0.0355484 | val_RMSE_RHI=0.152328 | test_RMSE_fCNM=0.0360384 | test_RMSE_RHI=0.178519 | lr=0.00025
+Epoch 059 | train_loss=0.0266228 | train_RMSE_fCNM=0.023909 | train_RMSE_RHI=0.187758 | val_loss=0.109766 | val_RMSE_fCNM=0.035633 | val_RMSE_RHI=0.153407 | test_RMSE_fCNM=0.0360384 | test_RMSE_RHI=0.177539 | lr=0.00025
+Epoch 060 | train_loss=0.0273532 | train_RMSE_fCNM=0.0239524 | train_RMSE_RHI=0.201894 | val_loss=0.109758 | val_RMSE_fCNM=0.0353367 | val_RMSE_RHI=0.154259 | test_RMSE_fCNM=0.035709 | test_RMSE_RHI=0.179747 | lr=0.00025
+Epoch 061 | train_loss=0.0257948 | train_RMSE_fCNM=0.0236475 | train_RMSE_RHI=0.186337 | val_loss=0.1108 | val_RMSE_fCNM=0.0359625 | val_RMSE_RHI=0.153128 | test_RMSE_fCNM=0.0364259 | test_RMSE_RHI=0.176943 | lr=0.00025
+Epoch 062 | train_loss=0.0256393 | train_RMSE_fCNM=0.0232513 | train_RMSE_RHI=0.195287 | val_loss=0.112659 | val_RMSE_fCNM=0.0365211 | val_RMSE_RHI=0.154234 | test_RMSE_fCNM=0.037084 | test_RMSE_RHI=0.177048 | lr=0.00025
+Epoch 063 | train_loss=0.0255007 | train_RMSE_fCNM=0.023311 | train_RMSE_RHI=0.180513 | val_loss=0.106159 | val_RMSE_fCNM=0.0347621 | val_RMSE_RHI=0.153082 | test_RMSE_fCNM=0.035229 | test_RMSE_RHI=0.178292 | lr=0.00025
+Epoch 064 | train_loss=0.0264619 | train_RMSE_fCNM=0.0236716 | train_RMSE_RHI=0.205251 | val_loss=0.108413 | val_RMSE_fCNM=0.0355248 | val_RMSE_RHI=0.153689 | test_RMSE_fCNM=0.0360102 | test_RMSE_RHI=0.17742 | lr=0.00025
+Epoch 065 | train_loss=0.0257898 | train_RMSE_fCNM=0.0235864 | train_RMSE_RHI=0.191463 | val_loss=0.10803 | val_RMSE_fCNM=0.0353541 | val_RMSE_RHI=0.154413 | test_RMSE_fCNM=0.0358251 | test_RMSE_RHI=0.178465 | lr=0.00025
+Epoch 066 | train_loss=0.0248445 | train_RMSE_fCNM=0.0231036 | train_RMSE_RHI=0.183049 | val_loss=0.112562 | val_RMSE_fCNM=0.0367249 | val_RMSE_RHI=0.154377 | test_RMSE_fCNM=0.0371187 | test_RMSE_RHI=0.178932 | lr=0.00025
+Epoch 067 | train_loss=0.025956 | train_RMSE_fCNM=0.0234926 | train_RMSE_RHI=0.189966 | val_loss=0.107649 | val_RMSE_fCNM=0.0347739 | val_RMSE_RHI=0.153544 | test_RMSE_fCNM=0.0351769 | test_RMSE_RHI=0.178209 | lr=0.00025
+Epoch 068 | train_loss=0.0251172 | train_RMSE_fCNM=0.0232487 | train_RMSE_RHI=0.193898 | val_loss=0.109347 | val_RMSE_fCNM=0.0358181 | val_RMSE_RHI=0.154944 | test_RMSE_fCNM=0.0361733 | test_RMSE_RHI=0.178275 | lr=0.00025
+Epoch 069 | train_loss=0.0251455 | train_RMSE_fCNM=0.0232096 | train_RMSE_RHI=0.20187 | val_loss=0.109017 | val_RMSE_fCNM=0.0358207 | val_RMSE_RHI=0.153826 | test_RMSE_fCNM=0.0363461 | test_RMSE_RHI=0.177099 | lr=0.000125
+Epoch 070 | train_loss=0.0213911 | train_RMSE_fCNM=0.0221481 | train_RMSE_RHI=0.157714 | val_loss=0.107599 | val_RMSE_fCNM=0.035894 | val_RMSE_RHI=0.154159 | test_RMSE_fCNM=0.0363986 | test_RMSE_RHI=0.179426 | lr=0.000125
+Epoch 071 | train_loss=0.0213489 | train_RMSE_fCNM=0.0221308 | train_RMSE_RHI=0.17212 | val_loss=0.107111 | val_RMSE_fCNM=0.0356234 | val_RMSE_RHI=0.153752 | test_RMSE_fCNM=0.0359017 | test_RMSE_RHI=0.178618 | lr=0.000125
+Epoch 072 | train_loss=0.0212859 | train_RMSE_fCNM=0.0221216 | train_RMSE_RHI=0.157356 | val_loss=0.107597 | val_RMSE_fCNM=0.0358003 | val_RMSE_RHI=0.153755 | test_RMSE_fCNM=0.0363137 | test_RMSE_RHI=0.178217 | lr=0.000125
+Epoch 073 | train_loss=0.0210458 | train_RMSE_fCNM=0.0221273 | train_RMSE_RHI=0.153123 | val_loss=0.105967 | val_RMSE_fCNM=0.0347988 | val_RMSE_RHI=0.154768 | test_RMSE_fCNM=0.035331 | test_RMSE_RHI=0.179251 | lr=0.000125
+Epoch 074 | train_loss=0.0210978 | train_RMSE_fCNM=0.0219365 | train_RMSE_RHI=0.152961 | val_loss=0.107309 | val_RMSE_fCNM=0.0353618 | val_RMSE_RHI=0.154006 | test_RMSE_fCNM=0.0358492 | test_RMSE_RHI=0.178239 | lr=0.000125
+Epoch 075 | train_loss=0.0208558 | train_RMSE_fCNM=0.0220019 | train_RMSE_RHI=0.163005 | val_loss=0.106706 | val_RMSE_fCNM=0.0348508 | val_RMSE_RHI=0.154125 | test_RMSE_fCNM=0.0353739 | test_RMSE_RHI=0.179271 | lr=0.000125
+Epoch 076 | train_loss=0.0202881 | train_RMSE_fCNM=0.0220436 | train_RMSE_RHI=0.155481 | val_loss=0.106639 | val_RMSE_fCNM=0.0347477 | val_RMSE_RHI=0.154456 | test_RMSE_fCNM=0.0352371 | test_RMSE_RHI=0.179936 | lr=0.000125
+Epoch 077 | train_loss=0.0205188 | train_RMSE_fCNM=0.0218884 | train_RMSE_RHI=0.152596 | val_loss=0.105239 | val_RMSE_fCNM=0.0346154 | val_RMSE_RHI=0.154381 | test_RMSE_fCNM=0.0350495 | test_RMSE_RHI=0.179441 | lr=0.000125
+Epoch 078 | train_loss=0.0207367 | train_RMSE_fCNM=0.0219776 | train_RMSE_RHI=0.1528 | val_loss=0.106413 | val_RMSE_fCNM=0.0347932 | val_RMSE_RHI=0.154244 | test_RMSE_fCNM=0.0351902 | test_RMSE_RHI=0.178833 | lr=0.000125
+Epoch 079 | train_loss=0.0202833 | train_RMSE_fCNM=0.0218673 | train_RMSE_RHI=0.149984 | val_loss=0.106718 | val_RMSE_fCNM=0.0351231 | val_RMSE_RHI=0.154901 | test_RMSE_fCNM=0.0355525 | test_RMSE_RHI=0.179504 | lr=0.000125
+Epoch 080 | train_loss=0.020343 | train_RMSE_fCNM=0.0217367 | train_RMSE_RHI=0.149938 | val_loss=0.106805 | val_RMSE_fCNM=0.0342964 | val_RMSE_RHI=0.155226 | test_RMSE_fCNM=0.0347593 | test_RMSE_RHI=0.181586 | lr=0.000125
+Epoch 081 | train_loss=0.0207656 | train_RMSE_fCNM=0.0219915 | train_RMSE_RHI=0.152517 | val_loss=0.106318 | val_RMSE_fCNM=0.0347239 | val_RMSE_RHI=0.154856 | test_RMSE_fCNM=0.0351385 | test_RMSE_RHI=0.180239 | lr=0.000125
+Epoch 082 | train_loss=0.0209104 | train_RMSE_fCNM=0.0218524 | train_RMSE_RHI=0.150475 | val_loss=0.105913 | val_RMSE_fCNM=0.0350893 | val_RMSE_RHI=0.15427 | test_RMSE_fCNM=0.0355395 | test_RMSE_RHI=0.179645 | lr=0.000125
+Epoch 083 | train_loss=0.0203332 | train_RMSE_fCNM=0.0216844 | train_RMSE_RHI=0.152407 | val_loss=0.10713 | val_RMSE_fCNM=0.0347288 | val_RMSE_RHI=0.154704 | test_RMSE_fCNM=0.0351554 | test_RMSE_RHI=0.179555 | lr=6.25e-05
+Epoch 084 | train_loss=0.018425 | train_RMSE_fCNM=0.0211594 | train_RMSE_RHI=0.131148 | val_loss=0.104994 | val_RMSE_fCNM=0.0344602 | val_RMSE_RHI=0.155046 | test_RMSE_fCNM=0.0348931 | test_RMSE_RHI=0.179656 | lr=6.25e-05
+Epoch 085 | train_loss=0.0183378 | train_RMSE_fCNM=0.0212383 | train_RMSE_RHI=0.131803 | val_loss=0.104579 | val_RMSE_fCNM=0.0344307 | val_RMSE_RHI=0.154285 | test_RMSE_fCNM=0.0348571 | test_RMSE_RHI=0.17915 | lr=6.25e-05
+Epoch 086 | train_loss=0.0191755 | train_RMSE_fCNM=0.0212479 | train_RMSE_RHI=0.129218 | val_loss=0.105769 | val_RMSE_fCNM=0.0343517 | val_RMSE_RHI=0.155109 | test_RMSE_fCNM=0.0347892 | test_RMSE_RHI=0.179783 | lr=6.25e-05
+Epoch 087 | train_loss=0.0185811 | train_RMSE_fCNM=0.0212724 | train_RMSE_RHI=0.134227 | val_loss=0.106081 | val_RMSE_fCNM=0.0347006 | val_RMSE_RHI=0.155002 | test_RMSE_fCNM=0.0350774 | test_RMSE_RHI=0.179696 | lr=6.25e-05
+Epoch 088 | train_loss=0.0182611 | train_RMSE_fCNM=0.0210924 | train_RMSE_RHI=0.128362 | val_loss=0.105791 | val_RMSE_fCNM=0.0348715 | val_RMSE_RHI=0.155085 | test_RMSE_fCNM=0.0352644 | test_RMSE_RHI=0.180889 | lr=6.25e-05
+Epoch 089 | train_loss=0.0181402 | train_RMSE_fCNM=0.0212219 | train_RMSE_RHI=0.125314 | val_loss=0.10561 | val_RMSE_fCNM=0.0346068 | val_RMSE_RHI=0.154367 | test_RMSE_fCNM=0.0350452 | test_RMSE_RHI=0.179282 | lr=6.25e-05
+Epoch 090 | train_loss=0.0181096 | train_RMSE_fCNM=0.0209283 | train_RMSE_RHI=0.129279 | val_loss=0.104405 | val_RMSE_fCNM=0.0344701 | val_RMSE_RHI=0.154671 | test_RMSE_fCNM=0.0349152 | test_RMSE_RHI=0.18031 | lr=6.25e-05
+Epoch 091 | train_loss=0.0180704 | train_RMSE_fCNM=0.021001 | train_RMSE_RHI=0.130778 | val_loss=0.104689 | val_RMSE_fCNM=0.0346254 | val_RMSE_RHI=0.154983 | test_RMSE_fCNM=0.0350244 | test_RMSE_RHI=0.180914 | lr=6.25e-05
+Epoch 092 | train_loss=0.0181727 | train_RMSE_fCNM=0.0211377 | train_RMSE_RHI=0.128776 | val_loss=0.104555 | val_RMSE_fCNM=0.0344703 | val_RMSE_RHI=0.154545 | test_RMSE_fCNM=0.0349894 | test_RMSE_RHI=0.179417 | lr=6.25e-05
+Epoch 093 | train_loss=0.0181434 | train_RMSE_fCNM=0.021056 | train_RMSE_RHI=0.127622 | val_loss=0.105145 | val_RMSE_fCNM=0.0345731 | val_RMSE_RHI=0.154778 | test_RMSE_fCNM=0.0349926 | test_RMSE_RHI=0.179173 | lr=6.25e-05
+Epoch 094 | train_loss=0.0181408 | train_RMSE_fCNM=0.0210551 | train_RMSE_RHI=0.128474 | val_loss=0.105204 | val_RMSE_fCNM=0.0344922 | val_RMSE_RHI=0.154468 | test_RMSE_fCNM=0.0349558 | test_RMSE_RHI=0.179827 | lr=6.25e-05
+Epoch 095 | train_loss=0.0186861 | train_RMSE_fCNM=0.0212667 | train_RMSE_RHI=0.128849 | val_loss=0.105852 | val_RMSE_fCNM=0.034967 | val_RMSE_RHI=0.154554 | test_RMSE_fCNM=0.0354928 | test_RMSE_RHI=0.17944 | lr=6.25e-05
+Epoch 096 | train_loss=0.017801 | train_RMSE_fCNM=0.0208265 | train_RMSE_RHI=0.124831 | val_loss=0.104195 | val_RMSE_fCNM=0.033968 | val_RMSE_RHI=0.155081 | test_RMSE_fCNM=0.0344506 | test_RMSE_RHI=0.180355 | lr=6.25e-05
+Epoch 097 | train_loss=0.0179413 | train_RMSE_fCNM=0.0209258 | train_RMSE_RHI=0.128284 | val_loss=0.104817 | val_RMSE_fCNM=0.0343173 | val_RMSE_RHI=0.155306 | test_RMSE_fCNM=0.0347624 | test_RMSE_RHI=0.180643 | lr=6.25e-05
+Epoch 098 | train_loss=0.0175934 | train_RMSE_fCNM=0.0209463 | train_RMSE_RHI=0.128152 | val_loss=0.105462 | val_RMSE_fCNM=0.0344345 | val_RMSE_RHI=0.155013 | test_RMSE_fCNM=0.0348255 | test_RMSE_RHI=0.179571 | lr=6.25e-05
+Epoch 099 | train_loss=0.0178935 | train_RMSE_fCNM=0.0209913 | train_RMSE_RHI=0.127849 | val_loss=0.104633 | val_RMSE_fCNM=0.0344238 | val_RMSE_RHI=0.15472 | test_RMSE_fCNM=0.0348308 | test_RMSE_RHI=0.178846 | lr=6.25e-05
+Epoch 100 | train_loss=0.0180091 | train_RMSE_fCNM=0.0208392 | train_RMSE_RHI=0.13503 | val_loss=0.105151 | val_RMSE_fCNM=0.0348247 | val_RMSE_RHI=0.155224 | test_RMSE_fCNM=0.0352735 | test_RMSE_RHI=0.181015 | lr=6.25e-05
+
+Test RMSE fCNM: 0.0344506
+Test RMSE RHI : 0.180354
+Test MAE  fCNM: 0.017492
+Test MAE  RHI : 0.0361503
+
+Prediction diagnostics
+  fCNM truth: min=7.45058e-09, max=0.9707, mean=0.091333
+  fCNM pred : min=0, max=0.900729, mean=0.0960961
+  RHI truth: min=0.995655, max=25.905, mean=1.0675
+  RHI pred : min=0.833931, max=14.9844, mean=1.06299
+
+Summary
+  device: cuda
+  CNN layers: 6/8
+  subset size: 262144
+  train/val/test: 183501/39322/39321
+  best validation loss: 0.104195
+  final test RMSE fCNM: 0.0344506
+  final test RMSE RHI : 0.180354
+  sampled indices CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers6/sampled_indices_layers6.csv
+  split indices CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers6/split_indices_layers6.csv
+  training metrics CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers6/training_metrics_layers6.csv
+  prediction CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers6/test_predictions_layers6.csv
+  figures:
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers6/true_vs_pred_fcnm_layers6.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers6/true_vs_pred_rhi_layers6.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers6/true_vs_pred_combined_layers6.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers6/true_vs_pred_rhi_log_layers6.png
+
+============================================================
+Starting layer count: 7
+============================================================
+Using device: cuda
+Selected CNN depth: 7/8 convolutional layers
+Reading targets from: /mnt/c/users/retar/desktop/research/ML/data/MW/fcnm_RHI_z.fits
+Listing spectra in: /mnt/c/users/retar/desktop/research/ML/data/MW/syn_HI_spec_z
+Found 262144 spectra files
+Mapped spectra filenames to flattened FITS target indices using target shape (512, 512)
+
+Split sizes: train=183501, val=39322, test=39321
+
+Target summary: selected subset (n=262144)
+  fCNM: min=0, p05=0, median=0, mean=0.092244, std=0.17233, p95=0.50071, max=0.9707
+  RHI : min=0.99561, p05=0.99786, median=1.0111, mean=1.0671, std=0.30218, p95=1.2818, max=38.421
+
+Target summary: train (n=183501)
+  fCNM: min=0, p05=0, median=0, mean=0.09278, std=0.17286, p95=0.50325, max=0.94901
+  RHI : min=0.99561, p05=0.99786, median=1.0111, mean=1.0674, std=0.30349, p95=1.2836, max=38.421
+
+Target summary: validation (n=39322)
+  fCNM: min=0, p05=0, median=0, mean=0.090652, std=0.17093, p95=0.49569, max=0.92045
+  RHI : min=0.99564, p05=0.99787, median=1.011, mean=1.0654, std=0.27205, p95=1.2814, max=12.44
+
+Target summary: test (n=39321)
+  fCNM: min=0, p05=0, median=0, mean=0.091333, std=0.17123, p95=0.49519, max=0.9707
+  RHI : min=0.99566, p05=0.99785, median=1.011, mean=1.0675, std=0.32391, p95=1.2742, max=25.905
+
+Reading only selected subset spectra: 262144 files, tb_column=3
+Inferred spectrum length: 201 channels
+Loaded 1/262144 spectra
+Loaded 1000/262144 spectra
+Loaded 2000/262144 spectra
+Loaded 3000/262144 spectra
+Loaded 4000/262144 spectra
+Loaded 5000/262144 spectra
+Loaded 6000/262144 spectra
+Loaded 7000/262144 spectra
+Loaded 8000/262144 spectra
+Loaded 9000/262144 spectra
+Loaded 10000/262144 spectra
+Loaded 11000/262144 spectra
+Loaded 12000/262144 spectra
+Loaded 13000/262144 spectra
+Loaded 14000/262144 spectra
+Loaded 15000/262144 spectra
+Loaded 16000/262144 spectra
+Loaded 17000/262144 spectra
+Loaded 18000/262144 spectra
+Loaded 19000/262144 spectra
+Loaded 20000/262144 spectra
+Loaded 21000/262144 spectra
+Loaded 22000/262144 spectra
+Loaded 23000/262144 spectra
+Loaded 24000/262144 spectra
+Loaded 25000/262144 spectra
+Loaded 26000/262144 spectra
+Loaded 27000/262144 spectra
+Loaded 28000/262144 spectra
+Loaded 29000/262144 spectra
+Loaded 30000/262144 spectra
+Loaded 31000/262144 spectra
+Loaded 32000/262144 spectra
+Loaded 33000/262144 spectra
+Loaded 34000/262144 spectra
+Loaded 35000/262144 spectra
+Loaded 36000/262144 spectra
+Loaded 37000/262144 spectra
+Loaded 38000/262144 spectra
+Loaded 39000/262144 spectra
+Loaded 40000/262144 spectra
+Loaded 41000/262144 spectra
+Loaded 42000/262144 spectra
+Loaded 43000/262144 spectra
+Loaded 44000/262144 spectra
+Loaded 45000/262144 spectra
+Loaded 46000/262144 spectra
+Loaded 47000/262144 spectra
+Loaded 48000/262144 spectra
+Loaded 49000/262144 spectra
+Loaded 50000/262144 spectra
+Loaded 51000/262144 spectra
+Loaded 52000/262144 spectra
+Loaded 53000/262144 spectra
+Loaded 54000/262144 spectra
+Loaded 55000/262144 spectra
+Loaded 56000/262144 spectra
+Loaded 57000/262144 spectra
+Loaded 58000/262144 spectra
+Loaded 59000/262144 spectra
+Loaded 60000/262144 spectra
+Loaded 61000/262144 spectra
+Loaded 62000/262144 spectra
+Loaded 63000/262144 spectra
+Loaded 64000/262144 spectra
+Loaded 65000/262144 spectra
+Loaded 66000/262144 spectra
+Loaded 67000/262144 spectra
+Loaded 68000/262144 spectra
+Loaded 69000/262144 spectra
+Loaded 70000/262144 spectra
+Loaded 71000/262144 spectra
+Loaded 72000/262144 spectra
+Loaded 73000/262144 spectra
+Loaded 74000/262144 spectra
+Loaded 75000/262144 spectra
+Loaded 76000/262144 spectra
+Loaded 77000/262144 spectra
+Loaded 78000/262144 spectra
+Loaded 79000/262144 spectra
+Loaded 80000/262144 spectra
+Loaded 81000/262144 spectra
+Loaded 82000/262144 spectra
+Loaded 83000/262144 spectra
+Loaded 84000/262144 spectra
+Loaded 85000/262144 spectra
+Loaded 86000/262144 spectra
+Loaded 87000/262144 spectra
+Loaded 88000/262144 spectra
+Loaded 89000/262144 spectra
+Loaded 90000/262144 spectra
+Loaded 91000/262144 spectra
+Loaded 92000/262144 spectra
+Loaded 93000/262144 spectra
+Loaded 94000/262144 spectra
+Loaded 95000/262144 spectra
+Loaded 96000/262144 spectra
+Loaded 97000/262144 spectra
+Loaded 98000/262144 spectra
+Loaded 99000/262144 spectra
+Loaded 100000/262144 spectra
+Loaded 101000/262144 spectra
+Loaded 102000/262144 spectra
+Loaded 103000/262144 spectra
+Loaded 104000/262144 spectra
+Loaded 105000/262144 spectra
+Loaded 106000/262144 spectra
+Loaded 107000/262144 spectra
+Loaded 108000/262144 spectra
+Loaded 109000/262144 spectra
+Loaded 110000/262144 spectra
+Loaded 111000/262144 spectra
+Loaded 112000/262144 spectra
+Loaded 113000/262144 spectra
+Loaded 114000/262144 spectra
+Loaded 115000/262144 spectra
+Loaded 116000/262144 spectra
+Loaded 117000/262144 spectra
+Loaded 118000/262144 spectra
+Loaded 119000/262144 spectra
+Loaded 120000/262144 spectra
+Loaded 121000/262144 spectra
+Loaded 122000/262144 spectra
+Loaded 123000/262144 spectra
+Loaded 124000/262144 spectra
+Loaded 125000/262144 spectra
+Loaded 126000/262144 spectra
+Loaded 127000/262144 spectra
+Loaded 128000/262144 spectra
+Loaded 129000/262144 spectra
+Loaded 130000/262144 spectra
+Loaded 131000/262144 spectra
+Loaded 132000/262144 spectra
+Loaded 133000/262144 spectra
+Loaded 134000/262144 spectra
+Loaded 135000/262144 spectra
+Loaded 136000/262144 spectra
+Loaded 137000/262144 spectra
+Loaded 138000/262144 spectra
+Loaded 139000/262144 spectra
+Loaded 140000/262144 spectra
+Loaded 141000/262144 spectra
+Loaded 142000/262144 spectra
+Loaded 143000/262144 spectra
+Loaded 144000/262144 spectra
+Loaded 145000/262144 spectra
+Loaded 146000/262144 spectra
+Loaded 147000/262144 spectra
+Loaded 148000/262144 spectra
+Loaded 149000/262144 spectra
+Loaded 150000/262144 spectra
+Loaded 151000/262144 spectra
+Loaded 152000/262144 spectra
+Loaded 153000/262144 spectra
+Loaded 154000/262144 spectra
+Loaded 155000/262144 spectra
+Loaded 156000/262144 spectra
+Loaded 157000/262144 spectra
+Loaded 158000/262144 spectra
+Loaded 159000/262144 spectra
+Loaded 160000/262144 spectra
+Loaded 161000/262144 spectra
+Loaded 162000/262144 spectra
+Loaded 163000/262144 spectra
+Loaded 164000/262144 spectra
+Loaded 165000/262144 spectra
+Loaded 166000/262144 spectra
+Loaded 167000/262144 spectra
+Loaded 168000/262144 spectra
+Loaded 169000/262144 spectra
+Loaded 170000/262144 spectra
+Loaded 171000/262144 spectra
+Loaded 172000/262144 spectra
+Loaded 173000/262144 spectra
+Loaded 174000/262144 spectra
+Loaded 175000/262144 spectra
+Loaded 176000/262144 spectra
+Loaded 177000/262144 spectra
+Loaded 178000/262144 spectra
+Loaded 179000/262144 spectra
+Loaded 180000/262144 spectra
+Loaded 181000/262144 spectra
+Loaded 182000/262144 spectra
+Loaded 183000/262144 spectra
+Loaded 184000/262144 spectra
+Loaded 185000/262144 spectra
+Loaded 186000/262144 spectra
+Loaded 187000/262144 spectra
+Loaded 188000/262144 spectra
+Loaded 189000/262144 spectra
+Loaded 190000/262144 spectra
+Loaded 191000/262144 spectra
+Loaded 192000/262144 spectra
+Loaded 193000/262144 spectra
+Loaded 194000/262144 spectra
+Loaded 195000/262144 spectra
+Loaded 196000/262144 spectra
+Loaded 197000/262144 spectra
+Loaded 198000/262144 spectra
+Loaded 199000/262144 spectra
+Loaded 200000/262144 spectra
+Loaded 201000/262144 spectra
+Loaded 202000/262144 spectra
+Loaded 203000/262144 spectra
+Loaded 204000/262144 spectra
+Loaded 205000/262144 spectra
+Loaded 206000/262144 spectra
+Loaded 207000/262144 spectra
+Loaded 208000/262144 spectra
+Loaded 209000/262144 spectra
+Loaded 210000/262144 spectra
+Loaded 211000/262144 spectra
+Loaded 212000/262144 spectra
+Loaded 213000/262144 spectra
+Loaded 214000/262144 spectra
+Loaded 215000/262144 spectra
+Loaded 216000/262144 spectra
+Loaded 217000/262144 spectra
+Loaded 218000/262144 spectra
+Loaded 219000/262144 spectra
+Loaded 220000/262144 spectra
+Loaded 221000/262144 spectra
+Loaded 222000/262144 spectra
+Loaded 223000/262144 spectra
+Loaded 224000/262144 spectra
+Loaded 225000/262144 spectra
+Loaded 226000/262144 spectra
+Loaded 227000/262144 spectra
+Loaded 228000/262144 spectra
+Loaded 229000/262144 spectra
+Loaded 230000/262144 spectra
+Loaded 231000/262144 spectra
+Loaded 232000/262144 spectra
+Loaded 233000/262144 spectra
+Loaded 234000/262144 spectra
+Loaded 235000/262144 spectra
+Loaded 236000/262144 spectra
+Loaded 237000/262144 spectra
+Loaded 238000/262144 spectra
+Loaded 239000/262144 spectra
+Loaded 240000/262144 spectra
+Loaded 241000/262144 spectra
+Loaded 242000/262144 spectra
+Loaded 243000/262144 spectra
+Loaded 244000/262144 spectra
+Loaded 245000/262144 spectra
+Loaded 246000/262144 spectra
+Loaded 247000/262144 spectra
+Loaded 248000/262144 spectra
+Loaded 249000/262144 spectra
+Loaded 250000/262144 spectra
+Loaded 251000/262144 spectra
+Loaded 252000/262144 spectra
+Loaded 253000/262144 spectra
+Loaded 254000/262144 spectra
+Loaded 255000/262144 spectra
+Loaded 256000/262144 spectra
+Loaded 257000/262144 spectra
+Loaded 258000/262144 spectra
+Loaded 259000/262144 spectra
+Loaded 260000/262144 spectra
+Loaded 261000/262144 spectra
+Loaded 262000/262144 spectra
+Loaded 262144/262144 spectra
+Selected TB loaded: (262144, 201)
+Input mode: raw spectrum only
+Model input array prepared: (262144, 201)
+fCNM error floor: OFF
+RHI target transform: log(RHI) for training, exp() for evaluation
+Input normalization: ON, fitted per velocity channel on train split
+Target normalization: ON, fitted on train split (mean fCNM/RHI=[0.0927797  0.05011275], std=[0.172869   0.14508232])
+RHI tail loss weighting: OFF
+fCNM zero/floor loss weighting: ON (threshold <= 0, weight=3, n=173964)
+Using imbalance sampler with 24 occupied joint bins out of 100; min/max bin counts=1/133224
+Building TPCNetInspiredCNN with num_layers=7
+TPCNetInspiredCNN(
+  num_layers=7, channels=[64, 56, 48, 40, 32, 24, 16], kernels=[7, 33, 7, 33, 7, 33, 7]
+  (backbone): Sequential(
+    (0): Conv1d(1, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv1d(64, 56, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (4): BatchNorm1d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): Conv1d(56, 48, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (7): BatchNorm1d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): Conv1d(48, 40, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (10): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): Conv1d(40, 32, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (13): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (14): ReLU(inplace=True)
+    (15): Conv1d(32, 24, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (16): BatchNorm1d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (17): ReLU(inplace=True)
+    (18): Conv1d(24, 16, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (19): BatchNorm1d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (20): ReLU(inplace=True)
+  )
+  (head): Linear(in_features=3216, out_features=2, bias=True)
+)
+Epoch 001 | train_loss=2.45982 | train_RMSE_fCNM=0.122358 | train_RMSE_RHI=2.21351 | val_loss=1.05901 | val_RMSE_fCNM=0.0973339 | val_RMSE_RHI=0.318413 | test_RMSE_fCNM=0.0985755 | test_RMSE_RHI=0.329075 | lr=0.001
+Epoch 002 | train_loss=0.6743 | train_RMSE_fCNM=0.0714876 | train_RMSE_RHI=1.20371 | val_loss=0.595188 | val_RMSE_fCNM=0.0806304 | val_RMSE_RHI=0.235598 | test_RMSE_fCNM=0.0811612 | test_RMSE_RHI=0.23602 | lr=0.001
+Epoch 003 | train_loss=0.47385 | train_RMSE_fCNM=0.0624739 | train_RMSE_RHI=0.961612 | val_loss=0.402379 | val_RMSE_fCNM=0.0593981 | val_RMSE_RHI=0.20771 | test_RMSE_fCNM=0.0598853 | test_RMSE_RHI=0.208394 | lr=0.001
+Epoch 004 | train_loss=0.392354 | train_RMSE_fCNM=0.0586879 | train_RMSE_RHI=0.908815 | val_loss=0.302865 | val_RMSE_fCNM=0.0557394 | val_RMSE_RHI=0.185364 | test_RMSE_fCNM=0.0560876 | test_RMSE_RHI=0.191333 | lr=0.001
+Epoch 005 | train_loss=0.331433 | train_RMSE_fCNM=0.0564998 | train_RMSE_RHI=0.799949 | val_loss=0.356336 | val_RMSE_fCNM=0.0686646 | val_RMSE_RHI=0.185397 | test_RMSE_fCNM=0.0697509 | test_RMSE_RHI=0.197757 | lr=0.001
+Epoch 006 | train_loss=0.297249 | train_RMSE_fCNM=0.0538296 | train_RMSE_RHI=0.776047 | val_loss=0.303449 | val_RMSE_fCNM=0.057472 | val_RMSE_RHI=0.185974 | test_RMSE_fCNM=0.0575607 | test_RMSE_RHI=0.193758 | lr=0.001
+Epoch 007 | train_loss=0.267106 | train_RMSE_fCNM=0.0516841 | train_RMSE_RHI=0.715635 | val_loss=0.284597 | val_RMSE_fCNM=0.0555849 | val_RMSE_RHI=0.179706 | test_RMSE_fCNM=0.0564437 | test_RMSE_RHI=0.183162 | lr=0.001
+Epoch 008 | train_loss=0.237651 | train_RMSE_fCNM=0.049508 | train_RMSE_RHI=0.673725 | val_loss=0.249659 | val_RMSE_fCNM=0.0549285 | val_RMSE_RHI=0.174037 | test_RMSE_fCNM=0.0553753 | test_RMSE_RHI=0.177316 | lr=0.001
+Epoch 009 | train_loss=0.220306 | train_RMSE_fCNM=0.0492235 | train_RMSE_RHI=0.668434 | val_loss=0.255263 | val_RMSE_fCNM=0.0543306 | val_RMSE_RHI=0.173309 | test_RMSE_fCNM=0.054292 | test_RMSE_RHI=0.183391 | lr=0.001
+Epoch 010 | train_loss=0.198771 | train_RMSE_fCNM=0.0468347 | train_RMSE_RHI=0.619283 | val_loss=0.263513 | val_RMSE_fCNM=0.0493203 | val_RMSE_RHI=0.179279 | test_RMSE_fCNM=0.0497876 | test_RMSE_RHI=0.184645 | lr=0.001
+Epoch 011 | train_loss=0.189502 | train_RMSE_fCNM=0.0463703 | train_RMSE_RHI=0.643367 | val_loss=0.24551 | val_RMSE_fCNM=0.0520836 | val_RMSE_RHI=0.17328 | test_RMSE_fCNM=0.0526516 | test_RMSE_RHI=0.179986 | lr=0.001
+Epoch 012 | train_loss=0.174604 | train_RMSE_fCNM=0.0446547 | train_RMSE_RHI=0.565444 | val_loss=0.209362 | val_RMSE_fCNM=0.0524778 | val_RMSE_RHI=0.163444 | test_RMSE_fCNM=0.0530235 | test_RMSE_RHI=0.177085 | lr=0.001
+Epoch 013 | train_loss=0.164688 | train_RMSE_fCNM=0.043947 | train_RMSE_RHI=0.554762 | val_loss=0.187523 | val_RMSE_fCNM=0.0487811 | val_RMSE_RHI=0.163338 | test_RMSE_fCNM=0.0493408 | test_RMSE_RHI=0.167515 | lr=0.001
+Epoch 014 | train_loss=0.145353 | train_RMSE_fCNM=0.0425538 | train_RMSE_RHI=0.53422 | val_loss=0.17788 | val_RMSE_fCNM=0.0439908 | val_RMSE_RHI=0.160761 | test_RMSE_fCNM=0.0445629 | test_RMSE_RHI=0.168901 | lr=0.001
+Epoch 015 | train_loss=0.156258 | train_RMSE_fCNM=0.0438251 | train_RMSE_RHI=0.58066 | val_loss=0.187707 | val_RMSE_fCNM=0.0445105 | val_RMSE_RHI=0.164816 | test_RMSE_fCNM=0.0448619 | test_RMSE_RHI=0.173765 | lr=0.001
+Epoch 016 | train_loss=0.129819 | train_RMSE_fCNM=0.0408705 | train_RMSE_RHI=0.485909 | val_loss=0.190313 | val_RMSE_fCNM=0.0501221 | val_RMSE_RHI=0.163448 | test_RMSE_fCNM=0.0506591 | test_RMSE_RHI=0.167375 | lr=0.001
+Epoch 017 | train_loss=0.125496 | train_RMSE_fCNM=0.039987 | train_RMSE_RHI=0.469912 | val_loss=0.173881 | val_RMSE_fCNM=0.0501125 | val_RMSE_RHI=0.16008 | test_RMSE_fCNM=0.0503938 | test_RMSE_RHI=0.169038 | lr=0.001
+Epoch 018 | train_loss=0.120011 | train_RMSE_fCNM=0.0393585 | train_RMSE_RHI=0.4782 | val_loss=0.16374 | val_RMSE_fCNM=0.0433465 | val_RMSE_RHI=0.161029 | test_RMSE_fCNM=0.0435981 | test_RMSE_RHI=0.166231 | lr=0.001
+Epoch 019 | train_loss=0.113825 | train_RMSE_fCNM=0.0395391 | train_RMSE_RHI=0.459124 | val_loss=0.150371 | val_RMSE_fCNM=0.0416624 | val_RMSE_RHI=0.160051 | test_RMSE_fCNM=0.0416484 | test_RMSE_RHI=0.166886 | lr=0.001
+Epoch 020 | train_loss=0.106446 | train_RMSE_fCNM=0.0379224 | train_RMSE_RHI=0.458739 | val_loss=0.140299 | val_RMSE_fCNM=0.0409156 | val_RMSE_RHI=0.155416 | test_RMSE_fCNM=0.0413144 | test_RMSE_RHI=0.16369 | lr=0.001
+Epoch 021 | train_loss=0.10235 | train_RMSE_fCNM=0.0377677 | train_RMSE_RHI=0.454748 | val_loss=0.131543 | val_RMSE_fCNM=0.0395229 | val_RMSE_RHI=0.155052 | test_RMSE_fCNM=0.0397936 | test_RMSE_RHI=0.164761 | lr=0.001
+Epoch 022 | train_loss=0.0999584 | train_RMSE_fCNM=0.0370762 | train_RMSE_RHI=0.459918 | val_loss=0.137971 | val_RMSE_fCNM=0.0415095 | val_RMSE_RHI=0.154996 | test_RMSE_fCNM=0.0417995 | test_RMSE_RHI=0.170324 | lr=0.001
+Epoch 023 | train_loss=0.0927583 | train_RMSE_fCNM=0.0359166 | train_RMSE_RHI=0.376948 | val_loss=0.146455 | val_RMSE_fCNM=0.0438408 | val_RMSE_RHI=0.155231 | test_RMSE_fCNM=0.0440836 | test_RMSE_RHI=0.164396 | lr=0.001
+Epoch 024 | train_loss=0.0893683 | train_RMSE_fCNM=0.0362743 | train_RMSE_RHI=0.386994 | val_loss=0.129561 | val_RMSE_fCNM=0.0405778 | val_RMSE_RHI=0.15664 | test_RMSE_fCNM=0.0409818 | test_RMSE_RHI=0.163149 | lr=0.001
+Epoch 025 | train_loss=0.0873804 | train_RMSE_fCNM=0.0355665 | train_RMSE_RHI=0.419102 | val_loss=0.134135 | val_RMSE_fCNM=0.0404233 | val_RMSE_RHI=0.155908 | test_RMSE_fCNM=0.0404161 | test_RMSE_RHI=0.161474 | lr=0.001
+Epoch 026 | train_loss=0.0837074 | train_RMSE_fCNM=0.0352044 | train_RMSE_RHI=0.372455 | val_loss=0.127222 | val_RMSE_fCNM=0.0383494 | val_RMSE_RHI=0.154383 | test_RMSE_fCNM=0.0384811 | test_RMSE_RHI=0.159974 | lr=0.001
+Epoch 027 | train_loss=0.0815263 | train_RMSE_fCNM=0.0345433 | train_RMSE_RHI=0.417097 | val_loss=0.129741 | val_RMSE_fCNM=0.0418346 | val_RMSE_RHI=0.15534 | test_RMSE_fCNM=0.0421633 | test_RMSE_RHI=0.162251 | lr=0.001
+Epoch 028 | train_loss=0.0753879 | train_RMSE_fCNM=0.0342263 | train_RMSE_RHI=0.3708 | val_loss=0.138916 | val_RMSE_fCNM=0.0421679 | val_RMSE_RHI=0.158001 | test_RMSE_fCNM=0.0416527 | test_RMSE_RHI=0.166069 | lr=0.001
+Epoch 029 | train_loss=0.0797139 | train_RMSE_fCNM=0.03439 | train_RMSE_RHI=0.400246 | val_loss=0.131972 | val_RMSE_fCNM=0.0436043 | val_RMSE_RHI=0.152998 | test_RMSE_fCNM=0.0439024 | test_RMSE_RHI=0.164017 | lr=0.001
+Epoch 030 | train_loss=0.0713963 | train_RMSE_fCNM=0.0332525 | train_RMSE_RHI=0.352009 | val_loss=0.126556 | val_RMSE_fCNM=0.0424839 | val_RMSE_RHI=0.154941 | test_RMSE_fCNM=0.0427567 | test_RMSE_RHI=0.161774 | lr=0.001
+Epoch 031 | train_loss=0.0757697 | train_RMSE_fCNM=0.0337566 | train_RMSE_RHI=0.382887 | val_loss=0.123115 | val_RMSE_fCNM=0.0399421 | val_RMSE_RHI=0.151491 | test_RMSE_fCNM=0.0401478 | test_RMSE_RHI=0.161647 | lr=0.001
+Epoch 032 | train_loss=0.0675251 | train_RMSE_fCNM=0.0329341 | train_RMSE_RHI=0.359619 | val_loss=0.121599 | val_RMSE_fCNM=0.0388684 | val_RMSE_RHI=0.153738 | test_RMSE_fCNM=0.03914 | test_RMSE_RHI=0.171157 | lr=0.001
+Epoch 033 | train_loss=0.0666522 | train_RMSE_fCNM=0.0325924 | train_RMSE_RHI=0.352112 | val_loss=0.125263 | val_RMSE_fCNM=0.0400319 | val_RMSE_RHI=0.154429 | test_RMSE_fCNM=0.0400509 | test_RMSE_RHI=0.162207 | lr=0.001
+Epoch 034 | train_loss=0.0645749 | train_RMSE_fCNM=0.0321161 | train_RMSE_RHI=0.368853 | val_loss=0.126015 | val_RMSE_fCNM=0.0397329 | val_RMSE_RHI=0.155036 | test_RMSE_fCNM=0.0396754 | test_RMSE_RHI=0.163611 | lr=0.001
+Epoch 035 | train_loss=0.0638803 | train_RMSE_fCNM=0.0318459 | train_RMSE_RHI=0.347664 | val_loss=0.122333 | val_RMSE_fCNM=0.0402608 | val_RMSE_RHI=0.156105 | test_RMSE_fCNM=0.0405573 | test_RMSE_RHI=0.164835 | lr=0.001
+Epoch 036 | train_loss=0.0635446 | train_RMSE_fCNM=0.0319939 | train_RMSE_RHI=0.357448 | val_loss=0.126712 | val_RMSE_fCNM=0.0412276 | val_RMSE_RHI=0.155288 | test_RMSE_fCNM=0.0415584 | test_RMSE_RHI=0.162882 | lr=0.001
+Epoch 037 | train_loss=0.06219 | train_RMSE_fCNM=0.0320291 | train_RMSE_RHI=0.334938 | val_loss=0.116955 | val_RMSE_fCNM=0.0385351 | val_RMSE_RHI=0.152914 | test_RMSE_fCNM=0.0388355 | test_RMSE_RHI=0.164272 | lr=0.001
+Epoch 038 | train_loss=0.0589354 | train_RMSE_fCNM=0.0315558 | train_RMSE_RHI=0.324978 | val_loss=0.127698 | val_RMSE_fCNM=0.0383997 | val_RMSE_RHI=0.158123 | test_RMSE_fCNM=0.038316 | test_RMSE_RHI=0.166263 | lr=0.001
+Epoch 039 | train_loss=0.0583566 | train_RMSE_fCNM=0.0315618 | train_RMSE_RHI=0.325206 | val_loss=0.114401 | val_RMSE_fCNM=0.037971 | val_RMSE_RHI=0.155038 | test_RMSE_fCNM=0.0380224 | test_RMSE_RHI=0.160184 | lr=0.001
+Epoch 040 | train_loss=0.0574836 | train_RMSE_fCNM=0.0306182 | train_RMSE_RHI=0.345994 | val_loss=0.114629 | val_RMSE_fCNM=0.0384667 | val_RMSE_RHI=0.154239 | test_RMSE_fCNM=0.0385302 | test_RMSE_RHI=0.161141 | lr=0.001
+Epoch 041 | train_loss=0.0557494 | train_RMSE_fCNM=0.0305004 | train_RMSE_RHI=0.338801 | val_loss=0.114675 | val_RMSE_fCNM=0.0385268 | val_RMSE_RHI=0.156288 | test_RMSE_fCNM=0.0385552 | test_RMSE_RHI=0.163935 | lr=0.001
+Epoch 042 | train_loss=0.0505353 | train_RMSE_fCNM=0.0298073 | train_RMSE_RHI=0.300286 | val_loss=0.117597 | val_RMSE_fCNM=0.0378253 | val_RMSE_RHI=0.156968 | test_RMSE_fCNM=0.0378348 | test_RMSE_RHI=0.161282 | lr=0.001
+Epoch 043 | train_loss=0.0538027 | train_RMSE_fCNM=0.0305326 | train_RMSE_RHI=0.31259 | val_loss=0.116893 | val_RMSE_fCNM=0.0408734 | val_RMSE_RHI=0.15579 | test_RMSE_fCNM=0.0413399 | test_RMSE_RHI=0.164907 | lr=0.001
+Epoch 044 | train_loss=0.0532566 | train_RMSE_fCNM=0.03016 | train_RMSE_RHI=0.322463 | val_loss=0.112906 | val_RMSE_fCNM=0.0373532 | val_RMSE_RHI=0.155727 | test_RMSE_fCNM=0.0375813 | test_RMSE_RHI=0.163707 | lr=0.001
+Epoch 045 | train_loss=0.0523577 | train_RMSE_fCNM=0.0299084 | train_RMSE_RHI=0.336917 | val_loss=0.116591 | val_RMSE_fCNM=0.0387066 | val_RMSE_RHI=0.158496 | test_RMSE_fCNM=0.0383803 | test_RMSE_RHI=0.163208 | lr=0.001
+Epoch 046 | train_loss=0.0468787 | train_RMSE_fCNM=0.0291094 | train_RMSE_RHI=0.273317 | val_loss=0.113149 | val_RMSE_fCNM=0.0378172 | val_RMSE_RHI=0.153721 | test_RMSE_fCNM=0.037909 | test_RMSE_RHI=0.162471 | lr=0.001
+Epoch 047 | train_loss=0.0501601 | train_RMSE_fCNM=0.0295125 | train_RMSE_RHI=0.314537 | val_loss=0.109804 | val_RMSE_fCNM=0.0356882 | val_RMSE_RHI=0.155748 | test_RMSE_fCNM=0.0358009 | test_RMSE_RHI=0.163609 | lr=0.001
+Epoch 048 | train_loss=0.0482532 | train_RMSE_fCNM=0.0292017 | train_RMSE_RHI=0.301719 | val_loss=0.105357 | val_RMSE_fCNM=0.0355027 | val_RMSE_RHI=0.154401 | test_RMSE_fCNM=0.0354119 | test_RMSE_RHI=0.162343 | lr=0.001
+Epoch 049 | train_loss=0.0528196 | train_RMSE_fCNM=0.0301019 | train_RMSE_RHI=0.301539 | val_loss=0.108978 | val_RMSE_fCNM=0.0362066 | val_RMSE_RHI=0.155901 | test_RMSE_fCNM=0.0362517 | test_RMSE_RHI=0.159824 | lr=0.001
+Epoch 050 | train_loss=0.0472977 | train_RMSE_fCNM=0.0291052 | train_RMSE_RHI=0.319635 | val_loss=0.109888 | val_RMSE_fCNM=0.0362791 | val_RMSE_RHI=0.155388 | test_RMSE_fCNM=0.0364092 | test_RMSE_RHI=0.160619 | lr=0.001
+Epoch 051 | train_loss=0.0446012 | train_RMSE_fCNM=0.028495 | train_RMSE_RHI=0.290419 | val_loss=0.111379 | val_RMSE_fCNM=0.0373035 | val_RMSE_RHI=0.158801 | test_RMSE_fCNM=0.0372667 | test_RMSE_RHI=0.164783 | lr=0.001
+Epoch 052 | train_loss=0.0429377 | train_RMSE_fCNM=0.0279581 | train_RMSE_RHI=0.282547 | val_loss=0.11274 | val_RMSE_fCNM=0.0380189 | val_RMSE_RHI=0.155243 | test_RMSE_fCNM=0.0382966 | test_RMSE_RHI=0.160202 | lr=0.001
+Epoch 053 | train_loss=0.0427754 | train_RMSE_fCNM=0.0280048 | train_RMSE_RHI=0.276477 | val_loss=0.112089 | val_RMSE_fCNM=0.0363628 | val_RMSE_RHI=0.156745 | test_RMSE_fCNM=0.0361685 | test_RMSE_RHI=0.162927 | lr=0.001
+Epoch 054 | train_loss=0.0445083 | train_RMSE_fCNM=0.0286135 | train_RMSE_RHI=0.289868 | val_loss=0.108379 | val_RMSE_fCNM=0.036916 | val_RMSE_RHI=0.154176 | test_RMSE_fCNM=0.0370782 | test_RMSE_RHI=0.165015 | lr=0.0005
+Epoch 055 | train_loss=0.0288181 | train_RMSE_fCNM=0.0249569 | train_RMSE_RHI=0.194926 | val_loss=0.103964 | val_RMSE_fCNM=0.035328 | val_RMSE_RHI=0.156423 | test_RMSE_fCNM=0.0351521 | test_RMSE_RHI=0.162227 | lr=0.0005
+Epoch 056 | train_loss=0.029448 | train_RMSE_fCNM=0.0252404 | train_RMSE_RHI=0.198262 | val_loss=0.105535 | val_RMSE_fCNM=0.0370462 | val_RMSE_RHI=0.157816 | test_RMSE_fCNM=0.0372024 | test_RMSE_RHI=0.163347 | lr=0.0005
+Epoch 057 | train_loss=0.0270467 | train_RMSE_fCNM=0.0247638 | train_RMSE_RHI=0.198666 | val_loss=0.100632 | val_RMSE_fCNM=0.0350723 | val_RMSE_RHI=0.155839 | test_RMSE_fCNM=0.03495 | test_RMSE_RHI=0.160823 | lr=0.0005
+Epoch 058 | train_loss=0.0274643 | train_RMSE_fCNM=0.0246747 | train_RMSE_RHI=0.206499 | val_loss=0.101946 | val_RMSE_fCNM=0.0351619 | val_RMSE_RHI=0.156573 | test_RMSE_fCNM=0.0350937 | test_RMSE_RHI=0.16348 | lr=0.0005
+Epoch 059 | train_loss=0.027184 | train_RMSE_fCNM=0.0244655 | train_RMSE_RHI=0.207778 | val_loss=0.101626 | val_RMSE_fCNM=0.0363985 | val_RMSE_RHI=0.154259 | test_RMSE_fCNM=0.0365058 | test_RMSE_RHI=0.161956 | lr=0.0005
+Epoch 060 | train_loss=0.0267367 | train_RMSE_fCNM=0.0243484 | train_RMSE_RHI=0.196148 | val_loss=0.103777 | val_RMSE_fCNM=0.0350763 | val_RMSE_RHI=0.156797 | test_RMSE_fCNM=0.0349392 | test_RMSE_RHI=0.162455 | lr=0.0005
+Epoch 061 | train_loss=0.0266081 | train_RMSE_fCNM=0.0242041 | train_RMSE_RHI=0.207935 | val_loss=0.0998808 | val_RMSE_fCNM=0.0343053 | val_RMSE_RHI=0.1567 | test_RMSE_fCNM=0.0343722 | test_RMSE_RHI=0.161688 | lr=0.0005
+Epoch 062 | train_loss=0.0256825 | train_RMSE_fCNM=0.0238544 | train_RMSE_RHI=0.200043 | val_loss=0.102005 | val_RMSE_fCNM=0.0356891 | val_RMSE_RHI=0.157517 | test_RMSE_fCNM=0.0356751 | test_RMSE_RHI=0.16266 | lr=0.0005
+Epoch 063 | train_loss=0.0261758 | train_RMSE_fCNM=0.0240507 | train_RMSE_RHI=0.208594 | val_loss=0.0986423 | val_RMSE_fCNM=0.0344944 | val_RMSE_RHI=0.154779 | test_RMSE_fCNM=0.0345747 | test_RMSE_RHI=0.164435 | lr=0.0005
+Epoch 064 | train_loss=0.0266128 | train_RMSE_fCNM=0.024092 | train_RMSE_RHI=0.21653 | val_loss=0.0993642 | val_RMSE_fCNM=0.0349564 | val_RMSE_RHI=0.155664 | test_RMSE_fCNM=0.0350572 | test_RMSE_RHI=0.161316 | lr=0.0005
+Epoch 065 | train_loss=0.0251335 | train_RMSE_fCNM=0.0236349 | train_RMSE_RHI=0.202872 | val_loss=0.0999425 | val_RMSE_fCNM=0.0348441 | val_RMSE_RHI=0.156074 | test_RMSE_fCNM=0.0351401 | test_RMSE_RHI=0.162213 | lr=0.0005
+Epoch 066 | train_loss=0.0265336 | train_RMSE_fCNM=0.0239822 | train_RMSE_RHI=0.202169 | val_loss=0.102211 | val_RMSE_fCNM=0.0356614 | val_RMSE_RHI=0.154491 | test_RMSE_fCNM=0.0356181 | test_RMSE_RHI=0.160834 | lr=0.0005
+Epoch 067 | train_loss=0.0252977 | train_RMSE_fCNM=0.0237886 | train_RMSE_RHI=0.195305 | val_loss=0.0990036 | val_RMSE_fCNM=0.0341581 | val_RMSE_RHI=0.155605 | test_RMSE_fCNM=0.0341655 | test_RMSE_RHI=0.163692 | lr=0.0005
+Epoch 068 | train_loss=0.0254893 | train_RMSE_fCNM=0.0236564 | train_RMSE_RHI=0.212154 | val_loss=0.102183 | val_RMSE_fCNM=0.0347522 | val_RMSE_RHI=0.157319 | test_RMSE_fCNM=0.0345431 | test_RMSE_RHI=0.163653 | lr=0.0005
+Epoch 069 | train_loss=0.02359 | train_RMSE_fCNM=0.0233466 | train_RMSE_RHI=0.189815 | val_loss=0.0996922 | val_RMSE_fCNM=0.0345059 | val_RMSE_RHI=0.155358 | test_RMSE_fCNM=0.034601 | test_RMSE_RHI=0.162999 | lr=0.00025
+Epoch 070 | train_loss=0.019409 | train_RMSE_fCNM=0.0220727 | train_RMSE_RHI=0.148078 | val_loss=0.0965583 | val_RMSE_fCNM=0.0342135 | val_RMSE_RHI=0.155195 | test_RMSE_fCNM=0.0344087 | test_RMSE_RHI=0.162488 | lr=0.00025
+Epoch 071 | train_loss=0.0190932 | train_RMSE_fCNM=0.0217921 | train_RMSE_RHI=0.172241 | val_loss=0.0970859 | val_RMSE_fCNM=0.0342329 | val_RMSE_RHI=0.156363 | test_RMSE_fCNM=0.0343038 | test_RMSE_RHI=0.163511 | lr=0.00025
+Epoch 072 | train_loss=0.0186108 | train_RMSE_fCNM=0.0218354 | train_RMSE_RHI=0.150811 | val_loss=0.0988505 | val_RMSE_fCNM=0.0351188 | val_RMSE_RHI=0.155135 | test_RMSE_fCNM=0.0354237 | test_RMSE_RHI=0.161914 | lr=0.00025
+Epoch 073 | train_loss=0.0184269 | train_RMSE_fCNM=0.0216867 | train_RMSE_RHI=0.147682 | val_loss=0.0991935 | val_RMSE_fCNM=0.0343687 | val_RMSE_RHI=0.15743 | test_RMSE_fCNM=0.0343794 | test_RMSE_RHI=0.164845 | lr=0.00025
+Epoch 074 | train_loss=0.0182609 | train_RMSE_fCNM=0.0215987 | train_RMSE_RHI=0.14062 | val_loss=0.0977461 | val_RMSE_fCNM=0.0335654 | val_RMSE_RHI=0.157488 | test_RMSE_fCNM=0.0335784 | test_RMSE_RHI=0.16468 | lr=0.00025
+Epoch 075 | train_loss=0.0181961 | train_RMSE_fCNM=0.0216542 | train_RMSE_RHI=0.156463 | val_loss=0.0974709 | val_RMSE_fCNM=0.0340006 | val_RMSE_RHI=0.15557 | test_RMSE_fCNM=0.0340919 | test_RMSE_RHI=0.162356 | lr=0.00025
+Epoch 076 | train_loss=0.0177636 | train_RMSE_fCNM=0.0216215 | train_RMSE_RHI=0.14253 | val_loss=0.0963766 | val_RMSE_fCNM=0.0338027 | val_RMSE_RHI=0.155518 | test_RMSE_fCNM=0.0340192 | test_RMSE_RHI=0.163656 | lr=0.00025
+Epoch 077 | train_loss=0.0185365 | train_RMSE_fCNM=0.0216123 | train_RMSE_RHI=0.165025 | val_loss=0.0972227 | val_RMSE_fCNM=0.0336126 | val_RMSE_RHI=0.156448 | test_RMSE_fCNM=0.0336893 | test_RMSE_RHI=0.16452 | lr=0.00025
+Epoch 078 | train_loss=0.0183023 | train_RMSE_fCNM=0.0214662 | train_RMSE_RHI=0.161533 | val_loss=0.0975054 | val_RMSE_fCNM=0.0341488 | val_RMSE_RHI=0.155381 | test_RMSE_fCNM=0.034151 | test_RMSE_RHI=0.163405 | lr=0.00025
+Epoch 079 | train_loss=0.0182216 | train_RMSE_fCNM=0.0214661 | train_RMSE_RHI=0.151187 | val_loss=0.0976575 | val_RMSE_fCNM=0.0340881 | val_RMSE_RHI=0.156833 | test_RMSE_fCNM=0.0340708 | test_RMSE_RHI=0.164285 | lr=0.00025
+Epoch 080 | train_loss=0.0179504 | train_RMSE_fCNM=0.0214074 | train_RMSE_RHI=0.154497 | val_loss=0.0975189 | val_RMSE_fCNM=0.0337989 | val_RMSE_RHI=0.156745 | test_RMSE_fCNM=0.0337986 | test_RMSE_RHI=0.163914 | lr=0.00025
+Epoch 081 | train_loss=0.0184354 | train_RMSE_fCNM=0.0216429 | train_RMSE_RHI=0.153337 | val_loss=0.0976021 | val_RMSE_fCNM=0.0334412 | val_RMSE_RHI=0.157007 | test_RMSE_fCNM=0.0334838 | test_RMSE_RHI=0.163379 | lr=0.00025
+Epoch 082 | train_loss=0.0178415 | train_RMSE_fCNM=0.0212993 | train_RMSE_RHI=0.14019 | val_loss=0.0964446 | val_RMSE_fCNM=0.0336691 | val_RMSE_RHI=0.156017 | test_RMSE_fCNM=0.0337048 | test_RMSE_RHI=0.163812 | lr=0.000125
+Epoch 083 | train_loss=0.0155748 | train_RMSE_fCNM=0.0205428 | train_RMSE_RHI=0.127193 | val_loss=0.0965119 | val_RMSE_fCNM=0.034015 | val_RMSE_RHI=0.155951 | test_RMSE_fCNM=0.0341944 | test_RMSE_RHI=0.16262 | lr=0.000125
+Epoch 084 | train_loss=0.0151116 | train_RMSE_fCNM=0.0202959 | train_RMSE_RHI=0.125135 | val_loss=0.0962124 | val_RMSE_fCNM=0.0332955 | val_RMSE_RHI=0.156001 | test_RMSE_fCNM=0.0333255 | test_RMSE_RHI=0.163059 | lr=0.000125
+Epoch 085 | train_loss=0.014963 | train_RMSE_fCNM=0.0203864 | train_RMSE_RHI=0.117859 | val_loss=0.0958286 | val_RMSE_fCNM=0.0335554 | val_RMSE_RHI=0.156105 | test_RMSE_fCNM=0.0337595 | test_RMSE_RHI=0.163587 | lr=0.000125
+Epoch 086 | train_loss=0.0158117 | train_RMSE_fCNM=0.0203976 | train_RMSE_RHI=0.127831 | val_loss=0.0974184 | val_RMSE_fCNM=0.0336267 | val_RMSE_RHI=0.157191 | test_RMSE_fCNM=0.0336762 | test_RMSE_RHI=0.163796 | lr=0.000125
+Epoch 087 | train_loss=0.0152209 | train_RMSE_fCNM=0.0204053 | train_RMSE_RHI=0.12662 | val_loss=0.0965255 | val_RMSE_fCNM=0.0333558 | val_RMSE_RHI=0.15634 | test_RMSE_fCNM=0.0333637 | test_RMSE_RHI=0.163491 | lr=0.000125
+Epoch 088 | train_loss=0.0148396 | train_RMSE_fCNM=0.0202314 | train_RMSE_RHI=0.125336 | val_loss=0.0964266 | val_RMSE_fCNM=0.0332876 | val_RMSE_RHI=0.156787 | test_RMSE_fCNM=0.0333238 | test_RMSE_RHI=0.164265 | lr=0.000125
+Epoch 089 | train_loss=0.0149536 | train_RMSE_fCNM=0.0203875 | train_RMSE_RHI=0.121642 | val_loss=0.0966284 | val_RMSE_fCNM=0.0340709 | val_RMSE_RHI=0.155715 | test_RMSE_fCNM=0.0342994 | test_RMSE_RHI=0.163262 | lr=0.000125
+Epoch 090 | train_loss=0.0147102 | train_RMSE_fCNM=0.0201726 | train_RMSE_RHI=0.115664 | val_loss=0.0963413 | val_RMSE_fCNM=0.0336757 | val_RMSE_RHI=0.156453 | test_RMSE_fCNM=0.0337962 | test_RMSE_RHI=0.164382 | lr=0.000125
+Epoch 091 | train_loss=0.0145108 | train_RMSE_fCNM=0.0200929 | train_RMSE_RHI=0.118612 | val_loss=0.0968699 | val_RMSE_fCNM=0.0335201 | val_RMSE_RHI=0.157174 | test_RMSE_fCNM=0.0335504 | test_RMSE_RHI=0.164178 | lr=6.25e-05
+Epoch 092 | train_loss=0.0140429 | train_RMSE_fCNM=0.0199697 | train_RMSE_RHI=0.106276 | val_loss=0.0963442 | val_RMSE_fCNM=0.0336976 | val_RMSE_RHI=0.156613 | test_RMSE_fCNM=0.0337342 | test_RMSE_RHI=0.163591 | lr=6.25e-05
+Epoch 093 | train_loss=0.0137089 | train_RMSE_fCNM=0.0198783 | train_RMSE_RHI=0.103127 | val_loss=0.0969286 | val_RMSE_fCNM=0.0334265 | val_RMSE_RHI=0.15677 | test_RMSE_fCNM=0.0334851 | test_RMSE_RHI=0.164495 | lr=6.25e-05
+Epoch 094 | train_loss=0.0136426 | train_RMSE_fCNM=0.0197174 | train_RMSE_RHI=0.103502 | val_loss=0.0954883 | val_RMSE_fCNM=0.0330998 | val_RMSE_RHI=0.156143 | test_RMSE_fCNM=0.0331489 | test_RMSE_RHI=0.16383 | lr=6.25e-05
+Epoch 095 | train_loss=0.0138783 | train_RMSE_fCNM=0.0199106 | train_RMSE_RHI=0.10759 | val_loss=0.0959011 | val_RMSE_fCNM=0.03372 | val_RMSE_RHI=0.156319 | test_RMSE_fCNM=0.0338589 | test_RMSE_RHI=0.164102 | lr=6.25e-05
+Epoch 096 | train_loss=0.0135789 | train_RMSE_fCNM=0.0195821 | train_RMSE_RHI=0.108052 | val_loss=0.0957222 | val_RMSE_fCNM=0.0332336 | val_RMSE_RHI=0.156733 | test_RMSE_fCNM=0.0333432 | test_RMSE_RHI=0.16465 | lr=6.25e-05
+Epoch 097 | train_loss=0.0136073 | train_RMSE_fCNM=0.0196782 | train_RMSE_RHI=0.106925 | val_loss=0.0953467 | val_RMSE_fCNM=0.0330956 | val_RMSE_RHI=0.156492 | test_RMSE_fCNM=0.0332125 | test_RMSE_RHI=0.163957 | lr=6.25e-05
+Epoch 098 | train_loss=0.0133852 | train_RMSE_fCNM=0.0197287 | train_RMSE_RHI=0.104033 | val_loss=0.095578 | val_RMSE_fCNM=0.0333501 | val_RMSE_RHI=0.156342 | test_RMSE_fCNM=0.0334811 | test_RMSE_RHI=0.163632 | lr=6.25e-05
+Epoch 099 | train_loss=0.0139027 | train_RMSE_fCNM=0.019825 | train_RMSE_RHI=0.114148 | val_loss=0.0957297 | val_RMSE_fCNM=0.0332355 | val_RMSE_RHI=0.156052 | test_RMSE_fCNM=0.0333323 | test_RMSE_RHI=0.16417 | lr=6.25e-05
+Epoch 100 | train_loss=0.0134297 | train_RMSE_fCNM=0.019617 | train_RMSE_RHI=0.102147 | val_loss=0.0962111 | val_RMSE_fCNM=0.0334574 | val_RMSE_RHI=0.156934 | test_RMSE_fCNM=0.0335731 | test_RMSE_RHI=0.164051 | lr=6.25e-05
+
+Test RMSE fCNM: 0.0332124
+Test RMSE RHI : 0.163956
+Test MAE  fCNM: 0.0164668
+Test MAE  RHI : 0.0293723
+
+Prediction diagnostics
+  fCNM truth: min=7.45058e-09, max=0.9707, mean=0.091333
+  fCNM pred : min=0, max=0.995512, mean=0.0961948
+  RHI truth: min=0.995655, max=25.905, mean=1.0675
+  RHI pred : min=0.893088, max=19.643, mean=1.06224
+
+Summary
+  device: cuda
+  CNN layers: 7/8
+  subset size: 262144
+  train/val/test: 183501/39322/39321
+  best validation loss: 0.0953467
+  final test RMSE fCNM: 0.0332124
+  final test RMSE RHI : 0.163956
+  sampled indices CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers7/sampled_indices_layers7.csv
+  split indices CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers7/split_indices_layers7.csv
+  training metrics CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers7/training_metrics_layers7.csv
+  prediction CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers7/test_predictions_layers7.csv
+  figures:
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers7/true_vs_pred_fcnm_layers7.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers7/true_vs_pred_rhi_layers7.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers7/true_vs_pred_combined_layers7.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers7/true_vs_pred_rhi_log_layers7.png
+
+============================================================
+Starting layer count: 8
+============================================================
+Using device: cuda
+Selected CNN depth: 8/8 convolutional layers
+Reading targets from: /mnt/c/users/retar/desktop/research/ML/data/MW/fcnm_RHI_z.fits
+Listing spectra in: /mnt/c/users/retar/desktop/research/ML/data/MW/syn_HI_spec_z
+Found 262144 spectra files
+Mapped spectra filenames to flattened FITS target indices using target shape (512, 512)
+
+Split sizes: train=183501, val=39322, test=39321
+
+Target summary: selected subset (n=262144)
+  fCNM: min=0, p05=0, median=0, mean=0.092244, std=0.17233, p95=0.50071, max=0.9707
+  RHI : min=0.99561, p05=0.99786, median=1.0111, mean=1.0671, std=0.30218, p95=1.2818, max=38.421
+
+Target summary: train (n=183501)
+  fCNM: min=0, p05=0, median=0, mean=0.09278, std=0.17286, p95=0.50325, max=0.94901
+  RHI : min=0.99561, p05=0.99786, median=1.0111, mean=1.0674, std=0.30349, p95=1.2836, max=38.421
+
+Target summary: validation (n=39322)
+  fCNM: min=0, p05=0, median=0, mean=0.090652, std=0.17093, p95=0.49569, max=0.92045
+  RHI : min=0.99564, p05=0.99787, median=1.011, mean=1.0654, std=0.27205, p95=1.2814, max=12.44
+
+Target summary: test (n=39321)
+  fCNM: min=0, p05=0, median=0, mean=0.091333, std=0.17123, p95=0.49519, max=0.9707
+  RHI : min=0.99566, p05=0.99785, median=1.011, mean=1.0675, std=0.32391, p95=1.2742, max=25.905
+
+Reading only selected subset spectra: 262144 files, tb_column=3
+Inferred spectrum length: 201 channels
+Loaded 1/262144 spectra
+Loaded 1000/262144 spectra
+Loaded 2000/262144 spectra
+Loaded 3000/262144 spectra
+Loaded 4000/262144 spectra
+Loaded 5000/262144 spectra
+Loaded 6000/262144 spectra
+Loaded 7000/262144 spectra
+Loaded 8000/262144 spectra
+Loaded 9000/262144 spectra
+Loaded 10000/262144 spectra
+Loaded 11000/262144 spectra
+Loaded 12000/262144 spectra
+Loaded 13000/262144 spectra
+Loaded 14000/262144 spectra
+Loaded 15000/262144 spectra
+Loaded 16000/262144 spectra
+Loaded 17000/262144 spectra
+Loaded 18000/262144 spectra
+Loaded 19000/262144 spectra
+Loaded 20000/262144 spectra
+Loaded 21000/262144 spectra
+Loaded 22000/262144 spectra
+Loaded 23000/262144 spectra
+Loaded 24000/262144 spectra
+Loaded 25000/262144 spectra
+Loaded 26000/262144 spectra
+Loaded 27000/262144 spectra
+Loaded 28000/262144 spectra
+Loaded 29000/262144 spectra
+Loaded 30000/262144 spectra
+Loaded 31000/262144 spectra
+Loaded 32000/262144 spectra
+Loaded 33000/262144 spectra
+Loaded 34000/262144 spectra
+Loaded 35000/262144 spectra
+Loaded 36000/262144 spectra
+Loaded 37000/262144 spectra
+Loaded 38000/262144 spectra
+Loaded 39000/262144 spectra
+Loaded 40000/262144 spectra
+Loaded 41000/262144 spectra
+Loaded 42000/262144 spectra
+Loaded 43000/262144 spectra
+Loaded 44000/262144 spectra
+Loaded 45000/262144 spectra
+Loaded 46000/262144 spectra
+Loaded 47000/262144 spectra
+Loaded 48000/262144 spectra
+Loaded 49000/262144 spectra
+Loaded 50000/262144 spectra
+Loaded 51000/262144 spectra
+Loaded 52000/262144 spectra
+Loaded 53000/262144 spectra
+Loaded 54000/262144 spectra
+Loaded 55000/262144 spectra
+Loaded 56000/262144 spectra
+Loaded 57000/262144 spectra
+Loaded 58000/262144 spectra
+Loaded 59000/262144 spectra
+Loaded 60000/262144 spectra
+Loaded 61000/262144 spectra
+Loaded 62000/262144 spectra
+Loaded 63000/262144 spectra
+Loaded 64000/262144 spectra
+Loaded 65000/262144 spectra
+Loaded 66000/262144 spectra
+Loaded 67000/262144 spectra
+Loaded 68000/262144 spectra
+Loaded 69000/262144 spectra
+Loaded 70000/262144 spectra
+Loaded 71000/262144 spectra
+Loaded 72000/262144 spectra
+Loaded 73000/262144 spectra
+Loaded 74000/262144 spectra
+Loaded 75000/262144 spectra
+Loaded 76000/262144 spectra
+Loaded 77000/262144 spectra
+Loaded 78000/262144 spectra
+Loaded 79000/262144 spectra
+Loaded 80000/262144 spectra
+Loaded 81000/262144 spectra
+Loaded 82000/262144 spectra
+Loaded 83000/262144 spectra
+Loaded 84000/262144 spectra
+Loaded 85000/262144 spectra
+Loaded 86000/262144 spectra
+Loaded 87000/262144 spectra
+Loaded 88000/262144 spectra
+Loaded 89000/262144 spectra
+Loaded 90000/262144 spectra
+Loaded 91000/262144 spectra
+Loaded 92000/262144 spectra
+Loaded 93000/262144 spectra
+Loaded 94000/262144 spectra
+Loaded 95000/262144 spectra
+Loaded 96000/262144 spectra
+Loaded 97000/262144 spectra
+Loaded 98000/262144 spectra
+Loaded 99000/262144 spectra
+Loaded 100000/262144 spectra
+Loaded 101000/262144 spectra
+Loaded 102000/262144 spectra
+Loaded 103000/262144 spectra
+Loaded 104000/262144 spectra
+Loaded 105000/262144 spectra
+Loaded 106000/262144 spectra
+Loaded 107000/262144 spectra
+Loaded 108000/262144 spectra
+Loaded 109000/262144 spectra
+Loaded 110000/262144 spectra
+Loaded 111000/262144 spectra
+Loaded 112000/262144 spectra
+Loaded 113000/262144 spectra
+Loaded 114000/262144 spectra
+Loaded 115000/262144 spectra
+Loaded 116000/262144 spectra
+Loaded 117000/262144 spectra
+Loaded 118000/262144 spectra
+Loaded 119000/262144 spectra
+Loaded 120000/262144 spectra
+Loaded 121000/262144 spectra
+Loaded 122000/262144 spectra
+Loaded 123000/262144 spectra
+Loaded 124000/262144 spectra
+Loaded 125000/262144 spectra
+Loaded 126000/262144 spectra
+Loaded 127000/262144 spectra
+Loaded 128000/262144 spectra
+Loaded 129000/262144 spectra
+Loaded 130000/262144 spectra
+Loaded 131000/262144 spectra
+Loaded 132000/262144 spectra
+Loaded 133000/262144 spectra
+Loaded 134000/262144 spectra
+Loaded 135000/262144 spectra
+Loaded 136000/262144 spectra
+Loaded 137000/262144 spectra
+Loaded 138000/262144 spectra
+Loaded 139000/262144 spectra
+Loaded 140000/262144 spectra
+Loaded 141000/262144 spectra
+Loaded 142000/262144 spectra
+Loaded 143000/262144 spectra
+Loaded 144000/262144 spectra
+Loaded 145000/262144 spectra
+Loaded 146000/262144 spectra
+Loaded 147000/262144 spectra
+Loaded 148000/262144 spectra
+Loaded 149000/262144 spectra
+Loaded 150000/262144 spectra
+Loaded 151000/262144 spectra
+Loaded 152000/262144 spectra
+Loaded 153000/262144 spectra
+Loaded 154000/262144 spectra
+Loaded 155000/262144 spectra
+Loaded 156000/262144 spectra
+Loaded 157000/262144 spectra
+Loaded 158000/262144 spectra
+Loaded 159000/262144 spectra
+Loaded 160000/262144 spectra
+Loaded 161000/262144 spectra
+Loaded 162000/262144 spectra
+Loaded 163000/262144 spectra
+Loaded 164000/262144 spectra
+Loaded 165000/262144 spectra
+Loaded 166000/262144 spectra
+Loaded 167000/262144 spectra
+Loaded 168000/262144 spectra
+Loaded 169000/262144 spectra
+Loaded 170000/262144 spectra
+Loaded 171000/262144 spectra
+Loaded 172000/262144 spectra
+Loaded 173000/262144 spectra
+Loaded 174000/262144 spectra
+Loaded 175000/262144 spectra
+Loaded 176000/262144 spectra
+Loaded 177000/262144 spectra
+Loaded 178000/262144 spectra
+Loaded 179000/262144 spectra
+Loaded 180000/262144 spectra
+Loaded 181000/262144 spectra
+Loaded 182000/262144 spectra
+Loaded 183000/262144 spectra
+Loaded 184000/262144 spectra
+Loaded 185000/262144 spectra
+Loaded 186000/262144 spectra
+Loaded 187000/262144 spectra
+Loaded 188000/262144 spectra
+Loaded 189000/262144 spectra
+Loaded 190000/262144 spectra
+Loaded 191000/262144 spectra
+Loaded 192000/262144 spectra
+Loaded 193000/262144 spectra
+Loaded 194000/262144 spectra
+Loaded 195000/262144 spectra
+Loaded 196000/262144 spectra
+Loaded 197000/262144 spectra
+Loaded 198000/262144 spectra
+Loaded 199000/262144 spectra
+Loaded 200000/262144 spectra
+Loaded 201000/262144 spectra
+Loaded 202000/262144 spectra
+Loaded 203000/262144 spectra
+Loaded 204000/262144 spectra
+Loaded 205000/262144 spectra
+Loaded 206000/262144 spectra
+Loaded 207000/262144 spectra
+Loaded 208000/262144 spectra
+Loaded 209000/262144 spectra
+Loaded 210000/262144 spectra
+Loaded 211000/262144 spectra
+Loaded 212000/262144 spectra
+Loaded 213000/262144 spectra
+Loaded 214000/262144 spectra
+Loaded 215000/262144 spectra
+Loaded 216000/262144 spectra
+Loaded 217000/262144 spectra
+Loaded 218000/262144 spectra
+Loaded 219000/262144 spectra
+Loaded 220000/262144 spectra
+Loaded 221000/262144 spectra
+Loaded 222000/262144 spectra
+Loaded 223000/262144 spectra
+Loaded 224000/262144 spectra
+Loaded 225000/262144 spectra
+Loaded 226000/262144 spectra
+Loaded 227000/262144 spectra
+Loaded 228000/262144 spectra
+Loaded 229000/262144 spectra
+Loaded 230000/262144 spectra
+Loaded 231000/262144 spectra
+Loaded 232000/262144 spectra
+Loaded 233000/262144 spectra
+Loaded 234000/262144 spectra
+Loaded 235000/262144 spectra
+Loaded 236000/262144 spectra
+Loaded 237000/262144 spectra
+Loaded 238000/262144 spectra
+Loaded 239000/262144 spectra
+Loaded 240000/262144 spectra
+Loaded 241000/262144 spectra
+Loaded 242000/262144 spectra
+Loaded 243000/262144 spectra
+Loaded 244000/262144 spectra
+Loaded 245000/262144 spectra
+Loaded 246000/262144 spectra
+Loaded 247000/262144 spectra
+Loaded 248000/262144 spectra
+Loaded 249000/262144 spectra
+Loaded 250000/262144 spectra
+Loaded 251000/262144 spectra
+Loaded 252000/262144 spectra
+Loaded 253000/262144 spectra
+Loaded 254000/262144 spectra
+Loaded 255000/262144 spectra
+Loaded 256000/262144 spectra
+Loaded 257000/262144 spectra
+Loaded 258000/262144 spectra
+Loaded 259000/262144 spectra
+Loaded 260000/262144 spectra
+Loaded 261000/262144 spectra
+Loaded 262000/262144 spectra
+Loaded 262144/262144 spectra
+Selected TB loaded: (262144, 201)
+Input mode: raw spectrum only
+Model input array prepared: (262144, 201)
+fCNM error floor: OFF
+RHI target transform: log(RHI) for training, exp() for evaluation
+Input normalization: ON, fitted per velocity channel on train split
+Target normalization: ON, fitted on train split (mean fCNM/RHI=[0.0927797  0.05011275], std=[0.172869   0.14508232])
+RHI tail loss weighting: OFF
+fCNM zero/floor loss weighting: ON (threshold <= 0, weight=3, n=173964)
+Using imbalance sampler with 24 occupied joint bins out of 100; min/max bin counts=1/133224
+Building TPCNetInspiredCNN with num_layers=8
+TPCNetInspiredCNN(
+  num_layers=8, channels=[64, 56, 48, 40, 32, 24, 16, 8], kernels=[7, 33, 7, 33, 7, 33, 7, 33]
+  (backbone): Sequential(
+    (0): Conv1d(1, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv1d(64, 56, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (4): BatchNorm1d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): Conv1d(56, 48, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (7): BatchNorm1d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): Conv1d(48, 40, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (10): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): Conv1d(40, 32, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (13): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (14): ReLU(inplace=True)
+    (15): Conv1d(32, 24, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (16): BatchNorm1d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (17): ReLU(inplace=True)
+    (18): Conv1d(24, 16, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+    (19): BatchNorm1d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (20): ReLU(inplace=True)
+    (21): Conv1d(16, 8, kernel_size=(33,), stride=(1,), padding=(16,), bias=False)
+    (22): BatchNorm1d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (23): ReLU(inplace=True)
+  )
+  (head): Linear(in_features=1608, out_features=2, bias=True)
+)
+Epoch 001 | train_loss=2.66364 | train_RMSE_fCNM=0.130185 | train_RMSE_RHI=2.28872 | val_loss=0.79496 | val_RMSE_fCNM=0.0987053 | val_RMSE_RHI=0.270779 | test_RMSE_fCNM=0.0986489 | test_RMSE_RHI=0.273348 | lr=0.001
+Epoch 002 | train_loss=0.693507 | train_RMSE_fCNM=0.0732423 | train_RMSE_RHI=1.18852 | val_loss=0.674531 | val_RMSE_fCNM=0.101072 | val_RMSE_RHI=0.249569 | test_RMSE_fCNM=0.100608 | test_RMSE_RHI=0.246232 | lr=0.001
+Epoch 003 | train_loss=0.509367 | train_RMSE_fCNM=0.0652875 | train_RMSE_RHI=0.948696 | val_loss=0.434769 | val_RMSE_fCNM=0.0645212 | val_RMSE_RHI=0.208552 | test_RMSE_fCNM=0.0643125 | test_RMSE_RHI=0.212419 | lr=0.001
+Epoch 004 | train_loss=0.409622 | train_RMSE_fCNM=0.0602588 | train_RMSE_RHI=0.861896 | val_loss=0.318144 | val_RMSE_fCNM=0.0580635 | val_RMSE_RHI=0.190007 | test_RMSE_fCNM=0.0578798 | test_RMSE_RHI=0.195586 | lr=0.001
+Epoch 005 | train_loss=0.365328 | train_RMSE_fCNM=0.0579309 | train_RMSE_RHI=0.807774 | val_loss=0.279529 | val_RMSE_fCNM=0.0602478 | val_RMSE_RHI=0.189793 | test_RMSE_fCNM=0.0602904 | test_RMSE_RHI=0.189041 | lr=0.001
+Epoch 006 | train_loss=0.319013 | train_RMSE_fCNM=0.0557004 | train_RMSE_RHI=0.737054 | val_loss=0.428388 | val_RMSE_fCNM=0.0702812 | val_RMSE_RHI=0.219027 | test_RMSE_fCNM=0.0696526 | test_RMSE_RHI=0.20953 | lr=0.001
+Epoch 007 | train_loss=0.312348 | train_RMSE_fCNM=0.0543429 | train_RMSE_RHI=0.753783 | val_loss=0.297986 | val_RMSE_fCNM=0.065404 | val_RMSE_RHI=0.186466 | test_RMSE_fCNM=0.0653745 | test_RMSE_RHI=0.192107 | lr=0.001
+Epoch 008 | train_loss=0.267987 | train_RMSE_fCNM=0.0521264 | train_RMSE_RHI=0.687595 | val_loss=0.277657 | val_RMSE_fCNM=0.0611936 | val_RMSE_RHI=0.18937 | test_RMSE_fCNM=0.0615184 | test_RMSE_RHI=0.186097 | lr=0.001
+Epoch 009 | train_loss=0.246664 | train_RMSE_fCNM=0.0509898 | train_RMSE_RHI=0.658387 | val_loss=0.218409 | val_RMSE_fCNM=0.0535554 | val_RMSE_RHI=0.173369 | test_RMSE_fCNM=0.0537901 | test_RMSE_RHI=0.181168 | lr=0.001
+Epoch 010 | train_loss=0.225772 | train_RMSE_fCNM=0.0492552 | train_RMSE_RHI=0.617468 | val_loss=0.203764 | val_RMSE_fCNM=0.0484296 | val_RMSE_RHI=0.173135 | test_RMSE_fCNM=0.0487968 | test_RMSE_RHI=0.178233 | lr=0.001
+Epoch 011 | train_loss=0.203588 | train_RMSE_fCNM=0.0471069 | train_RMSE_RHI=0.576988 | val_loss=0.198993 | val_RMSE_fCNM=0.0485163 | val_RMSE_RHI=0.172075 | test_RMSE_fCNM=0.048954 | test_RMSE_RHI=0.181024 | lr=0.001
+Epoch 012 | train_loss=0.192989 | train_RMSE_fCNM=0.0467887 | train_RMSE_RHI=0.530926 | val_loss=0.195744 | val_RMSE_fCNM=0.0482858 | val_RMSE_RHI=0.172481 | test_RMSE_fCNM=0.0483337 | test_RMSE_RHI=0.174625 | lr=0.001
+Epoch 013 | train_loss=0.186943 | train_RMSE_fCNM=0.0464228 | train_RMSE_RHI=0.567639 | val_loss=0.205919 | val_RMSE_fCNM=0.0478699 | val_RMSE_RHI=0.169174 | test_RMSE_fCNM=0.0480705 | test_RMSE_RHI=0.180405 | lr=0.001
+Epoch 014 | train_loss=0.170615 | train_RMSE_fCNM=0.045246 | train_RMSE_RHI=0.562949 | val_loss=0.169263 | val_RMSE_fCNM=0.0450494 | val_RMSE_RHI=0.160986 | test_RMSE_fCNM=0.0454392 | test_RMSE_RHI=0.172429 | lr=0.001
+Epoch 015 | train_loss=0.160956 | train_RMSE_fCNM=0.0439122 | train_RMSE_RHI=0.517216 | val_loss=0.18435 | val_RMSE_fCNM=0.0486279 | val_RMSE_RHI=0.163256 | test_RMSE_fCNM=0.0489439 | test_RMSE_RHI=0.186444 | lr=0.001
+Epoch 016 | train_loss=0.155143 | train_RMSE_fCNM=0.0434732 | train_RMSE_RHI=0.512722 | val_loss=0.223965 | val_RMSE_fCNM=0.0514277 | val_RMSE_RHI=0.170548 | test_RMSE_fCNM=0.051426 | test_RMSE_RHI=0.179364 | lr=0.001
+Epoch 017 | train_loss=0.141406 | train_RMSE_fCNM=0.0422882 | train_RMSE_RHI=0.480089 | val_loss=0.176953 | val_RMSE_fCNM=0.0485 | val_RMSE_RHI=0.160873 | test_RMSE_fCNM=0.0487934 | test_RMSE_RHI=0.175431 | lr=0.001
+Epoch 018 | train_loss=0.134652 | train_RMSE_fCNM=0.041509 | train_RMSE_RHI=0.492474 | val_loss=0.174927 | val_RMSE_fCNM=0.0484508 | val_RMSE_RHI=0.16463 | test_RMSE_fCNM=0.0484709 | test_RMSE_RHI=0.171825 | lr=0.001
+Epoch 019 | train_loss=0.131961 | train_RMSE_fCNM=0.0404996 | train_RMSE_RHI=0.474303 | val_loss=0.155597 | val_RMSE_fCNM=0.0430176 | val_RMSE_RHI=0.16277 | test_RMSE_fCNM=0.0428871 | test_RMSE_RHI=0.169096 | lr=0.001
+Epoch 020 | train_loss=0.115772 | train_RMSE_fCNM=0.0392371 | train_RMSE_RHI=0.438287 | val_loss=0.143696 | val_RMSE_fCNM=0.0412207 | val_RMSE_RHI=0.156652 | test_RMSE_fCNM=0.0414917 | test_RMSE_RHI=0.17358 | lr=0.001
+Epoch 021 | train_loss=0.112536 | train_RMSE_fCNM=0.0387666 | train_RMSE_RHI=0.439764 | val_loss=0.159389 | val_RMSE_fCNM=0.0434359 | val_RMSE_RHI=0.15606 | test_RMSE_fCNM=0.0437904 | test_RMSE_RHI=0.170793 | lr=0.001
+Epoch 022 | train_loss=0.116333 | train_RMSE_fCNM=0.0392362 | train_RMSE_RHI=0.460027 | val_loss=0.138454 | val_RMSE_fCNM=0.040364 | val_RMSE_RHI=0.159007 | test_RMSE_fCNM=0.0405552 | test_RMSE_RHI=0.169507 | lr=0.001
+Epoch 023 | train_loss=0.107115 | train_RMSE_fCNM=0.0380427 | train_RMSE_RHI=0.409318 | val_loss=0.138387 | val_RMSE_fCNM=0.0409027 | val_RMSE_RHI=0.155057 | test_RMSE_fCNM=0.0411317 | test_RMSE_RHI=0.167817 | lr=0.001
+Epoch 024 | train_loss=0.0992849 | train_RMSE_fCNM=0.0374501 | train_RMSE_RHI=0.417255 | val_loss=0.14303 | val_RMSE_fCNM=0.0429367 | val_RMSE_RHI=0.157039 | test_RMSE_fCNM=0.0429531 | test_RMSE_RHI=0.173372 | lr=0.001
+Epoch 025 | train_loss=0.0969199 | train_RMSE_fCNM=0.0371636 | train_RMSE_RHI=0.408345 | val_loss=0.13885 | val_RMSE_fCNM=0.0413908 | val_RMSE_RHI=0.162641 | test_RMSE_fCNM=0.0413832 | test_RMSE_RHI=0.170075 | lr=0.001
+Epoch 026 | train_loss=0.101392 | train_RMSE_fCNM=0.0373512 | train_RMSE_RHI=0.422618 | val_loss=0.206425 | val_RMSE_fCNM=0.0490826 | val_RMSE_RHI=0.172957 | test_RMSE_fCNM=0.0490269 | test_RMSE_RHI=0.178165 | lr=0.001
+Epoch 027 | train_loss=0.0941038 | train_RMSE_fCNM=0.0364394 | train_RMSE_RHI=0.417382 | val_loss=0.140298 | val_RMSE_fCNM=0.0453907 | val_RMSE_RHI=0.154336 | test_RMSE_fCNM=0.0454792 | test_RMSE_RHI=0.166032 | lr=0.001
+Epoch 028 | train_loss=0.0837823 | train_RMSE_fCNM=0.0356195 | train_RMSE_RHI=0.38064 | val_loss=0.129509 | val_RMSE_fCNM=0.0399764 | val_RMSE_RHI=0.157621 | test_RMSE_fCNM=0.0402258 | test_RMSE_RHI=0.171639 | lr=0.001
+Epoch 029 | train_loss=0.0848894 | train_RMSE_fCNM=0.0356426 | train_RMSE_RHI=0.380481 | val_loss=0.12955 | val_RMSE_fCNM=0.0422349 | val_RMSE_RHI=0.150779 | test_RMSE_fCNM=0.0425831 | test_RMSE_RHI=0.163893 | lr=0.001
+Epoch 030 | train_loss=0.081166 | train_RMSE_fCNM=0.0351199 | train_RMSE_RHI=0.379084 | val_loss=0.159315 | val_RMSE_fCNM=0.0515631 | val_RMSE_RHI=0.151962 | test_RMSE_fCNM=0.0522008 | test_RMSE_RHI=0.174271 | lr=0.001
+Epoch 031 | train_loss=0.0922563 | train_RMSE_fCNM=0.036204 | train_RMSE_RHI=0.421621 | val_loss=0.126201 | val_RMSE_fCNM=0.0390498 | val_RMSE_RHI=0.155191 | test_RMSE_fCNM=0.039699 | test_RMSE_RHI=0.171922 | lr=0.001
+Epoch 032 | train_loss=0.072818 | train_RMSE_fCNM=0.0339669 | train_RMSE_RHI=0.363202 | val_loss=0.117759 | val_RMSE_fCNM=0.0380048 | val_RMSE_RHI=0.149627 | test_RMSE_fCNM=0.0385213 | test_RMSE_RHI=0.1672 | lr=0.001
+Epoch 033 | train_loss=0.0698875 | train_RMSE_fCNM=0.0330486 | train_RMSE_RHI=0.346962 | val_loss=0.126775 | val_RMSE_fCNM=0.0405718 | val_RMSE_RHI=0.153634 | test_RMSE_fCNM=0.0407137 | test_RMSE_RHI=0.164767 | lr=0.001
+Epoch 034 | train_loss=0.0743339 | train_RMSE_fCNM=0.0337091 | train_RMSE_RHI=0.363222 | val_loss=0.117253 | val_RMSE_fCNM=0.0384451 | val_RMSE_RHI=0.152927 | test_RMSE_fCNM=0.0386934 | test_RMSE_RHI=0.168311 | lr=0.001
+Epoch 035 | train_loss=0.0691142 | train_RMSE_fCNM=0.0329673 | train_RMSE_RHI=0.362908 | val_loss=0.122698 | val_RMSE_fCNM=0.0393108 | val_RMSE_RHI=0.154874 | test_RMSE_fCNM=0.039631 | test_RMSE_RHI=0.166735 | lr=0.001
+Epoch 036 | train_loss=0.0699296 | train_RMSE_fCNM=0.0331415 | train_RMSE_RHI=0.354497 | val_loss=0.129939 | val_RMSE_fCNM=0.0434102 | val_RMSE_RHI=0.152309 | test_RMSE_fCNM=0.0439234 | test_RMSE_RHI=0.168753 | lr=0.001
+Epoch 037 | train_loss=0.0713422 | train_RMSE_fCNM=0.033583 | train_RMSE_RHI=0.349372 | val_loss=0.121395 | val_RMSE_fCNM=0.0407345 | val_RMSE_RHI=0.151131 | test_RMSE_fCNM=0.0410124 | test_RMSE_RHI=0.162563 | lr=0.001
+Epoch 038 | train_loss=0.074357 | train_RMSE_fCNM=0.0338542 | train_RMSE_RHI=0.353947 | val_loss=0.132626 | val_RMSE_fCNM=0.0412217 | val_RMSE_RHI=0.155049 | test_RMSE_fCNM=0.0411743 | test_RMSE_RHI=0.167641 | lr=0.001
+Epoch 039 | train_loss=0.0636557 | train_RMSE_fCNM=0.0323897 | train_RMSE_RHI=0.336329 | val_loss=0.11339 | val_RMSE_fCNM=0.0390614 | val_RMSE_RHI=0.151018 | test_RMSE_fCNM=0.0393539 | test_RMSE_RHI=0.164301 | lr=0.001
+Epoch 040 | train_loss=0.058283 | train_RMSE_fCNM=0.0315881 | train_RMSE_RHI=0.314691 | val_loss=0.117146 | val_RMSE_fCNM=0.0402659 | val_RMSE_RHI=0.155622 | test_RMSE_fCNM=0.0405896 | test_RMSE_RHI=0.161556 | lr=0.001
+Epoch 041 | train_loss=0.0585378 | train_RMSE_fCNM=0.0315108 | train_RMSE_RHI=0.329704 | val_loss=0.11542 | val_RMSE_fCNM=0.0389 | val_RMSE_RHI=0.156352 | test_RMSE_fCNM=0.0391816 | test_RMSE_RHI=0.166345 | lr=0.001
+Epoch 042 | train_loss=0.0581151 | train_RMSE_fCNM=0.0313506 | train_RMSE_RHI=0.312693 | val_loss=0.149996 | val_RMSE_fCNM=0.0447771 | val_RMSE_RHI=0.155588 | test_RMSE_fCNM=0.0449238 | test_RMSE_RHI=0.172472 | lr=0.001
+Epoch 043 | train_loss=0.0568513 | train_RMSE_fCNM=0.0308564 | train_RMSE_RHI=0.317358 | val_loss=0.109115 | val_RMSE_fCNM=0.0379862 | val_RMSE_RHI=0.14882 | test_RMSE_fCNM=0.0383729 | test_RMSE_RHI=0.164729 | lr=0.001
+Epoch 044 | train_loss=0.0581552 | train_RMSE_fCNM=0.0313611 | train_RMSE_RHI=0.308203 | val_loss=0.118611 | val_RMSE_fCNM=0.0416104 | val_RMSE_RHI=0.152158 | test_RMSE_fCNM=0.0419031 | test_RMSE_RHI=0.16909 | lr=0.001
+Epoch 045 | train_loss=0.0580383 | train_RMSE_fCNM=0.0309952 | train_RMSE_RHI=0.333919 | val_loss=0.114415 | val_RMSE_fCNM=0.0385709 | val_RMSE_RHI=0.151363 | test_RMSE_fCNM=0.0386096 | test_RMSE_RHI=0.160087 | lr=0.001
+Epoch 046 | train_loss=0.0542709 | train_RMSE_fCNM=0.0305786 | train_RMSE_RHI=0.30465 | val_loss=0.111788 | val_RMSE_fCNM=0.0383536 | val_RMSE_RHI=0.150979 | test_RMSE_fCNM=0.0385636 | test_RMSE_RHI=0.167604 | lr=0.001
+Epoch 047 | train_loss=0.0519281 | train_RMSE_fCNM=0.0302803 | train_RMSE_RHI=0.310094 | val_loss=0.109538 | val_RMSE_fCNM=0.0379385 | val_RMSE_RHI=0.148773 | test_RMSE_fCNM=0.0383026 | test_RMSE_RHI=0.167995 | lr=0.001
+Epoch 048 | train_loss=0.0538471 | train_RMSE_fCNM=0.0303812 | train_RMSE_RHI=0.339449 | val_loss=0.112985 | val_RMSE_fCNM=0.037463 | val_RMSE_RHI=0.15321 | test_RMSE_fCNM=0.0373238 | test_RMSE_RHI=0.162743 | lr=0.001
+Epoch 049 | train_loss=0.0513213 | train_RMSE_fCNM=0.0297609 | train_RMSE_RHI=0.304923 | val_loss=0.109392 | val_RMSE_fCNM=0.0364015 | val_RMSE_RHI=0.151299 | test_RMSE_fCNM=0.036731 | test_RMSE_RHI=0.167262 | lr=0.0005
+Epoch 050 | train_loss=0.0336179 | train_RMSE_fCNM=0.0264061 | train_RMSE_RHI=0.216151 | val_loss=0.103025 | val_RMSE_fCNM=0.03572 | val_RMSE_RHI=0.150101 | test_RMSE_fCNM=0.036061 | test_RMSE_RHI=0.165365 | lr=0.0005
+Epoch 051 | train_loss=0.0337355 | train_RMSE_fCNM=0.0265523 | train_RMSE_RHI=0.225605 | val_loss=0.103175 | val_RMSE_fCNM=0.0360718 | val_RMSE_RHI=0.151003 | test_RMSE_fCNM=0.0363932 | test_RMSE_RHI=0.164158 | lr=0.0005
+Epoch 052 | train_loss=0.0329205 | train_RMSE_fCNM=0.0263539 | train_RMSE_RHI=0.222088 | val_loss=0.10068 | val_RMSE_fCNM=0.0351578 | val_RMSE_RHI=0.149639 | test_RMSE_fCNM=0.0353436 | test_RMSE_RHI=0.163288 | lr=0.0005
+Epoch 053 | train_loss=0.0314215 | train_RMSE_fCNM=0.0258345 | train_RMSE_RHI=0.218045 | val_loss=0.102262 | val_RMSE_fCNM=0.0364374 | val_RMSE_RHI=0.149687 | test_RMSE_fCNM=0.0367813 | test_RMSE_RHI=0.162689 | lr=0.0005
+Epoch 054 | train_loss=0.0323845 | train_RMSE_fCNM=0.0262422 | train_RMSE_RHI=0.222673 | val_loss=0.0995242 | val_RMSE_fCNM=0.035061 | val_RMSE_RHI=0.149196 | test_RMSE_fCNM=0.0353323 | test_RMSE_RHI=0.164626 | lr=0.0005
+Epoch 055 | train_loss=0.0337013 | train_RMSE_fCNM=0.0263718 | train_RMSE_RHI=0.247789 | val_loss=0.0996607 | val_RMSE_fCNM=0.0354577 | val_RMSE_RHI=0.150204 | test_RMSE_fCNM=0.0359208 | test_RMSE_RHI=0.162705 | lr=0.0005
+Epoch 056 | train_loss=0.031802 | train_RMSE_fCNM=0.0259381 | train_RMSE_RHI=0.219297 | val_loss=0.100801 | val_RMSE_fCNM=0.0364105 | val_RMSE_RHI=0.149733 | test_RMSE_fCNM=0.0368419 | test_RMSE_RHI=0.168327 | lr=0.0005
+Epoch 057 | train_loss=0.0314967 | train_RMSE_fCNM=0.0257996 | train_RMSE_RHI=0.228952 | val_loss=0.113998 | val_RMSE_fCNM=0.0365232 | val_RMSE_RHI=0.157184 | test_RMSE_fCNM=0.0367264 | test_RMSE_RHI=0.170351 | lr=0.0005
+Epoch 058 | train_loss=0.0309832 | train_RMSE_fCNM=0.025819 | train_RMSE_RHI=0.223075 | val_loss=0.0991694 | val_RMSE_fCNM=0.0343422 | val_RMSE_RHI=0.149817 | test_RMSE_fCNM=0.0347902 | test_RMSE_RHI=0.165304 | lr=0.0005
+Epoch 059 | train_loss=0.0300306 | train_RMSE_fCNM=0.0254774 | train_RMSE_RHI=0.216878 | val_loss=0.100116 | val_RMSE_fCNM=0.0345762 | val_RMSE_RHI=0.150904 | test_RMSE_fCNM=0.0348159 | test_RMSE_RHI=0.162582 | lr=0.0005
+Epoch 060 | train_loss=0.0293363 | train_RMSE_fCNM=0.0250948 | train_RMSE_RHI=0.217459 | val_loss=0.100603 | val_RMSE_fCNM=0.0346196 | val_RMSE_RHI=0.152195 | test_RMSE_fCNM=0.03491 | test_RMSE_RHI=0.166223 | lr=0.0005
+Epoch 061 | train_loss=0.0294793 | train_RMSE_fCNM=0.0250943 | train_RMSE_RHI=0.218878 | val_loss=0.102567 | val_RMSE_fCNM=0.0358797 | val_RMSE_RHI=0.149379 | test_RMSE_fCNM=0.0363605 | test_RMSE_RHI=0.165685 | lr=0.0005
+Epoch 062 | train_loss=0.0285102 | train_RMSE_fCNM=0.0247867 | train_RMSE_RHI=0.217526 | val_loss=0.100903 | val_RMSE_fCNM=0.035786 | val_RMSE_RHI=0.149778 | test_RMSE_fCNM=0.0360999 | test_RMSE_RHI=0.161448 | lr=0.0005
+Epoch 063 | train_loss=0.0288401 | train_RMSE_fCNM=0.0248859 | train_RMSE_RHI=0.212677 | val_loss=0.0975319 | val_RMSE_fCNM=0.0342361 | val_RMSE_RHI=0.150332 | test_RMSE_fCNM=0.0344647 | test_RMSE_RHI=0.164318 | lr=0.0005
+Epoch 064 | train_loss=0.0290484 | train_RMSE_fCNM=0.0248736 | train_RMSE_RHI=0.219569 | val_loss=0.0980396 | val_RMSE_fCNM=0.0348486 | val_RMSE_RHI=0.15109 | test_RMSE_fCNM=0.0350815 | test_RMSE_RHI=0.164355 | lr=0.0005
+Epoch 065 | train_loss=0.0276855 | train_RMSE_fCNM=0.024613 | train_RMSE_RHI=0.209699 | val_loss=0.0989184 | val_RMSE_fCNM=0.0343007 | val_RMSE_RHI=0.152444 | test_RMSE_fCNM=0.0346177 | test_RMSE_RHI=0.164656 | lr=0.0005
+Epoch 066 | train_loss=0.0284823 | train_RMSE_fCNM=0.0247406 | train_RMSE_RHI=0.221743 | val_loss=0.0996721 | val_RMSE_fCNM=0.0351628 | val_RMSE_RHI=0.15038 | test_RMSE_fCNM=0.0354781 | test_RMSE_RHI=0.166454 | lr=0.0005
+Epoch 067 | train_loss=0.0288319 | train_RMSE_fCNM=0.0248842 | train_RMSE_RHI=0.221182 | val_loss=0.0989946 | val_RMSE_fCNM=0.0345695 | val_RMSE_RHI=0.149778 | test_RMSE_fCNM=0.0348992 | test_RMSE_RHI=0.163118 | lr=0.0005
+Epoch 068 | train_loss=0.0281859 | train_RMSE_fCNM=0.0247216 | train_RMSE_RHI=0.226789 | val_loss=0.0989881 | val_RMSE_fCNM=0.0341582 | val_RMSE_RHI=0.151142 | test_RMSE_fCNM=0.0343212 | test_RMSE_RHI=0.165664 | lr=0.0005
+Epoch 069 | train_loss=0.0272977 | train_RMSE_fCNM=0.0244045 | train_RMSE_RHI=0.204806 | val_loss=0.101262 | val_RMSE_fCNM=0.0344531 | val_RMSE_RHI=0.150283 | test_RMSE_fCNM=0.0346819 | test_RMSE_RHI=0.165699 | lr=0.00025
+Epoch 070 | train_loss=0.0219254 | train_RMSE_fCNM=0.0231402 | train_RMSE_RHI=0.171191 | val_loss=0.0964483 | val_RMSE_fCNM=0.0346591 | val_RMSE_RHI=0.149699 | test_RMSE_fCNM=0.0350101 | test_RMSE_RHI=0.165482 | lr=0.00025
+Epoch 071 | train_loss=0.0208492 | train_RMSE_fCNM=0.0227905 | train_RMSE_RHI=0.169207 | val_loss=0.0986189 | val_RMSE_fCNM=0.035476 | val_RMSE_RHI=0.148502 | test_RMSE_fCNM=0.0358491 | test_RMSE_RHI=0.164608 | lr=0.00025
+Epoch 072 | train_loss=0.0211984 | train_RMSE_fCNM=0.0228459 | train_RMSE_RHI=0.171207 | val_loss=0.0968499 | val_RMSE_fCNM=0.0343743 | val_RMSE_RHI=0.150432 | test_RMSE_fCNM=0.0347422 | test_RMSE_RHI=0.163807 | lr=0.00025
+Epoch 073 | train_loss=0.0214629 | train_RMSE_fCNM=0.0227957 | train_RMSE_RHI=0.177531 | val_loss=0.0964023 | val_RMSE_fCNM=0.0337896 | val_RMSE_RHI=0.14905 | test_RMSE_fCNM=0.034042 | test_RMSE_RHI=0.164342 | lr=0.00025
+Epoch 074 | train_loss=0.0204703 | train_RMSE_fCNM=0.0225937 | train_RMSE_RHI=0.163774 | val_loss=0.0948966 | val_RMSE_fCNM=0.0332815 | val_RMSE_RHI=0.150341 | test_RMSE_fCNM=0.033616 | test_RMSE_RHI=0.163779 | lr=0.00025
+Epoch 075 | train_loss=0.0202831 | train_RMSE_fCNM=0.0225277 | train_RMSE_RHI=0.16882 | val_loss=0.0956185 | val_RMSE_fCNM=0.0337181 | val_RMSE_RHI=0.150514 | test_RMSE_fCNM=0.0341033 | test_RMSE_RHI=0.163812 | lr=0.00025
+Epoch 076 | train_loss=0.0203948 | train_RMSE_fCNM=0.0226224 | train_RMSE_RHI=0.17293 | val_loss=0.0966689 | val_RMSE_fCNM=0.0342938 | val_RMSE_RHI=0.149754 | test_RMSE_fCNM=0.0346565 | test_RMSE_RHI=0.163907 | lr=0.00025
+Epoch 077 | train_loss=0.0204269 | train_RMSE_fCNM=0.0224111 | train_RMSE_RHI=0.175219 | val_loss=0.0949082 | val_RMSE_fCNM=0.0336209 | val_RMSE_RHI=0.149396 | test_RMSE_fCNM=0.0340072 | test_RMSE_RHI=0.165557 | lr=0.00025
+Epoch 078 | train_loss=0.0201876 | train_RMSE_fCNM=0.0224602 | train_RMSE_RHI=0.161963 | val_loss=0.096876 | val_RMSE_fCNM=0.0336642 | val_RMSE_RHI=0.15125 | test_RMSE_fCNM=0.0338954 | test_RMSE_RHI=0.164588 | lr=0.00025
+Epoch 079 | train_loss=0.0195234 | train_RMSE_fCNM=0.0222693 | train_RMSE_RHI=0.159957 | val_loss=0.0959519 | val_RMSE_fCNM=0.0343773 | val_RMSE_RHI=0.149371 | test_RMSE_fCNM=0.0346183 | test_RMSE_RHI=0.165021 | lr=0.00025
+Epoch 080 | train_loss=0.0200819 | train_RMSE_fCNM=0.0222664 | train_RMSE_RHI=0.170729 | val_loss=0.0947925 | val_RMSE_fCNM=0.0331298 | val_RMSE_RHI=0.149458 | test_RMSE_fCNM=0.0334166 | test_RMSE_RHI=0.164933 | lr=0.00025
+Epoch 081 | train_loss=0.0204867 | train_RMSE_fCNM=0.022527 | train_RMSE_RHI=0.180422 | val_loss=0.0951355 | val_RMSE_fCNM=0.0332891 | val_RMSE_RHI=0.15037 | test_RMSE_fCNM=0.0335909 | test_RMSE_RHI=0.166467 | lr=0.00025
+Epoch 082 | train_loss=0.0204994 | train_RMSE_fCNM=0.0223434 | train_RMSE_RHI=0.162441 | val_loss=0.095617 | val_RMSE_fCNM=0.034104 | val_RMSE_RHI=0.149376 | test_RMSE_fCNM=0.034373 | test_RMSE_RHI=0.164673 | lr=0.00025
+Epoch 083 | train_loss=0.0198262 | train_RMSE_fCNM=0.0222508 | train_RMSE_RHI=0.170388 | val_loss=0.0972017 | val_RMSE_fCNM=0.034087 | val_RMSE_RHI=0.150836 | test_RMSE_fCNM=0.0342639 | test_RMSE_RHI=0.16507 | lr=0.00025
+Epoch 084 | train_loss=0.0189438 | train_RMSE_fCNM=0.0218746 | train_RMSE_RHI=0.15372 | val_loss=0.095497 | val_RMSE_fCNM=0.0331612 | val_RMSE_RHI=0.150232 | test_RMSE_fCNM=0.0333181 | test_RMSE_RHI=0.162748 | lr=0.00025
+Epoch 085 | train_loss=0.0193815 | train_RMSE_fCNM=0.0222227 | train_RMSE_RHI=0.170241 | val_loss=0.0952454 | val_RMSE_fCNM=0.0334116 | val_RMSE_RHI=0.149936 | test_RMSE_fCNM=0.0336186 | test_RMSE_RHI=0.165153 | lr=0.00025
+Epoch 086 | train_loss=0.0202077 | train_RMSE_fCNM=0.0219822 | train_RMSE_RHI=0.174772 | val_loss=0.0951003 | val_RMSE_fCNM=0.0331562 | val_RMSE_RHI=0.150662 | test_RMSE_fCNM=0.0333254 | test_RMSE_RHI=0.165624 | lr=0.000125
+Epoch 087 | train_loss=0.0168633 | train_RMSE_fCNM=0.0212909 | train_RMSE_RHI=0.140324 | val_loss=0.0943924 | val_RMSE_fCNM=0.0332169 | val_RMSE_RHI=0.150527 | test_RMSE_fCNM=0.0333698 | test_RMSE_RHI=0.163874 | lr=0.000125
+Epoch 088 | train_loss=0.0166308 | train_RMSE_fCNM=0.0212648 | train_RMSE_RHI=0.139934 | val_loss=0.0945825 | val_RMSE_fCNM=0.0333633 | val_RMSE_RHI=0.150306 | test_RMSE_fCNM=0.0335466 | test_RMSE_RHI=0.164698 | lr=0.000125
+Epoch 089 | train_loss=0.0166738 | train_RMSE_fCNM=0.0213036 | train_RMSE_RHI=0.131793 | val_loss=0.0935247 | val_RMSE_fCNM=0.0332524 | val_RMSE_RHI=0.149219 | test_RMSE_fCNM=0.0335149 | test_RMSE_RHI=0.164217 | lr=0.000125
+Epoch 090 | train_loss=0.0162419 | train_RMSE_fCNM=0.0210779 | train_RMSE_RHI=0.134922 | val_loss=0.0937417 | val_RMSE_fCNM=0.0333442 | val_RMSE_RHI=0.149824 | test_RMSE_fCNM=0.0336249 | test_RMSE_RHI=0.164716 | lr=0.000125
+Epoch 091 | train_loss=0.0164883 | train_RMSE_fCNM=0.0211249 | train_RMSE_RHI=0.136523 | val_loss=0.0946848 | val_RMSE_fCNM=0.0331251 | val_RMSE_RHI=0.150908 | test_RMSE_fCNM=0.0333023 | test_RMSE_RHI=0.164588 | lr=0.000125
+Epoch 092 | train_loss=0.0165117 | train_RMSE_fCNM=0.0211409 | train_RMSE_RHI=0.139678 | val_loss=0.09384 | val_RMSE_fCNM=0.0331751 | val_RMSE_RHI=0.149336 | test_RMSE_fCNM=0.0334617 | test_RMSE_RHI=0.163728 | lr=0.000125
+Epoch 093 | train_loss=0.0163564 | train_RMSE_fCNM=0.0211472 | train_RMSE_RHI=0.136205 | val_loss=0.0948066 | val_RMSE_fCNM=0.0333803 | val_RMSE_RHI=0.149232 | test_RMSE_fCNM=0.033596 | test_RMSE_RHI=0.163827 | lr=0.000125
+Epoch 094 | train_loss=0.0166639 | train_RMSE_fCNM=0.0211021 | train_RMSE_RHI=0.145826 | val_loss=0.0940971 | val_RMSE_fCNM=0.0329891 | val_RMSE_RHI=0.149785 | test_RMSE_fCNM=0.0333265 | test_RMSE_RHI=0.164689 | lr=0.000125
+Epoch 095 | train_loss=0.0164973 | train_RMSE_fCNM=0.0211963 | train_RMSE_RHI=0.135916 | val_loss=0.0940105 | val_RMSE_fCNM=0.0334828 | val_RMSE_RHI=0.149298 | test_RMSE_fCNM=0.033658 | test_RMSE_RHI=0.163663 | lr=6.25e-05
+Epoch 096 | train_loss=0.0151419 | train_RMSE_fCNM=0.0205584 | train_RMSE_RHI=0.122457 | val_loss=0.0932323 | val_RMSE_fCNM=0.0331393 | val_RMSE_RHI=0.148917 | test_RMSE_fCNM=0.0334337 | test_RMSE_RHI=0.164617 | lr=6.25e-05
+Epoch 097 | train_loss=0.015045 | train_RMSE_fCNM=0.0205485 | train_RMSE_RHI=0.120473 | val_loss=0.0941072 | val_RMSE_fCNM=0.0329964 | val_RMSE_RHI=0.1502 | test_RMSE_fCNM=0.0332103 | test_RMSE_RHI=0.165439 | lr=6.25e-05
+Epoch 098 | train_loss=0.0149337 | train_RMSE_fCNM=0.020619 | train_RMSE_RHI=0.122254 | val_loss=0.0940721 | val_RMSE_fCNM=0.0331745 | val_RMSE_RHI=0.149871 | test_RMSE_fCNM=0.0334286 | test_RMSE_RHI=0.165388 | lr=6.25e-05
+Epoch 099 | train_loss=0.0154676 | train_RMSE_fCNM=0.0208165 | train_RMSE_RHI=0.127775 | val_loss=0.0935581 | val_RMSE_fCNM=0.0328693 | val_RMSE_RHI=0.149809 | test_RMSE_fCNM=0.0330844 | test_RMSE_RHI=0.163904 | lr=6.25e-05
+Epoch 100 | train_loss=0.0149351 | train_RMSE_fCNM=0.0205146 | train_RMSE_RHI=0.122578 | val_loss=0.0938942 | val_RMSE_fCNM=0.0332367 | val_RMSE_RHI=0.149756 | test_RMSE_fCNM=0.0335147 | test_RMSE_RHI=0.165533 | lr=6.25e-05
+
+Test RMSE fCNM: 0.0334336
+Test RMSE RHI : 0.164615
+Test MAE  fCNM: 0.0162807
+Test MAE  RHI : 0.0301105
+
+Prediction diagnostics
+  fCNM truth: min=7.45058e-09, max=0.9707, mean=0.091333
+  fCNM pred : min=0, max=0.942985, mean=0.0960368
+  RHI truth: min=0.995655, max=25.905, mean=1.0675
+  RHI pred : min=0.857282, max=17.8578, mean=1.06351
+
+Summary
+  device: cuda
+  CNN layers: 8/8
+  subset size: 262144
+  train/val/test: 183501/39322/39321
+  best validation loss: 0.0932323
+  final test RMSE fCNM: 0.0334336
+  final test RMSE RHI : 0.164615
+  sampled indices CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers8/sampled_indices_layers8.csv
+  split indices CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers8/split_indices_layers8.csv
+  training metrics CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers8/training_metrics_layers8.csv
+  prediction CSV: /mnt/c/users/retar/desktop/research/ML/ML_MW/results/layer_sweep_full_layers8/test_predictions_layers8.csv
+  figures:
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers8/true_vs_pred_fcnm_layers8.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers8/true_vs_pred_rhi_layers8.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers8/true_vs_pred_combined_layers8.png
+    /mnt/c/users/retar/desktop/research/ML/ML_MW/figs/layer_sweep_full_layers8/true_vs_pred_rhi_log_layers8.png
+
+Layer sweep complete.

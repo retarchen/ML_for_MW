@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Detached/no-stop launcher for scripts/train_hi_tpcnet_cnn.py.
+# Detached/no-stop launcher for scripts/train_hi_cnn.py.
 # Edit the variables below, or override them from the command line:
-#   RUN_NAME=my_run FCNM_ERROR_FLOOR=0.02 bash scripts/run_train_hi_tpcnet_cnn.sh
+#   RUN_NAME=my_run FCNM_ERROR_FLOOR=0.02 bash scripts/run_train_hi_cnn.sh
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
@@ -16,9 +16,11 @@ EPOCHS="${EPOCHS:-100}"
 PATIENCE="${PATIENCE:-15}"
 BATCH_SIZE="${BATCH_SIZE:-256}"
 DEVICE="${DEVICE:-cuda}"
+TB_COLUMN="${TB_COLUMN:-3}"
+NUM_LAYERS="${NUM_LAYERS:-8}"
 RHI_TARGET_TRANSFORM="${RHI_TARGET_TRANSFORM:-log}"
-FCNM_ERROR_FLOOR="${FCNM_ERROR_FLOOR:-0.02}"
-FCNM_ZERO_LOSS_WEIGHT="${FCNM_ZERO_LOSS_WEIGHT:-2.0}"
+FCNM_ERROR_FLOOR="${FCNM_ERROR_FLOOR:-0}"
+FCNM_ZERO_LOSS_WEIGHT="${FCNM_ZERO_LOSS_WEIGHT:-3.0}"
 
 LOG_DIR="${PROJECT_DIR}/logs"
 LOG_FILE="${LOG_DIR}/${RUN_NAME}.log"
@@ -33,12 +35,14 @@ source '${CONDA_SH}'
 conda activate '${ENV_NAME}'
 export MPLCONFIGDIR=/tmp
 cd '${PROJECT_DIR}'
-python -u scripts/train_hi_tpcnet_cnn.py \
+python -u scripts/train_hi_cnn.py \
   --subset-size '${SUBSET_SIZE}' \
   --epochs '${EPOCHS}' \
   --patience '${PATIENCE}' \
   --batch-size '${BATCH_SIZE}' \
   --device '${DEVICE}' \
+  --tb-column '${TB_COLUMN}' \
+  --num-layers '${NUM_LAYERS}' \
   --rhi-target-transform '${RHI_TARGET_TRANSFORM}' \
   --fcnm-error-floor '${FCNM_ERROR_FLOOR}' \
   --fcnm-zero-loss-weight '${FCNM_ZERO_LOSS_WEIGHT}' \
@@ -48,7 +52,7 @@ python -u scripts/train_hi_tpcnet_cnn.py \
 pid="$!"
 echo "${pid}" > "${PID_FILE}"
 
-echo "Started train_hi_tpcnet_cnn.py"
+echo "Started train_hi_cnn.py"
 echo "  PID: ${pid}"
 echo "  run name: ${RUN_NAME}"
 echo "  log: ${LOG_FILE}"

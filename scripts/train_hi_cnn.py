@@ -53,6 +53,7 @@ class TrainConfig:
     csv_dir: str
     output_root: Path
     run_name: str
+    tb_column: int
     subset_size: int
     seed: int
     train_frac: float
@@ -77,6 +78,7 @@ class TrainConfig:
     input_mode: str
     smooth_window: int
     device: str
+    num_layers: int = 8
 
 
 # -----------------------------------------------------------------------------
@@ -192,10 +194,15 @@ def target_indices_from_spectra_files(files: List[str], target_shape: Tuple[int,
     return np.asarray(indices, dtype=np.int64)
 
 
-def load_spectra_files(files: List[str], expected_length: Optional[int] = None) -> np.ndarray:
+def load_spectra_files(
+    files: List[str],
+    tb_column: int,
+    expected_length: Optional[int] = None,
+) -> np.ndarray:
     """Load TB spectra from an already-selected list of CSV files.
 
-    The TB column follows the user's local code: df.iloc[:, 3].
+    Use tb_column=1 for noisy TB and tb_column=3 for the no-noise TB column
+    in the current spectra files.
     """
 
     tb_spectra: List[np.ndarray] = []
@@ -205,12 +212,12 @@ def load_spectra_files(files: List[str], expected_length: Optional[int] = None) 
         except Exception as exc:
             raise RuntimeError(f"Failed to read CSV file {fp}: {exc}") from exc
 
-        if df.shape[1] <= 3:
+        if df.shape[1] <= tb_column:
             raise ValueError(
-                f"CSV file has {df.shape[1]} columns, but TB expects column index 3: {fp}"
+                f"CSV file has {df.shape[1]} columns, cannot read TB column index {tb_column}: {fp}"
             )
 
-        spectrum = df.iloc[:, 3].to_numpy(dtype=np.float32)
+        spectrum = df.iloc[:, tb_column].to_numpy(dtype=np.float32)
         if expected_length is None:
             expected_length = int(spectrum.shape[0])
             print(f"Inferred spectrum length: {expected_length} channels")
@@ -393,9 +400,11 @@ def save_indices(
     train_idx: np.ndarray,
     val_idx: np.ndarray,
     test_idx: np.ndarray,
+    filename_tag: str = "",
 ) -> Tuple[Path, Path]:
-    subset_path = results_dir / "sampled_indices.csv"
-    split_path = results_dir / "split_indices.csv"
+    suffix = f"_{filename_tag}" if filename_tag else ""
+    subset_path = results_dir / f"sampled_indices{suffix}.csv"
+    split_path = results_dir / f"split_indices{suffix}.csv"
 
     pd.DataFrame({"sample_index": subset_indices}).to_csv(subset_path, index=False)
 
@@ -755,10 +764,10 @@ def apply_physical_prediction_constraints(
 
 
 class TPCNetInspiredCNN(nn.Module):
-    """Eight-layer no-pooling 1D CNN for spectra regression.
+    """Variable-depth no-pooling 1D CNN for spectra regression.
 
     Paper-inspired choices:
-      - 8 convolutional layers.
+      - Up to 8 convolutional layers.
       - ReLU activations.
       - BatchNorm after each convolution and before activation.
       - Alternating kernel sizes 7 and 33.
@@ -773,14 +782,26 @@ class TPCNetInspiredCNN(nn.Module):
       - The final head is a simple flatten + linear regression layer.
     """
 
-    def __init__(self, input_length: int, in_channels: int = 1, out_dim: int = 2):
+    def __init__(
+        self,
+        input_length: int,
+        in_channels: int = 1,
+        out_dim: int = 2,
+        num_layers: int = 8,
+    ):
         super().__init__()
         channels = [64, 56, 48, 40, 32, 24, 16, 8]
         kernels = [7, 33, 7, 33, 7, 33, 7, 33]
+        if num_layers < 1 or num_layers > len(channels):
+            raise ValueError(f"num_layers must be between 1 and {len(channels)}, got {num_layers}")
+
+        self.num_layers = int(num_layers)
+        self.channels = channels[: self.num_layers]
+        self.kernels = kernels[: self.num_layers]
 
         layers: List[nn.Module] = []
         c_in = in_channels
-        for c_out, kernel_size in zip(channels, kernels):
+        for c_out, kernel_size in zip(self.channels, self.kernels):
             layers.extend(
                 [
                     nn.Conv1d(
@@ -797,7 +818,13 @@ class TPCNetInspiredCNN(nn.Module):
             c_in = c_out
 
         self.backbone = nn.Sequential(*layers)
-        self.head = nn.Linear(channels[-1] * input_length, out_dim)
+        self.head = nn.Linear(self.channels[-1] * input_length, out_dim)
+
+    def extra_repr(self) -> str:
+        return (
+            f"num_layers={self.num_layers}, "
+            f"channels={self.channels}, kernels={self.kernels}"
+        )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         features = self.backbone(x)
@@ -877,6 +904,7 @@ def train_model(
     model: nn.Module,
     train_loader: DataLoader,
     val_loader: DataLoader,
+    test_loader: DataLoader,
     config: TrainConfig,
     device: torch.device,
     target_scaler: Optional[Standardization],
@@ -890,11 +918,12 @@ def train_model(
     best_state: Optional[Dict[str, torch.Tensor]] = None
     epochs_without_improvement = 0
     history: List[Dict[str, float]] = []
-    metrics_path = results_dir / "training_metrics.csv"
-    checkpoint_path = results_dir / "best_model.pt"
+    layer_suffix = f"layers{config.num_layers}"
+    metrics_path = results_dir / f"training_metrics_{layer_suffix}.csv"
+    checkpoint_path = results_dir / f"best_model_{layer_suffix}.pt"
 
     for epoch in range(1, config.epochs + 1):
-        train_loss, _ = run_epoch(
+        train_loss, train_rmse = run_epoch(
             model,
             train_loader,
             criterion,
@@ -920,6 +949,18 @@ def train_model(
                 fcnm_error_floor=config.fcnm_error_floor,
                 snap_fcnm_below_floor=config.snap_fcnm_below_floor,
             )
+            test_loss, test_rmse = run_epoch(
+                model,
+                test_loader,
+                criterion,
+                device,
+                optimizer=None,
+                target_scaler=target_scaler,
+                rhi_target_transform=config.rhi_target_transform,
+                apply_physical_constraints=config.apply_physical_constraints,
+                fcnm_error_floor=config.fcnm_error_floor,
+                snap_fcnm_below_floor=config.snap_fcnm_below_floor,
+            )
 
         scheduler.step(val_loss)
         current_lr = float(optimizer.param_groups[0]["lr"])
@@ -927,9 +968,14 @@ def train_model(
         row = {
             "epoch": float(epoch),
             "train_loss": float(train_loss),
+            "train_rmse_fcnm": float(train_rmse[0]),
+            "train_rmse_rhi": float(train_rmse[1]),
             "val_loss": float(val_loss),
             "val_rmse_fcnm": float(val_rmse[0]),
             "val_rmse_rhi": float(val_rmse[1]),
+            "test_loss": float(test_loss),
+            "test_rmse_fcnm": float(test_rmse[0]),
+            "test_rmse_rhi": float(test_rmse[1]),
             "learning_rate": current_lr,
         }
         history.append(row)
@@ -938,9 +984,13 @@ def train_model(
         print(
             f"Epoch {epoch:03d} | "
             f"train_loss={train_loss:.6g} | "
+            f"train_RMSE_fCNM={train_rmse[0]:.6g} | "
+            f"train_RMSE_RHI={train_rmse[1]:.6g} | "
             f"val_loss={val_loss:.6g} | "
             f"val_RMSE_fCNM={val_rmse[0]:.6g} | "
             f"val_RMSE_RHI={val_rmse[1]:.6g} | "
+            f"test_RMSE_fCNM={test_rmse[0]:.6g} | "
+            f"test_RMSE_RHI={test_rmse[1]:.6g} | "
             f"lr={current_lr:.3g}",
             flush=True,
         )
@@ -1056,8 +1106,13 @@ def print_prediction_diagnostics(
 # -----------------------------------------------------------------------------
 
 
-def save_training_history(results_dir: Path, history: List[Dict[str, float]]) -> Path:
-    path = results_dir / "training_metrics.csv"
+def save_training_history(
+    results_dir: Path,
+    history: List[Dict[str, float]],
+    filename_tag: str = "",
+) -> Path:
+    suffix = f"_{filename_tag}" if filename_tag else ""
+    path = results_dir / f"training_metrics{suffix}.csv"
     pd.DataFrame(history).to_csv(path, index=False)
     return path
 
@@ -1067,8 +1122,10 @@ def save_predictions(
     sample_indices: np.ndarray,
     truth: np.ndarray,
     pred: np.ndarray,
+    filename_tag: str = "",
 ) -> Path:
-    path = results_dir / "test_predictions.csv"
+    suffix = f"_{filename_tag}" if filename_tag else ""
+    path = results_dir / f"test_predictions{suffix}.csv"
     pd.DataFrame(
         {
             "sample_index": sample_indices.astype(np.int64),
@@ -1087,13 +1144,15 @@ def plot_true_vs_pred(
     metrics: Dict[str, float],
     figs_dir: Path,
     fcnm_error_floor: float = 0.0,
+    filename_tag: str = "",
 ) -> List[Path]:
     plt.style.use("seaborn-v0_8-whitegrid")
     paths: List[Path] = []
+    suffix = f"_{filename_tag}" if filename_tag else ""
 
     plot_specs = [
-        ("fCNM", 0, metrics["rmse_fcnm"], figs_dir / "true_vs_pred_fcnm.png"),
-        ("RHI", 1, metrics["rmse_rhi"], figs_dir / "true_vs_pred_rhi.png"),
+        ("fCNM", 0, metrics["rmse_fcnm"], figs_dir / f"true_vs_pred_fcnm{suffix}.png"),
+        ("RHI", 1, metrics["rmse_rhi"], figs_dir / f"true_vs_pred_rhi{suffix}.png"),
     ]
 
     for label, col, rmse, path in plot_specs:
@@ -1104,7 +1163,7 @@ def plot_true_vs_pred(
         plt.close(fig)
         paths.append(path)
 
-    combined_path = figs_dir / "true_vs_pred_combined.png"
+    combined_path = figs_dir / f"true_vs_pred_combined{suffix}.png"
     fig, axes = plt.subplots(1, 2, figsize=(10.5, 4.8))
     add_scatter_panel(axes[0], truth[:, 0], pred[:, 0], "fCNM", metrics["rmse_fcnm"], fcnm_error_floor)
     add_scatter_panel(axes[1], truth[:, 1], pred[:, 1], "RHI", metrics["rmse_rhi"], fcnm_error_floor)
@@ -1113,7 +1172,7 @@ def plot_true_vs_pred(
     plt.close(fig)
     paths.append(combined_path)
 
-    rhi_log_path = figs_dir / "true_vs_pred_rhi_log.png"
+    rhi_log_path = figs_dir / f"true_vs_pred_rhi_log{suffix}.png"
     fig, ax = plt.subplots(figsize=(5.2, 4.8))
     add_scatter_panel(ax, truth[:, 1], pred[:, 1], "RHI", metrics["rmse_rhi"], fcnm_error_floor)
     positive = (truth[:, 1] > 0) & (pred[:, 1] > 0)
@@ -1190,6 +1249,12 @@ def parse_args() -> TrainConfig:
         ),
     )
     parser.add_argument(
+        "--tb-column",
+        type=int,
+        default=3,
+        help="Zero-based TB column index in spectra CSV files. Use 1 for noisy TB, 3 for no-noise TB.",
+    )
+    parser.add_argument(
         "--subset-size",
         type=int,
         default=20000,
@@ -1202,6 +1267,12 @@ def parse_args() -> TrainConfig:
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--patience", type=int, default=15)
+    parser.add_argument(
+        "--num-layers",
+        type=int,
+        default=8,
+        help="Number of CNN convolutional blocks to use from the 8-layer paper-inspired schedule.",
+    )
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--num-workers", type=int, default=0)
@@ -1244,7 +1315,7 @@ def parse_args() -> TrainConfig:
     parser.add_argument(
         "--fcnm-zero-loss-weight",
         type=float,
-        default=2.0,
+        default=3.0,
         help=(
             "Multiplier for the fCNM MSE term when true fCNM is zero or below "
             "--fcnm-error-floor. Use 1 to disable."
@@ -1328,11 +1399,14 @@ def parse_args() -> TrainConfig:
     )
 
     args = parser.parse_args()
+    if args.num_layers < 1 or args.num_layers > 8:
+        parser.error("--num-layers must be between 1 and 8.")
     return TrainConfig(
         fits_path=args.fits_path,
         csv_dir=args.csv_dir,
         output_root=Path(args.output_root).resolve(),
         run_name=args.run_name.strip(),
+        tb_column=args.tb_column,
         subset_size=args.subset_size,
         seed=args.seed,
         train_frac=args.train_frac,
@@ -1357,6 +1431,7 @@ def parse_args() -> TrainConfig:
         input_mode=args.input_mode,
         smooth_window=args.smooth_window,
         device=args.device,
+        num_layers=args.num_layers,
     )
 
 
@@ -1375,6 +1450,8 @@ def main() -> None:
         figs_dir = config.output_root / "figs"
     results_dir.mkdir(parents=True, exist_ok=True)
     figs_dir.mkdir(parents=True, exist_ok=True)
+    filename_tag = f"layers{config.num_layers}"
+    print(f"Selected CNN depth: {config.num_layers}/8 convolutional layers")
 
     print(f"Reading targets from: {config.fits_path}")
     fcnm, rhi, target_shape = load_targets(config.fits_path)
@@ -1410,12 +1487,17 @@ def main() -> None:
     target_summary("test", fcnm, rhi, test_target_idx)
 
     subset_path, split_path = save_indices(
-        results_dir, subset_target_idx, train_target_idx, val_target_idx, test_target_idx
+        results_dir,
+        subset_target_idx,
+        train_target_idx,
+        val_target_idx,
+        test_target_idx,
+        filename_tag=filename_tag,
     )
 
     selected_files = [spectra_files[i] for i in subset_idx]
-    print(f"\nReading only selected subset spectra: {len(selected_files)} files")
-    tb_subset = load_spectra_files(selected_files)
+    print(f"\nReading only selected subset spectra: {len(selected_files)} files, tb_column={config.tb_column}")
+    tb_subset = load_spectra_files(selected_files, tb_column=config.tb_column)
     if tb_subset.ndim != 2:
         raise ValueError(f"Expected selected TB shape (N, L), got {tb_subset.shape}")
     if len(tb_subset) != len(subset_idx):
@@ -1458,13 +1540,25 @@ def main() -> None:
 
     input_length = tb_subset.shape[-1]
     in_channels = tb_subset.shape[1] if tb_subset.ndim == 3 else 1
-    model = TPCNetInspiredCNN(input_length=input_length, in_channels=in_channels).to(device)
+    print(f"Building TPCNetInspiredCNN with num_layers={config.num_layers}")
+    model = TPCNetInspiredCNN(
+        input_length=input_length,
+        in_channels=in_channels,
+        num_layers=config.num_layers,
+    ).to(device)
     print(model)
 
     model, history, best_val_loss = train_model(
-        model, train_loader, val_loader, config, device, target_scaler, results_dir
+        model,
+        train_loader,
+        val_loader,
+        test_loader,
+        config,
+        device,
+        target_scaler,
+        results_dir,
     )
-    metrics_path = save_training_history(results_dir, history)
+    metrics_path = save_training_history(results_dir, history, filename_tag=filename_tag)
 
     test_indices, test_truth, test_pred = collect_predictions(
         model,
@@ -1477,8 +1571,21 @@ def main() -> None:
         config.snap_fcnm_below_floor,
     )
     metrics = regression_metrics(test_truth, test_pred)
-    predictions_path = save_predictions(results_dir, test_indices, test_truth, test_pred)
-    figure_paths = plot_true_vs_pred(test_truth, test_pred, metrics, figs_dir, config.fcnm_error_floor)
+    predictions_path = save_predictions(
+        results_dir,
+        test_indices,
+        test_truth,
+        test_pred,
+        filename_tag=filename_tag,
+    )
+    figure_paths = plot_true_vs_pred(
+        test_truth,
+        test_pred,
+        metrics,
+        figs_dir,
+        config.fcnm_error_floor,
+        filename_tag=filename_tag,
+    )
 
     print(
         f"\nTest RMSE fCNM: {metrics['rmse_fcnm']:.6g}\n"
@@ -1490,6 +1597,7 @@ def main() -> None:
 
     print("\nSummary")
     print(f"  device: {device}")
+    print(f"  CNN layers: {config.num_layers}/8")
     print(f"  subset size: {len(subset_idx)}")
     print(f"  train/val/test: {len(train_idx)}/{len(val_idx)}/{len(test_idx)}")
     print(f"  best validation loss: {best_val_loss:.6g}")
@@ -1510,4 +1618,4 @@ if __name__ == "__main__":
 
 
 # Example detached run:
-# RUN_NAME=no_noise_tb_fcnm_floor_002 bash scripts/run_train_hi_tpcnet_cnn.sh
+# RUN_NAME=no_noise_tb_fcnm_floor_002 bash scripts/run_train_hi_cnn.sh

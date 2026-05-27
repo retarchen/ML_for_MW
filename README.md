@@ -11,7 +11,7 @@ output: [fCNM, RHI]
 The current main training script is:
 
 ```text
-scripts/train_hi_tpcnet_cnn.py
+scripts/train_hi_cnn.py
 ```
 
 The CNN is a small-scale, practical implementation inspired by the 1D CNN idea
@@ -24,7 +24,7 @@ Run the default full-data CNN training in detached/no-stop mode:
 
 ```bash
 cd /path/to/ML_MW
-RUN_NAME=my_cnn_run bash scripts/run_train_hi_tpcnet_cnn.sh
+RUN_NAME=my_cnn_run bash scripts/run_train_hi_cnn.sh
 ```
 
 This keeps running after the terminal closes. Outputs are written to:
@@ -45,7 +45,7 @@ tail -f logs/my_cnn_run.log
 Check whether it is still running:
 
 ```bash
-ps -ef | grep train_hi_tpcnet_cnn.py | grep -v grep
+ps -ef | grep train_hi_cnn.py | grep -v grep
 ```
 
 Check GPU usage:
@@ -56,7 +56,7 @@ nvidia-smi
 
 ## Data
 
-By default, `train_hi_tpcnet_cnn.py` looks for data relative to the repository
+By default, `train_hi_cnn.py` looks for data relative to the repository
 parent directory:
 
 ```text
@@ -93,19 +93,14 @@ target_index = row * n_cols + col
 This avoids the common bug where simple string sorting misaligns spectra and
 targets.
 
-The monolithic script currently reads the no-noise TB column:
+The TB column is configurable:
 
-```python
-df.iloc[:, 3]
+```bash
+--tb-column 1  # noisy TB
+--tb-column 3  # no-noise TB
 ```
 
-For noisy TB or configurable TB columns, use the separated pipeline:
-
-```text
-scripts/seperate_scripts/run_pipeline.py
-```
-
-with `--tb-column 1` for noisy TB or `--tb-column 3` for no-noise TB.
+The launcher script uses `TB_COLUMN=3` by default.
 
 ## Model
 
@@ -138,8 +133,9 @@ Full no-noise run with fCNM error-floor handling:
 cd /path/to/ML_MW
 RUN_NAME=no_noise_full_fcnm_floor \
 FCNM_ERROR_FLOOR=0.02 \
-FCNM_ZERO_LOSS_WEIGHT=2.0 \
-bash scripts/run_train_hi_tpcnet_cnn.sh
+FCNM_ZERO_LOSS_WEIGHT=3.0 \
+TB_COLUMN=3 \
+bash scripts/run_train_hi_cnn.sh
 ```
 
 Small debug run:
@@ -150,7 +146,7 @@ RUN_NAME=debug_small \
 SUBSET_SIZE=1000 \
 EPOCHS=2 \
 PATIENCE=2 \
-bash scripts/run_train_hi_tpcnet_cnn.sh
+bash scripts/run_train_hi_cnn.sh
 ```
 
 CPU debug run:
@@ -161,7 +157,7 @@ RUN_NAME=cpu_debug \
 SUBSET_SIZE=500 \
 EPOCHS=1 \
 DEVICE=cpu \
-bash scripts/run_train_hi_tpcnet_cnn.sh
+bash scripts/run_train_hi_cnn.sh
 ```
 
 ## Direct Python Run
@@ -175,22 +171,23 @@ source "${HOME}/miniconda3/etc/profile.d/conda.sh"
 conda activate cnn
 export MPLCONFIGDIR=/tmp
 
-python -u scripts/train_hi_tpcnet_cnn.py \
+python -u scripts/train_hi_cnn.py \
   --subset-size -1 \
   --epochs 100 \
   --patience 15 \
   --batch-size 256 \
   --device cuda \
+  --tb-column 3 \
   --rhi-target-transform log \
   --fcnm-error-floor 0.02 \
-  --fcnm-zero-loss-weight 2.0 \
+  --fcnm-zero-loss-weight 3.0 \
   --run-name my_cnn_run
 ```
 
 Detached/no-stop version:
 
 ```bash
-setsid bash -lc 'source "${HOME}/miniconda3/etc/profile.d/conda.sh" && conda activate cnn && export MPLCONFIGDIR=/tmp && python -u scripts/train_hi_tpcnet_cnn.py --subset-size -1 --epochs 100 --patience 15 --batch-size 256 --device cuda --rhi-target-transform log --fcnm-error-floor 0.02 --fcnm-zero-loss-weight 2.0 --run-name my_cnn_run' > logs/my_cnn_run.log 2>&1 < /dev/null & echo $!
+setsid bash -lc 'source "${HOME}/miniconda3/etc/profile.d/conda.sh" && conda activate cnn && export MPLCONFIGDIR=/tmp && python -u scripts/train_hi_cnn.py --subset-size -1 --epochs 100 --patience 15 --batch-size 256 --device cuda --tb-column 3 --rhi-target-transform log --fcnm-error-floor 0.02 --fcnm-zero-loss-weight 3.0 --run-name my_cnn_run' > logs/my_cnn_run.log 2>&1 < /dev/null & echo $!
 ```
 
 ## Important Parameters
@@ -208,6 +205,15 @@ Path to the FITS target file.
 `--csv-dir`
 
 Directory containing spectra CSV/CSV.GZ files.
+
+`--tb-column`
+
+Zero-based TB column index in spectra CSV files.
+
+```bash
+--tb-column 1  # noisy TB
+--tb-column 3  # no-noise TB
+```
 
 `--subset-size`
 
@@ -310,7 +316,7 @@ Disable the floor:
 Increase the fCNM loss weight for true-zero or below-floor samples:
 
 ```bash
---fcnm-zero-loss-weight 2.0
+--fcnm-zero-loss-weight 3.0
 ```
 
 Disable extra weighting:
@@ -402,8 +408,8 @@ rate for plotting learning curves.
 ## Repository Layout
 
 ```text
-scripts/train_hi_tpcnet_cnn.py          Main monolithic CNN training script
-scripts/run_train_hi_tpcnet_cnn.sh      Detached/no-stop launcher
+scripts/train_hi_cnn.py          Main monolithic CNN training script
+scripts/run_train_hi_cnn.sh      Detached/no-stop launcher
 scripts/sample.py                       Earlier experimental script
 scripts/seperate_scripts/               Modular version of the CNN pipeline
 results/                                CSV outputs and model checkpoints
@@ -420,7 +426,7 @@ long time.
 If a run stops when the terminal closes, use:
 
 ```bash
-bash scripts/run_train_hi_tpcnet_cnn.sh
+bash scripts/run_train_hi_cnn.sh
 ```
 
 or the detached `setsid` command shown above.

@@ -145,7 +145,7 @@ def parse_args() -> PipelineConfig:
     parser.add_argument(
         "--fcnm-zero-loss-weight",
         type=float,
-        default=2.0,
+        default=3.0,
         help=(
             "Multiplier for the fCNM MSE term when true fCNM is zero or below "
             "--fcnm-error-floor. Use 1 to disable."
